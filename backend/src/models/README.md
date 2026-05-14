@@ -1,0 +1,1 @@
+Tutaj będą encje bazy danych TypeORM
