@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+model City {
+  id            Int            @id @default(autoincrement())
+  name          String         @unique
+  housingPrices HousingPrice[]
+}
+model HousingPrice {
+  id          Int      @id @default(autoincrement())
+  cityId      Int
+  year        Int
+  quarter     Int
+  marketType  String
+  priceType   String
+  price       Decimal
+
+  city        City     @relation(fields: [cityId], references: [id], onDelete: Cascade)
+
+  @@index([year, quarter])
+}
+model InterestRate {
+  id        Int      @id @default(autoincrement())
+  validFrom DateTime
+  rateType  String
+  rateValue Decimal
+
+  @@index([validFrom])
+}

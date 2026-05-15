@@ -1,1 +1,0 @@
-Tutaj wystawimy usluge/webservice SOAP jesli bedzie trzeba np jakas funkcje ktora bierze srednią cene i stope procentową z danego zakresu dat
