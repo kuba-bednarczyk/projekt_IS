@@ -29,6 +29,18 @@ CREATE TABLE "InterestRate" (
     CONSTRAINT "InterestRate_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "User" (
+    "id" SERIAL NOT NULL,
+    "email" TEXT NOT NULL,
+    "password" TEXT NOT NULL,
+    "role" TEXT NOT NULL DEFAULT 'USER',
+    "profilePicture" BYTEA,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "City_name_key" ON "City"("name");
 
@@ -37,6 +49,9 @@ CREATE INDEX "HousingPrice_year_quarter_idx" ON "HousingPrice"("year", "quarter"
 
 -- CreateIndex
 CREATE INDEX "InterestRate_validFrom_idx" ON "InterestRate"("validFrom");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
 -- AddForeignKey
 ALTER TABLE "HousingPrice" ADD CONSTRAINT "HousingPrice_cityId_fkey" FOREIGN KEY ("cityId") REFERENCES "City"("id") ON DELETE CASCADE ON UPDATE CASCADE;

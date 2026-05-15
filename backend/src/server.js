@@ -1,10 +1,11 @@
-// backend/src/server.js
 require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 const prisma = require('./config/db'); // połączenie z bazą 
 
-const dataRoutes = require('./routes/dataRoutes'); // import routeow
+const dataRoutes = require('./routes/dataRoutes'); //import routow
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(cors()); //dla reacta - dostep do API
 app.use(express.json()); // pozwala czytac dane z bazy
 
 app.use('/api', dataRoutes);
+app.use('/api/auth', authRoutes);
 
 // endpoint testowy STATUS
 app.get('/api/status', async (req, res) => {
