@@ -19,7 +19,6 @@
     "fast-xml-parser": "^5.8.0",
     "pg": "^8.20.0",
     "reflect-metadata": "^0.2.2",
-    "typeorm": "^0.3.29",
     "xml2js": "^0.6.2"
   },
   "devDependencies": {
