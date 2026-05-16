@@ -1,14 +1,18 @@
 const express = require("express");
 const prisma = require("../config/db");
 const router = express.Router();
+
 const {
   pricesSchema,
   ratesSchema,
   calculatorSchema,
 } = require("../validations/dataSchemas");
 
+// middlware autoryzacji JWT
+const { verifyToken } = require("../middleware/auth");
+
 // Pobieranie wszystkich miast (idealne do listy rozwijanej na froncie)
-router.get("/cities", async (req, res) => {
+router.get("/cities", verifyToken, async (req, res) => {
   try {
     const cities = await prisma.city.findMany({
       orderBy: { name: "asc" }, // Od razu sortujemy alfabetycznie dla wygody
@@ -26,7 +30,7 @@ router.get("/cities", async (req, res) => {
 // Pobieranie cen mieszkań (z opcją filtrowania)
 // Filtrowanie po roku, kwartale, typie rynku i typie ceny - dowoli (tzn. same kwartały nie przejdą)
 // Przykładowe zapytanie: /api/prices?ystart=2023&qstart=1&yend=2023&qend=4&marketType=pierwotny&priceType=ofertowe - pobierze średnie ceny ofertowe mieszkań na rynku pierwotnym od 1 kwartału 2023 do 4 kwartału 2023
-router.get("/prices", async (req, res) => {
+router.get("/prices", verifyToken, async (req, res) => {
   try {
     const validation = pricesSchema.safeParse(req.query);
     if (!validation.success) {
@@ -84,7 +88,7 @@ router.get("/prices", async (req, res) => {
 // Filtrowanie dowolne (tzn. same miesiące nie przejdą)
 // Zakresy dat są włączne
 // Przykładowe zapytanie: /api/rates?ystart=2023&mstart=1&yend=2025&mend=11 - pobierze stopy procentowe od 1 stycznia 2023 do 31 listopada 2025
-router.get("/rates", async (req, res) => {
+router.get("/rates", verifyToken, async (req, res) => {
   try {
     const validation = ratesSchema.safeParse(req.query);
     if (!validation.success) {
@@ -119,7 +123,7 @@ router.get("/rates", async (req, res) => {
 
 // endpoint dla kalkuatora podajemy cityId, year, quarter, area, years, marketType (pierwotny/wtórny) i zwracamy: city, period, totalPropertyValue, interestRateApplied, estimatedMonthlyInstallment
 // tesetowe zapytanie: /api/calculator?cityId=1&year=2023&area=50.5&years=25&marketType=pierwotny
-router.get("/calculator", async (req, res) => {
+router.get("/calculator", verifyToken, async (req, res) => {
   try {
     const validation = calculatorSchema.safeParse(req.query);
     if (!validation.success) {
@@ -184,6 +188,7 @@ router.get("/calculator", async (req, res) => {
     const totalPropertyValue = parseFloat(
       (priceData.price.toNumber() * area).toFixed(2),
     );
+    
     //obliczenie raty miesięcznej
     const annualrate = rateData.rateValue.toNumber();
     const r = annualrate / 100 / 12;
@@ -196,6 +201,7 @@ router.get("/calculator", async (req, res) => {
       const installment = (totalPropertyValue * r * power) / (power - 1);
       monthlyInstallment = parseFloat(installment.toFixed(2));
     }
+
     // final reply
     const period = priceData.year + " Q" + priceData.quarter;
     res.status(200).json({
@@ -215,4 +221,5 @@ router.get("/calculator", async (req, res) => {
       .json({ success: false, message: "Wewnętrzny błąd serwera." });
   }
 });
+
 module.exports = router;
