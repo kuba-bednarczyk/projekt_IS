@@ -30,7 +30,9 @@ router.get("/prices", async (req, res) => {
   try {
     const validation = pricesSchema.safeParse(req.query);
     if (!validation.success) {
-      const errorMessage = validation.error.errors[0].message;
+      const errorMessage = validation.error.issues
+        .map((issue) => issue.message)
+        .join(" | ");
       return res.status(400).json({ success: false, message: errorMessage });
     }
     const {
@@ -88,7 +90,9 @@ router.get("/rates", async (req, res) => {
   try {
     const validation = ratesSchema.safeParse(req.query);
     if (!validation.success) {
-      const errorMessage = validation.error.errors[0].message;
+      const errorMessage = validation.error.issues
+        .map((issue) => issue.message)
+        .join(" | ");
       return res.status(400).json({ success: false, message: errorMessage });
     }
     const { ystart: y, mstart: m, yend: yE, mend: mE } = validation.data;
@@ -123,7 +127,9 @@ router.get("/calculator", async (req, res) => {
   try {
     const validation = calculatorSchema.safeParse(req.query);
     if (!validation.success) {
-      const errorMessage = validation.error.errors[0].message;
+      const errorMessage = validation.error.issues
+        .map((issue) => issue.message)
+        .join(" | ");
       return res.status(400).json({ success: false, message: errorMessage });
     }
     const { cityId, year, quarter, area, years, marketType } = validation.data;
@@ -185,7 +191,7 @@ router.get("/calculator", async (req, res) => {
       (priceData.price.toNumber() * area).toFixed(2),
     );
     //obliczenie raty miesięcznej
-    const annualrate = rateData.rateValue.toNumber();
+    const annualrate = rateData ? rateData.rateValue.toNumber() : null;
     const r = annualrate / 100 / 12;
     const n = years * 12;
     let monthlyInstallment = 0;

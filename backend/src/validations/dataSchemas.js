@@ -26,26 +26,22 @@ const pricesSchema = z.object({
     .default(4),
 
   marketType: z
-    .string()
+    .string({
+      message: "Rynek jest wymagany.",
+    })
+    .refine((val) => ["pierwotny", "wtórny"].includes(val.toLowerCase()), {
+      message: "Rynek musi być 'pierwotny' lub 'wtórny'.",
+    })
     .transform((val) => val.toLowerCase())
-    .pipe(
-      z.enum(["pierwotny", "wtórny"], {
-        errorMap: () => ({
-          message: "Nieznany rynek. Dostępne to: pierwotny, wtórny",
-        }),
-      }),
-    )
     .optional(),
   priceType: z
-    .string()
+    .string({
+      message: "Typ ceny jest wymagany.",
+    })
+    .refine((val) => ["transakcyjne", "ofertowe"].includes(val.toLowerCase()), {
+      message: "Nieznany typ ceny. Dostępne to: transakcyjne, ofertowe",
+    })
     .transform((val) => val.toLowerCase())
-    .pipe(
-      z.enum(["transakcyjne", "ofertowe"], {
-        errorMap: () => ({
-          message: "Nieznany typ ceny. Dostępne to: transakcyjne, ofertowe",
-        }),
-      }),
-    )
     .optional(),
 });
 
@@ -79,11 +75,15 @@ const ratesSchema = z.object({
 // /calculator
 const calculatorSchema = z.object({
   cityId: z.coerce
-    .number({ invalid_type_error: "ID miasta musi być podane jako liczba." })
+    .number({
+      message: "ID miasta musi być liczbą.",
+    })
     .positive("ID miasta musi być dodatnią liczbą."),
 
   year: z.coerce
-    .number({ invalid_type_error: "Rok musi być podany jako liczba." })
+    .number({
+      message: "Rok musi być liczbą.",
+    })
     .min(2014, "Rok musi być większy niż 2013.")
     .max(2026, "Rok nie może być większy niż 2026."),
 
@@ -94,23 +94,25 @@ const calculatorSchema = z.object({
     .default(1),
 
   area: z.coerce
-    .number({ invalid_type_error: "Podaj poprawną powierzchnię." })
+    .number({
+      message: "Powierzchnia mieszkania musi być liczbą.",
+    })
     .positive("Powierzchnia mieszkania musi być większa od zera."),
 
   years: z.coerce
-    .number({ invalid_type_error: "Podaj poprawne lata kredytu." })
+    .number({
+      message: "Lata kredytu muszą być liczbą.",
+    })
     .min(1, "Okres kredytowania to minimum 1 rok.")
     .max(40, "Okres kredytowania to maksimum 40 lat."),
   marketType: z
-    .string()
-    .transform((val) => val.toLowerCase())
-    .pipe(
-      z.enum(["pierwotny", "wtórny"], {
-        errorMap: () => ({
-          message: "Rynek musi być 'pierwotny' lub 'wtórny'.",
-        }),
-      }),
-    ),
+    .string({
+      message: "Rynek jest wymagany.",
+    })
+    .refine((val) => ["pierwotny", "wtórny"].includes(val.toLowerCase()), {
+      message: "Rynek musi być 'pierwotny' lub 'wtórny'.",
+    })
+    .transform((val) => val.toLowerCase()),
 });
 module.exports = {
   pricesSchema,
