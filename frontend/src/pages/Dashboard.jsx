@@ -4,6 +4,15 @@ import { useNavigate } from "react-router";
 import Header from "@/components/Header";
 import HeroMarketStats from "@/components/dashboard/HeroMarketStats";
 import PriceTrendChart from "@/components/dashboard/PriceTrendChart";
+import CityPriceComparisonChart from "@/components/dashboard/CityPriceComparisonChart";
+
+import {
+  CardTitle,
+  Card,
+  CardHeader,
+  CardContent,
+  CardDescription,
+} from "@/components/ui/card";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -46,7 +55,6 @@ const Dashboard = () => {
           if (!res.ok) {
             if (res.status === 401 || res.status === 403) {
               localStorage.removeItem("token");
-              localStorage.removeItem("role");
               navigate("/", { replace: true });
               return;
             }
@@ -73,6 +81,7 @@ const Dashboard = () => {
     fetchAllData();
   }, [navigate]);
 
+  // dane do Hero - statystyk ogolnych
   const stats = useMemo(() => {
     if (prices.length === 0) return null;
 
@@ -237,10 +246,43 @@ const Dashboard = () => {
     return data;
   }, [prices, rates, selectedCity, selectedMarket, selectedPriceType]);
 
+  // Dane do porównania miast (rok 2024)
+  const cityComparisonData = useMemo(() => {
+    if (prices.length === 0 || cities.length === 0) return [];
+
+    return cities
+      .map((city) => {
+        const cityPrices = prices.filter((p) => {
+          const matchCity = p.cityId === city.id;
+          const matchYear = p.year === 2024;
+          const matchMarket =
+            selectedMarket === "all" ? true : p.marketType === selectedMarket;
+          const matchPriceType =
+            selectedPriceType === "all"
+              ? true
+              : p.priceType === selectedPriceType;
+
+          return matchCity && matchYear && matchMarket && matchPriceType;
+        });
+
+        const avgPrice =
+          cityPrices.length > 0
+            ? cityPrices.reduce((sum, p) => sum + parseFloat(p.price), 0) /
+              cityPrices.length
+            : 0;
+
+        return {
+          name: city.name,
+          avgPrice: Math.round(avgPrice),
+        };
+      })
+      .filter((item) => item.avgPrice > 0);
+  }, [cities, prices, selectedMarket, selectedPriceType]);
+
   return (
     <div className="min-h-screen bg-zinc-50">
       <Header />
-      <div className="p-8 space-y-6">
+      <main className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 space-y-6">
         {/* Hero: statystyki - cena (2024), wzorst ceny 5-lat, stopa procentowa (latest), stosunek: ofertowe/transakcyjne */}
         <HeroMarketStats
           cities={cities}
@@ -253,14 +295,36 @@ const Dashboard = () => {
           setSelectedPriceType={setSelectedPriceType}
         />
 
-        {/* Wykres */}
-        <div className="bg-white rounded-2xl p-6 shadow-sm border border-zinc-200">
-          <h3 className="text-lg font-semibold text-zinc-900 mb-4">
-            Trend cen mieszkań vs Stopa referencyjna NBP (2015–2024)
-          </h3>
-          <PriceTrendChart data={chartData} />
-        </div>
-      </div>
+        {/* Wykres trendu */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-lg font-semibold">
+              Trend cen vs Stopa NBP (2015–2024)
+            </CardTitle>
+            <CardDescription>
+              Oś lewa: średnia cena zł/m² · Oś prawa: stopa procentowa %
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="pb-6">
+            <PriceTrendChart data={chartData} />
+          </CardContent>
+        </Card>
+
+        {/* Wykres porownania miast */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-lg font-semibold">
+              Porównanie miast (2024)
+            </CardTitle>
+            <CardDescription>
+              Średnia cena/m² wg aktywnych filtrów
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="pb-6">
+            <CityPriceComparisonChart data={cityComparisonData} />
+          </CardContent>
+        </Card>
+      </main>
     </div>
   );
 };

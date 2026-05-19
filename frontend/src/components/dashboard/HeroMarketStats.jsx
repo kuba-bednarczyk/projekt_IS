@@ -1,5 +1,13 @@
 import React from "react";
 
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/card";
+
 const HeroSection = ({
   cities,
   stats,
@@ -11,24 +19,21 @@ const HeroSection = ({
   setSelectedPriceType,
 }) => {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm border border-zinc-200">
-      {/* Tytuł i Filtry */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
-        {/* Tytuły */}
+    <Card>
+      <CardHeader className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 space-y-0">
         <div>
-          <h2 className="text-xl font-bold text-zinc-900 flex items-center gap-2">
+          <CardTitle className="text-xl font-bold flex items-center gap-2">
             Rynek nieruchomości{" "}
-            <span className="text-zinc-400 font-normal">· 2015–2024</span>
-          </h2>
-          <p className="text-sm text-zinc-500 mt-1">
+            <span className="text-muted-foreground font-normal">· 2015–2024</span>
+          </CardTitle>
+          <CardDescription className="text-sm mt-1">
             Ceny mieszkań na tle stóp procentowych NBP
-          </p>
+          </CardDescription>
         </div>
 
-        {/* Filtry */}
         <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
           <select
-            className="bg-zinc-50 text-zinc-900 text-sm rounded-lg border border-zinc-200 px-3 py-2 focus:ring-2 focus:ring-zinc-900 focus:outline-none w-full sm:w-48 transition-all"
+            className="flex h-9 w-full sm:w-48 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.target.value)}
           >
@@ -41,7 +46,7 @@ const HeroSection = ({
           </select>
 
           <select
-            className="bg-zinc-50 text-zinc-900 text-sm rounded-lg border border-zinc-200 px-3 py-2 focus:ring-2 focus:ring-zinc-900 focus:outline-none w-full sm:w-40 transition-all"
+            className="flex h-9 w-full sm:w-40 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             value={selectedMarket}
             onChange={(e) => setSelectedMarket(e.target.value)}
           >
@@ -51,7 +56,7 @@ const HeroSection = ({
           </select>
 
           <select
-            className="bg-zinc-50 text-zinc-900 text-sm rounded-lg border border-zinc-200 px-3 py-2 focus:ring-2 focus:ring-zinc-900 focus:outline-none w-full sm:w-40 transition-all"
+            className="flex h-9 w-full sm:w-40 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             value={selectedPriceType}
             onChange={(e) => setSelectedPriceType(e.target.value)}
           >
@@ -60,74 +65,81 @@ const HeroSection = ({
             <option value="transakcyjne">Transakcyjne</option>
           </select>
         </div>
-      </div>
+      </CardHeader>
 
-      {/* Statystyki */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {/* Kafelek 1: Średnia cena */}
-        <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-4 flex flex-col justify-between">
-          <div>
-            <p className="text-xs font-medium text-zinc-500 mb-1">
-              Śr. cena/m² (2024)
-            </p>
-            <p className="text-2xl font-bold text-zinc-900">
-              {stats?.avg2024 || "---"}
-            </p>
-          </div>
-          <div className="mt-2">
-            {stats && stats.rrGrowth !== 0 && (
-              <span
-                className={`text-xs font-medium ${stats.rrGrowth > 0 ? "text-emerald-600" : "text-red-600"}`}
-              >
-                {stats.rrGrowth > 0 ? "▲" : "▼"}{" "}
-                {Math.abs(stats.rrGrowth).toFixed(1)}% r/r
-              </span>
-            )}
-          </div>
-        </div>
+      <CardContent>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* Kafelek 1: Średnia cena */}
+          <Card className="bg-muted/40 border-none">
+            <CardHeader className="p-4 pb-2">
+              <CardDescription className="text-xs font-medium uppercase tracking-wider">
+                Śr. cena/m² (2024)
+              </CardDescription>
+              <CardTitle className="text-2xl font-bold">
+                {stats?.avg2024 || "---"}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-4 pt-0">
+              {stats && stats.rrGrowth !== 0 && (
+                <span
+                  className={`text-xs font-medium ${stats.rrGrowth > 0 ? "text-emerald-600" : "text-red-600"}`}
+                >
+                  {stats.rrGrowth > 0 ? "▲" : "▼"}{" "}
+                  {Math.abs(stats.rrGrowth).toFixed(1)}% r/r
+                </span>
+              )}
+            </CardContent>
+          </Card>
 
-        {/* Kafelek 2: Wzrost 5-letni */}
-        <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-4 flex flex-col justify-between">
-          <div>
-            <p className="text-xs font-medium text-zinc-500 mb-1">
-              Wzrost 5-letni
-            </p>
-            <p className="text-2xl font-bold text-zinc-900">
-              {stats?.growth5Y || "---"}
-            </p>
-          </div>
-          <p className="text-xs text-zinc-400 mt-2">2019 → 2024</p>
-        </div>
+          {/* Kafelek 2: Wzrost 5-letni */}
+          <Card className="bg-muted/40 border-none">
+            <CardHeader className="p-4 pb-2">
+              <CardDescription className="text-xs font-medium uppercase tracking-wider">
+                Wzrost 5-letni
+              </CardDescription>
+              <CardTitle className="text-2xl font-bold">
+                {stats?.growth5Y || "---"}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-4 pt-0">
+              <p className="text-xs text-muted-foreground">2019 → 2024</p>
+            </CardContent>
+          </Card>
 
-        {/* Kafelek 3: Stopa referencyjna */}
-        <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-4 flex flex-col justify-between">
-          <div>
-            <p className="text-xs font-medium text-zinc-500 mb-1">
-              Stopa ref. NBP
-            </p>
-            <p className="text-2xl font-bold text-zinc-900">
-              {stats?.latestRateValue || "---"}
-            </p>
-          </div>
-          <p className="text-xs text-zinc-400 mt-2">
-            od {stats?.latestRateDate || "---"}
-          </p>
-        </div>
+          {/* Kafelek 3: Stopa referencyjna */}
+          <Card className="bg-muted/40 border-none">
+            <CardHeader className="p-4 pb-2">
+              <CardDescription className="text-xs font-medium uppercase tracking-wider">
+                Stopa ref. NBP
+              </CardDescription>
+              <CardTitle className="text-2xl font-bold">
+                {stats?.latestRateValue || "---"}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-4 pt-0">
+              <p className="text-xs text-muted-foreground">
+                od {stats?.latestRateDate || "---"}
+              </p>
+            </CardContent>
+          </Card>
 
-        {/* Kafelek 4: Spread */}
-        <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-4 flex flex-col justify-between">
-          <div>
-            <p className="text-xs font-medium text-zinc-500 mb-1">
-              Spread of./trans.
-            </p>
-            <p className="text-2xl font-bold text-zinc-900">
-              {stats?.spread || "---"}
-            </p>
-          </div>
-          <p className="text-xs text-zinc-400 mt-2">ofertowe vs transakcyjne</p>
+          {/* Kafelek 4: Spread */}
+          <Card className="bg-muted/40 border-none">
+            <CardHeader className="p-4 pb-2">
+              <CardDescription className="text-xs font-medium uppercase tracking-wider">
+                Spread of./trans.
+              </CardDescription>
+              <CardTitle className="text-2xl font-bold">
+                {stats?.spread || "---"}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-4 pt-0">
+              <p className="text-xs text-muted-foreground">ofertowe vs transakcyjne</p>
+            </CardContent>
+          </Card>
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 
