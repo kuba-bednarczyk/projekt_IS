@@ -178,7 +178,7 @@ const Dashboard = () => {
   }, [prices, rates, selectedCity, selectedMarket, selectedPriceType]);
 
   // Dane do wykresu trendu cen vs stopy ref.
-  const chartData = useMemo(() => {
+  const pricesAndRatesData = useMemo(() => {
     if (prices.length === 0 || rates.length === 0) return [];
 
     const data = [];
@@ -306,7 +306,7 @@ const Dashboard = () => {
             </CardDescription>
           </CardHeader>
           <CardContent className="pb-6">
-            <PriceTrendChart data={chartData} />
+            <PriceTrendChart data={pricesAndRatesData} />
           </CardContent>
         </Card>
 

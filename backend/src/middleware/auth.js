@@ -38,7 +38,6 @@ const requireRole = (requiredRole) => {
     if (req.user.role !== requiredRole) {
       return res.status(403).json({ error: 'Forbidden: insufficient permissions' });
     }
-
     next();
   };
 };
