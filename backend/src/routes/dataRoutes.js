@@ -9,7 +9,7 @@ const {
 } = require("../validations/dataSchemas");
 
 // middlware autoryzacji JWT
-const { verifyToken } = require("../middleware/auth");
+const { verifyToken, requireOwnerOrAdmin } = require("../middleware/auth");
 
 // Pobieranie wszystkich miast (idealne do listy rozwijanej na froncie)
 router.get("/cities", verifyToken, async (req, res) => {

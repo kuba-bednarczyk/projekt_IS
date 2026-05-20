@@ -5,8 +5,8 @@ const cors = require('cors');
 const prisma = require('./config/db'); // połączenie z bazą 
 
 const dataRoutes = require('./routes/dataRoutes'); //import routow
-const authRoutes = require('./routes/authRoutes'); // autoryzacja 
-const exportRoutes = require("./routes/exportRoutes"); // import routeow do eksportu danych
+const authRoutes = require('./routes/authRoutes');
+const exportRoutes = require("./routes/exportRoutes"); 
 
 const app = express();
 
