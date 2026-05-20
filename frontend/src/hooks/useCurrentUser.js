@@ -41,7 +41,7 @@ export default function useCurrentUser() {
   }, []);
 
   useEffect(() => {
-    fetchUser();
+    Promise.resolve().then(fetchUser);
   }, [fetchUser]);
 
   return { user, loading, error, refresh: fetchUser };

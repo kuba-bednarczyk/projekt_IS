@@ -48,18 +48,6 @@ const Account = () => {
           <form onSubmit={handleSave}>
             <CardContent className="space-y-4">
               <div>
-                <Label htmlFor="email" className="py-3">
-                  Email
-                </Label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-
-              <div className="pb-2">
                 <Label>Zdjęcie profilowe</Label>
                 <div className="flex items-center gap-4 mt-2">
                   <div className="w-20 h-20 rounded-full bg-zinc-100 overflow-hidden border border-zinc-200">
@@ -86,6 +74,39 @@ const Account = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+              <div>
+                <Label htmlFor="username" className="py-2">
+                  Nazwa użytkownika
+                </Label>
+                <Input
+                  id="username"
+                  type="username"
+                  value={""}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div>
+                <Label htmlFor="email" className="py-2">
+                  Email
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className="pb-4">
+                <Label htmlFor="password" className="py-2">
+                  Hasło
+                </Label>
+                <Input
+                  id="password"
+                  type="password"
+                  value={""}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
             </CardContent>
 

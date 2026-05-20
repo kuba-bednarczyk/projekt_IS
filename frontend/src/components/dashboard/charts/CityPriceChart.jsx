@@ -9,7 +9,7 @@ import {
   Cell,
 } from "recharts";
 
-const CityPriceComparisonChart = ({ data }) => {
+const CityPriceChart = ({ data }) => {
   if (!data || data.length === 0) {
     return (
       <div className="w-full h-80 bg-zinc-50 rounded-lg border border-zinc-200 flex items-center justify-center">
@@ -73,4 +73,4 @@ const CityPriceComparisonChart = ({ data }) => {
   );
 };
 
-export default CityPriceComparisonChart;
+export default CityPriceChart;
