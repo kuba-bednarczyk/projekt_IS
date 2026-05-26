@@ -7,51 +7,78 @@ const { verifyToken } = require("../middleware/auth");
 const router = express.Router();
 const JWT_SECRET = process.env.JWT_SECRET;
 
+// endpoint logowania z JWT i httpCookie
 router.post("/login", async (req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ error: "Email and password are required" });
+  }
 
   try {
     const userQuery = await prisma.user.findUnique({
-      where: {
-        email: email,
-      },
+      where: { email },
     });
 
     if (!userQuery) {
-      return res.status(400).json({ error: "There's no such user." });
+      return res.status(400).json({ error: "Invalid credentials." });
     }
 
     const passwdMatch = await bcrypt.compare(password, userQuery.password);
 
     if (!passwdMatch) {
-      return res.status(400).json({ error: "Invalid password" });
+      return res.status(400).json({ error: "Invalid credentials." });
     }
 
     const token = jwt.sign(
       {
         userId: userQuery.id,
         email: userQuery.email,
+        nickname: userQuery.nickname,
         role: userQuery.role,
       },
       JWT_SECRET,
       { expiresIn: "24h" },
     );
 
-    res.json({ token });
+    res.cookie("token", token, {
+      httpOnly: true, // Całkowita blokada dostępu z poziomu JS (XSS Protection)
+      secure: process.env.NODE_ENV === "production", // W produkcji wymagany HTTPS
+      sameSite: "lax", // Ochrona przed CSRF
+      maxAge: 24 * 60 * 60 * 1000, // 24 godziny
+    });
+    res.json({ success: true });
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
+// endpoint do wylogowywania
+router.post("/logout", (req, res) => {
+  res.clearCookie("token");
+  res.json({ success: true });
+});
+
 // endpoint: sprawdza token JWT w naglowku Authorization, odczytuje z tokena id, email i role, zwraca w formacie json
 router.get("/me", verifyToken, async (req, res) => {
-  res.json({
-    userId: req.user.userId,
-    email: req.user.email,
-    role: req.user.role,
-    nickname: req.user.nickname,
-  });
+  try {
+    // Pobieramy zawsze świeże dane z bazy na podstawie ID zawartego w tokenie
+    const currentUser = await prisma.user.findUnique({
+      where: { id: req.user.userId },
+      select: { id: true, email: true, role: true, nickname: true },
+    });
+
+    if (!currentUser) return res.status(404).json({ error: "User not found" });
+
+    res.json({
+      userId: currentUser.id,
+      email: currentUser.email,
+      role: currentUser.role,
+      nickname: currentUser.nickname,
+    });
+  } catch (error) {
+    res.status(500).json({ error: "Internal server error" });
+  }
 });
 
 module.exports = router;

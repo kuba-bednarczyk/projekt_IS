@@ -8,8 +8,7 @@ const userSchema = z.object({
     .pipe(z.enum(["USER", "ADMIN"]))
     .optional(),
   password: z.string().min(8).max(72).optional(),
-  profilePicture: z.string().base64().nullish(),
-  //jak profile picture nie dziala to zmienic base64() na url()
+  profilePicture: z.string().nullish(),
 });
 module.exports = {
   userSchema,

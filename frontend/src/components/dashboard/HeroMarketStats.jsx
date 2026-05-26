@@ -30,41 +30,6 @@ const HeroSection = ({
             Ceny mieszkań na tle stóp procentowych NBP
           </CardDescription>
         </div>
-
-        <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-          <select
-            className="flex h-9 w-full sm:w-48 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            value={selectedCity}
-            onChange={(e) => setSelectedCity(e.target.value)}
-          >
-            <option value="all">Wszystkie miasta</option>
-            {cities.map((city) => (
-              <option key={city.id} value={city.id}>
-                {city.name}
-              </option>
-            ))}
-          </select>
-
-          <select
-            className="flex h-9 w-full sm:w-40 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            value={selectedMarket}
-            onChange={(e) => setSelectedMarket(e.target.value)}
-          >
-            <option value="all">Oba rynki</option>
-            <option value="pierwotny">Pierwotny</option>
-            <option value="wtórny">Wtórny</option>
-          </select>
-
-          <select
-            className="flex h-9 w-full sm:w-40 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            value={selectedPriceType}
-            onChange={(e) => setSelectedPriceType(e.target.value)}
-          >
-            <option value="all">Wszystkie ceny</option>
-            <option value="ofertowe">Ofertowe</option>
-            <option value="transakcyjne">Transakcyjne</option>
-          </select>
-        </div>
       </CardHeader>
 
       <CardContent>

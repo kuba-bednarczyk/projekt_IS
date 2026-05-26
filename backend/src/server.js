@@ -1,22 +1,33 @@
-require('dotenv').config();
+require("dotenv").config();
 
-const express = require('express');
-const cors = require('cors');
-const prisma = require('./config/db'); // połączenie z bazą 
+const express = require("express");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
+const prisma = require("./config/db"); // połączenie z bazą
 
-const dataRoutes = require('./routes/dataRoutes'); //import routow
-const authRoutes = require('./routes/authRoutes'); // autoryzacja 
+const dataRoutes = require("./routes/dataRoutes"); //import routow
+const authRoutes = require("./routes/authRoutes"); // autoryzacja
 const exportRoutes = require("./routes/exportRoutes"); // import routeow do eksportu danych
+const userRoutes = require("./routes/userRoutes"); // import routow uzytkownikow
 
 const app = express();
 
 // Middleware
-app.use(cors()); //dla reacta - dostep do API
-app.use(express.json()); // pozwala czytac dane z bazy
+// zmiana ustawien cors pod httpCookie
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  }),
+);
 
-app.use('/api', dataRoutes);
-app.use('/api/auth', authRoutes);
+app.use(express.json({ limit: "5mb" })); // pozwala czytac dane z bazy (limit zwiększony dla zdjęć Base64)
+app.use(cookieParser()); // do obsługi ciasteczek HttpOnly
+
+app.use("/api", dataRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/api/export", exportRoutes);
+app.use("/api/users", userRoutes);
 
 // endpoint testowy STATUS
 app.get("/api/status", async (req, res) => {

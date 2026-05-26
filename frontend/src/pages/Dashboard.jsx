@@ -30,7 +30,7 @@ const Dashboard = () => {
   const [selectedMarket, setSelectedMarket] = useState("all");
   const [selectedPriceType, setSelectedPriceType] = useState("ofertowe");
 
-  // nowe filtry czasu TYLKO UI - BRAK PODPIETEJ LOGIKI 
+  // nowe filtry czasu TYLKO UI - BRAK PODPIETEJ LOGIKI
   const [yearFrom, setYearFrom] = useState("all");
   const [quarterFrom, setQuarterFrom] = useState("all");
   const [yearTo, setYearTo] = useState("all");
@@ -39,24 +39,23 @@ const Dashboard = () => {
   useEffect(() => {
     //fetchowanie potrzebnych danych do dashboardu
     const fetchAllData = async () => {
-      // sprawdzanie tokena (autoryzacja)
-      const token = localStorage.getItem("token");
-      if (!token) {
+      if (!localStorage.getItem("isAuthenticated")) {
         navigate("/", { replace: true });
         return;
       }
-      // zmienna naglowka w ktorej zawieramy bearer
+
       const headers = {
-        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       };
+      // opcja credentials jest wymagana żeby przeglądarka wysłała ciastko
+      const fetchOptions = { headers, credentials: "include" };
 
       try {
         // pobieramy dane z backendu
         const [citiesRes, pricesRes, ratesRes] = await Promise.all([
-          fetch("http://localhost:3000/api/cities", { headers }),
-          fetch("http://localhost:3000/api/prices", { headers }),
-          fetch("http://localhost:3000/api/rates", { headers }),
+          fetch("http://localhost:3000/api/cities", fetchOptions),
+          fetch("http://localhost:3000/api/prices", fetchOptions),
+          fetch("http://localhost:3000/api/rates", fetchOptions),
         ]);
 
         const responses = [citiesRes, pricesRes, ratesRes];
@@ -65,7 +64,7 @@ const Dashboard = () => {
         for (const res of responses) {
           if (!res.ok) {
             if (res.status === 401 || res.status === 403) {
-              localStorage.removeItem("token");
+              localStorage.removeItem("isAuthenticated");
               navigate("/", { replace: true });
               return;
             }
@@ -350,16 +349,19 @@ const Dashboard = () => {
     <div className="min-h-screen bg-zinc-50">
       <Header />
       <main className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 space-y-6">
-        
         {/* Sekcja Filtrów */}
         <Card>
           <CardHeader className="pb-4">
-            <CardTitle className="text-lg font-semibold">Filtry danych</CardTitle>
+            <CardTitle className="text-lg font-semibold">
+              Filtry danych
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
               <div className="space-y-2">
-                <label className="text-sm font-medium leading-none">Miasto</label>
+                <label className="text-sm font-medium leading-none">
+                  Miasto
+                </label>
                 <select
                   className="flex h-9 w-full items-center justify-between rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-zinc-950"
                   value={selectedCity}
@@ -375,7 +377,9 @@ const Dashboard = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium leading-none">Rynek</label>
+                <label className="text-sm font-medium leading-none">
+                  Rynek
+                </label>
                 <select
                   className="flex h-9 w-full items-center justify-between rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-zinc-950"
                   value={selectedMarket}
@@ -388,7 +392,9 @@ const Dashboard = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium leading-none">Rodzaj ceny</label>
+                <label className="text-sm font-medium leading-none">
+                  Rodzaj ceny
+                </label>
                 <select
                   className="flex h-9 w-full items-center justify-between rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-zinc-950"
                   value={selectedPriceType}
@@ -403,7 +409,9 @@ const Dashboard = () => {
             {/* filtry czasowe */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-zinc-100">
               <div className="space-y-2">
-                <label className="text-sm font-medium leading-none">Rok od</label>
+                <label className="text-sm font-medium leading-none">
+                  Rok od
+                </label>
                 <select
                   className="flex h-9 w-full items-center justify-between rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-zinc-950"
                   value={yearFrom}
@@ -411,13 +419,17 @@ const Dashboard = () => {
                 >
                   <option value="all">Od początku</option>
                   {[...Array(13)].map((_, i) => (
-                    <option key={2014 + i} value={2014 + i}>{2014 + i}</option>
+                    <option key={2014 + i} value={2014 + i}>
+                      {2014 + i}
+                    </option>
                   ))}
                 </select>
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium leading-none">Kwartał od</label>
+                <label className="text-sm font-medium leading-none">
+                  Kwartał od
+                </label>
                 <select
                   className="flex h-9 w-full items-center justify-between rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-zinc-950"
                   value={quarterFrom}
@@ -432,7 +444,9 @@ const Dashboard = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium leading-none">Rok do</label>
+                <label className="text-sm font-medium leading-none">
+                  Rok do
+                </label>
                 <select
                   className="flex h-9 w-full items-center justify-between rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-zinc-950"
                   value={yearTo}
@@ -440,13 +454,17 @@ const Dashboard = () => {
                 >
                   <option value="all">Do końca</option>
                   {[...Array(13)].map((_, i) => (
-                    <option key={2014 + i} value={2014 + i}>{2014 + i}</option>
+                    <option key={2014 + i} value={2014 + i}>
+                      {2014 + i}
+                    </option>
                   ))}
                 </select>
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium leading-none">Kwartał do</label>
+                <label className="text-sm font-medium leading-none">
+                  Kwartał do
+                </label>
                 <select
                   className="flex h-9 w-full items-center justify-between rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-zinc-950"
                   value={quarterTo}
