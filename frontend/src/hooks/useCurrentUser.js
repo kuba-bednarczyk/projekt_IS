@@ -8,8 +8,9 @@ export default function useCurrentUser() {
   const fetchUser = useCallback(async () => {
     setLoading(true);
     setError(null);
-    const token = localStorage.getItem("token");
-    if (!token) {
+
+    // bazujemy już wyłącznie na fladze statusu logowania
+    if (!localStorage.getItem("isAuthenticated")) {
       setUser(null);
       setLoading(false);
       return;
@@ -18,14 +19,14 @@ export default function useCurrentUser() {
     try {
       const res = await fetch("http://localhost:3000/api/auth/me", {
         headers: {
-          Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
+        credentials: "include", // odbieramy to z HttpOnly Cookies
       });
 
       if (!res.ok) {
         if (res.status === 401 || res.status === 403) {
-          localStorage.removeItem("token");
+          localStorage.removeItem("isAuthenticated");
         }
         throw new Error("Failed to fetch current user");
       }
@@ -41,7 +42,11 @@ export default function useCurrentUser() {
   }, []);
 
   useEffect(() => {
-    fetchUser();
+    Promise.resolve().then(fetchUser);
+
+    // Nasłuchiwanie na globalne zdarzenie odświeżenia danych użytkownika
+    window.addEventListener("user-updated", fetchUser);
+    return () => window.removeEventListener("user-updated", fetchUser);
   }, [fetchUser]);
 
   return { user, loading, error, refresh: fetchUser };

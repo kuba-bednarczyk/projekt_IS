@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Home, UserCircle, LogOut, UserCog } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router";
@@ -6,11 +7,11 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 const Header = () => {
   const navigate = useNavigate();
 
-  const { user } = useCurrentUser();
-  const userEmail =
-    user?.email || localStorage.getItem("email") || "test@email.pl";
+  const { user, loading } = useCurrentUser();
   const location = useLocation();
+  const [avatar, setAvatar] = useState(null);
 
+  const userIdentifier = loading ? "..." : user?.nickname || user?.email;
   const isActive = (path) => {
     return (
       location.pathname === path ||
@@ -18,10 +19,43 @@ const Header = () => {
     );
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("email");
-    navigate("/");
+  useEffect(() => {
+    const fetchAvatar = () => {
+      if (!user?.userId) {
+        setAvatar(null);
+        return;
+      }
+      fetch(
+        // Dodanie znacznika czasu w celu aktualizacji zdjecia profilowego po update'cie danych konta
+        `http://localhost:3000/api/users/${user.userId}/picture?t=${Date.now()}`,
+        {
+          credentials: "include",
+        },
+      )
+        .then((res) => {
+          if (res.ok) return res.json();
+          throw new Error("Brak zdjęcia");
+        })
+        .then((data) => setAvatar(data.profilePicture))
+        .catch(() => setAvatar(null));
+    };
+
+    fetchAvatar();
+    window.addEventListener("user-updated", fetchAvatar);
+    return () => window.removeEventListener("user-updated", fetchAvatar);
+  }, [user?.userId]);
+
+  const handleLogout = async () => {
+    try {
+      // Wyślij żądanie do serwera, aby wyczyścić cookie HttpOnly
+      await fetch("http://localhost:3000/api/auth/logout", {
+        method: "POST",
+        credentials: "include",
+      });
+    } finally {
+      localStorage.removeItem("isAuthenticated");
+      navigate("/");
+    }
   };
 
   return (
@@ -52,8 +86,16 @@ const Header = () => {
       <div className="flex flex-col items-end gap-3">
         {/* Dane użytkownika */}
         <div className="flex items-center gap-2 text-zinc-700 bg-zinc-50 px-3 py-1.5 rounded-full border border-zinc-200">
-          <UserCircle className="w-5 h-5 text-zinc-500" />
-          <span className="text-sm font-semibold">{userEmail}</span>
+          {user && avatar ? (
+            <img
+              src={avatar}
+              alt="Avatar"
+              className="w-6 h-6 rounded-full object-cover"
+            />
+          ) : (
+            <UserCircle className="w-6 h-6 text-zinc-500" />
+          )}
+          <span className="text-sm font-semibold">{userIdentifier}</span>
         </div>
 
         <div className="flex items-center gap-3">

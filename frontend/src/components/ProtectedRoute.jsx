@@ -1,10 +1,10 @@
 import { Navigate } from "react-router";
 
 const ProtectedRoute = ({ children }) => {
-  const token = localStorage.getItem("token");
+  const isAuthenticated = localStorage.getItem("isAuthenticated");
 
-  // sprawdzmay czy jest token i wtedy dopiero przekazujemy dzieci komponentu
-  if (!token) {
+  // sprawdzamy czy istnieje flaga uwierzytelnienia z Login.jsx
+  if (!isAuthenticated) {
     return <Navigate to="/" replace />;
   }
 

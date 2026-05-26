@@ -37,6 +37,10 @@ const PriceTrendChart = ({ data }) => {
           <YAxis
             yAxisId="left"
             stroke="#71717a"
+            domain={[(min) => Math.max(0, Math.floor(min / 100) * 100), "auto"]}
+            allowDataOverflow={true}
+            tickCount={8}
+            tickFormatter={(value) => value.toLocaleString("pl-PL")}
             label={{
               value: "Cena/m² (zł)",
               angle: -90,
@@ -48,6 +52,8 @@ const PriceTrendChart = ({ data }) => {
             yAxisId="right"
             orientation="right"
             stroke="#71717a"
+            domain={["dataMin", "auto"]}
+            tickCount={8}
             label={{
               value: "Stopa (%) NBP",
               angle: 90,
