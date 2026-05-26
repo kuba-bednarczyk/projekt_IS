@@ -96,7 +96,7 @@ router.get("/users/:id/picture", verifyToken, async (req, res) => {
   }
 });
 router.post(
-  "/createUser",
+  "/users/create",
   verifyToken,
   requireOwnerOrAdmin,
   largeJsonParser,
@@ -154,7 +154,7 @@ router.post(
   },
 );
 router.delete(
-  "/deleteUser/:id",
+  "/users/:id",
   verifyToken,
   requireOwnerOrAdmin,
   async (req, res) => {
@@ -184,7 +184,7 @@ router.delete(
   },
 );
 router.patch(
-  "/updateUser/:id",
+  "/users/:id",
   verifyToken,
   largeJsonParser,
   async (req, res) => {
