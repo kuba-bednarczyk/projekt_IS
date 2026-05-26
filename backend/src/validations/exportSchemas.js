@@ -1,26 +1,18 @@
 const { z } = require("zod");
 const exportSchema = z.object({
-  cityId: z.coerce
-    .number({
-      message: "ID miasta musi być liczbą.",
-    })
-    .positive("ID miasta musi być dodatnią liczbą."),
+  cityId: z.coerce.number().positive().optional(),
+  yearStart: z.coerce.number(),
+  yearEnd: z.coerce.number(),
   marketType: z
-    .string({
-      message: "Rynek jest wymagany.",
-    })
-    .refine((val) => ["pierwotny", "wtórny"].includes(val.toLowerCase()), {
-      message: "Rynek musi być 'pierwotny' lub 'wtórny'.",
-    })
-    .transform((val) => val.toLowerCase()),
+    .string()
+    .transform((val) => val.toLowerCase())
+    .pipe(z.enum(["pierwotny", "wtórny"]))
+    .optional(),
   priceType: z
-    .string({
-      message: "Typ ceny jest wymagany.",
-    })
-    .refine((val) => ["transakcyjne", "ofertowe"].includes(val.toLowerCase()), {
-      message: "Nieznany typ ceny. Dostępne to: transakcyjne, ofertowe",
-    })
-    .transform((val) => val.toLowerCase()),
+    .string()
+    .transform((val) => val.toLowerCase())
+    .pipe(z.enum(["transakcyjne", "ofertowe"]))
+    .optional(),
 });
 module.exports = {
   exportSchema,
