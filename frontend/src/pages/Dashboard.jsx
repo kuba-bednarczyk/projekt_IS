@@ -566,6 +566,7 @@ const Dashboard = () => {
     isInSelectedRange,
   ]);
 
+  // handler do eksportu przefiltrowanych danych do formatu json/yaml
   const handleDataExport = async (format) => {
     try {
       const queryParams = new URLSearchParams();

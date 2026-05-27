@@ -20,8 +20,11 @@ const Account = () => {
   const [nickname, setNickname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [preview, setPreview] = useState(null);
   const [originalPreview, setOriginalPreview] = useState(null);
+  const [fieldErrors, setFieldErrors] = useState({});
+  const [statusMessage, setStatusMessage] = useState(null);
 
   const fileInputRef = useRef(null);
 
@@ -64,9 +67,13 @@ const Account = () => {
     if (!f) return;
 
     if (f.size > 2 * 1024 * 1024) {
-      alert("Za duży plik! Maksymalny rozmiar to 2MB");
+      setStatusMessage({
+        type: "error",
+        text: "Za duży plik! Maksymalny rozmiar to 2MB",
+      });
       return;
     }
+    setStatusMessage(null);
 
     const reader = new FileReader();
 
@@ -79,7 +86,24 @@ const Account = () => {
 
   const handleSave = async (e) => {
     e.preventDefault(); // Blokujemy domyślne przeładowanie strony przez formularz
-    if (!user?.userId) return alert("Błąd: Nie odnaleziono ID użytkownika.");
+    setFieldErrors({});
+    setStatusMessage(null);
+
+    if (!user?.userId) {
+      setStatusMessage({
+        type: "error",
+        text: "Błąd: Nie odnaleziono ID użytkownika.",
+      });
+      return;
+    }
+
+    // Walidacja identyczności haseł
+    if (password.trim() !== "" && password !== confirmPassword) {
+      setFieldErrors({
+        confirmPassword: "Nowe hasło i powtórzone hasło nie są identyczne.",
+      });
+      return;
+    }
 
     try {
       const payload = {
@@ -112,20 +136,31 @@ const Account = () => {
 
       if (!response.ok) {
         if (data.errors) {
-          const fieldErrors = data.errors.map((err) => err.field).join(", ");
-          throw new Error(`Błąd walidacji w polach: ${fieldErrors}`);
+          const errs = {};
+          data.errors.forEach((err) => {
+            errs[err.field] =
+              err.message || "Nieprawidłowa wartość w tym polu.";
+          });
+          setFieldErrors(errs);
+          throw new Error(
+            "Proszę poprawić błędy w zaznaczonych polach formularza.",
+          );
         }
         throw new Error(data.message || "Nie udało się zapisać zmian.");
       }
 
-      alert("Twoje dane zostały pomyślnie zaktualizowane!");
+      setStatusMessage({
+        type: "success",
+        text: "Twoje dane zostały pomyślnie zaktualizowane!",
+      });
       setPassword("");
+      setConfirmPassword("");
       setOriginalPreview(preview);
-      // odpalenie globalnego refresha w celu zaktualizowania danych konta globalnie w całej aplikacji 
-      window.dispatchEvent(new Event("user-updated")); 
+      // odpalenie globalnego refresha w celu zaktualizowania danych konta globalnie w całej aplikacji
+      window.dispatchEvent(new Event("user-updated"));
     } catch (error) {
       console.error("Błąd podczas zapisu:", error);
-      alert("Wystąpił błąd: " + error.message);
+      setStatusMessage({ type: "error", text: error.message });
     }
   };
 
@@ -143,6 +178,13 @@ const Account = () => {
         </div>
 
         <form onSubmit={handleSave} className="space-y-6">
+          {statusMessage && (
+            <div
+              className={`p-4 rounded-md text-sm font-medium ${statusMessage.type === "error" ? "bg-red-50 text-red-700 border border-red-200" : "bg-green-50 text-green-700 border border-green-200"}`}
+            >
+              {statusMessage.text}
+            </div>
+          )}
           <Card className="shadow-sm border-zinc-200/60">
             <CardContent className="pt-6 space-y-8">
               {/* Sekcja Avatara */}
@@ -220,6 +262,11 @@ const Account = () => {
                       className="pl-10"
                     />
                   </div>
+                  {fieldErrors.nickname && (
+                    <p className="text-sm text-red-500">
+                      {fieldErrors.nickname}
+                    </p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -236,6 +283,9 @@ const Account = () => {
                       className="pl-10"
                     />
                   </div>
+                  {fieldErrors.email && (
+                    <p className="text-sm text-red-500">{fieldErrors.email}</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -253,6 +303,36 @@ const Account = () => {
                       placeholder="Zostaw puste, aby nie zmieniać"
                     />
                   </div>
+                  {fieldErrors.password && (
+                    <p className="text-sm text-red-500">
+                      {fieldErrors.password}
+                    </p>
+                  )}
+                </div>
+
+                <div className="space-y-2">
+                  <Label
+                    htmlFor="confirmPassword"
+                    className="text-sm font-medium"
+                  >
+                    Powtórz nowe hasło
+                  </Label>
+                  <div className="relative">
+                    <Lock className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" />
+                    <Input
+                      id="confirmPassword"
+                      type="password"
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      className="pl-10"
+                      placeholder="Zostaw puste, aby nie zmieniać"
+                    />
+                  </div>
+                  {fieldErrors.confirmPassword && (
+                    <p className="text-sm text-red-500">
+                      {fieldErrors.confirmPassword}
+                    </p>
+                  )}
                 </div>
               </div>
             </CardContent>

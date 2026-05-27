@@ -115,7 +115,7 @@ router.post("/", verifyToken, requireRole("ADMIN"), async (req, res) => {
     if (!validatedData.success) {
       const errors = validatedData.error.issues.map((issue) => ({
         field: issue.path.join("."),
-        code: issue.code,
+        message: issue.message,
       }));
       return res.status(400).json({ success: false, errors });
     }
@@ -179,8 +179,8 @@ router.delete("/:id", verifyToken, requireRole("ADMIN"), async (req, res) => {
   if (userId === currentUserId) {
     return res.status(403).json({
       success: false,
-      message: "Administrator nie moze usunac wlasnego konta."
-    })
+      message: "Administrator nie moze usunac wlasnego konta.",
+    });
   }
 
   try {
@@ -210,12 +210,15 @@ router.patch("/:id", verifyToken, requireOwnerOrAdmin, async (req, res) => {
     if (isNaN(id)) {
       return res.status(400).json({ error: "Nieprawidłowe ID użytkownika" });
     }
+
+    const currentUserId = req.user.userId || req.user.id;
+
     // Dodajemy .partial(), co informuje Zod, że z racji metody PATCH każde pole z userSchema jest opcjonalne.
     const validatedData = userSchema.partial().safeParse(req.body);
     if (!validatedData.success) {
       const errors = validatedData.error.issues.map((issue) => ({
         field: issue.path.join("."),
-        code: issue.code,
+        message: issue.message,
       }));
       return res.status(400).json({ success: false, errors });
     }
@@ -226,6 +229,13 @@ router.patch("/:id", verifyToken, requireOwnerOrAdmin, async (req, res) => {
       });
     }
     if (validatedData.data.password) {
+      if (req.user.role === "ADMIN" && currentUserId !== id) {
+        return res.status(403).json({
+          success: false,
+          message:
+            "Administrator nie może zmieniać hasła innemu użytkownikowi.",
+        });
+      }
       validatedData.data.password = await bcrypt.hash(
         validatedData.data.password,
         10,

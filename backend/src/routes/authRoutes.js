@@ -12,7 +12,7 @@ router.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    return res.status(400).json({ error: "Email and password are required" });
+    return res.status(400).json({ error: "E-mail i hasło są wymagane" });
   }
 
   try {
@@ -21,13 +21,13 @@ router.post("/login", async (req, res) => {
     });
 
     if (!userQuery) {
-      return res.status(400).json({ error: "Invalid credentials." });
+      return res.status(400).json({ error: "Niepoprawne dane." });
     }
 
     const passwdMatch = await bcrypt.compare(password, userQuery.password);
 
     if (!passwdMatch) {
-      return res.status(400).json({ error: "Invalid credentials." });
+      return res.status(400).json({ error: "Niepoprawne hasło." });
     }
 
     const token = jwt.sign(
@@ -49,7 +49,7 @@ router.post("/login", async (req, res) => {
     });
     res.json({ success: true });
   } catch (error) {
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({ error: "Wewnętrzny błąd serwera" });
   }
 });
 
@@ -68,7 +68,7 @@ router.get("/me", verifyToken, async (req, res) => {
       select: { id: true, email: true, role: true, nickname: true },
     });
 
-    if (!currentUser) return res.status(404).json({ error: "User not found" });
+    if (!currentUser) return res.status(404).json({ error: "Nie znaleziono użytkownika" });
 
     res.json({
       userId: currentUser.id,
@@ -77,7 +77,7 @@ router.get("/me", verifyToken, async (req, res) => {
       nickname: currentUser.nickname,
     });
   } catch (error) {
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: "Wewnętrzny błąd serwera." });
   }
 });
 

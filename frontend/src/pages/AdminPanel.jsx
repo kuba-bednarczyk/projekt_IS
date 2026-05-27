@@ -37,12 +37,13 @@ const AdminPanel = () => {
   const [formData, setFormData] = useState({
     nickname: "",
     email: "",
-    password: "",
     role: "USER",
   });
 
   const [preview, setPreview] = useState(null);
   const [isSaving, setIsSaving] = useState(false);
+  const [fieldErrors, setFieldErrors] = useState({});
+  const [statusMessage, setStatusMessage] = useState(null);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -58,12 +59,10 @@ const AdminPanel = () => {
       }
 
       try {
-        const usersRes = await fetch(
-          "http://localhost:3000/api/users", {
-            headers: {"Content-Type": "application/json"},
-            credentials: "include",
-          }
-        );
+        const usersRes = await fetch("http://localhost:3000/api/users", {
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+        });
         if (usersRes.ok) {
           const usersData = await usersRes.json();
           if (usersData.success) {
@@ -111,7 +110,6 @@ const AdminPanel = () => {
     setFormData({
       nickname: selectedUser.nickname || "",
       email: selectedUser.email || "",
-      password: "",
       role: selectedUser.role || "USER",
     });
     setPreview(null);
@@ -139,10 +137,11 @@ const AdminPanel = () => {
     setFormData({
       nickname: "",
       email: "",
-      password: "",
       role: "USER",
     });
     setPreview(null);
+    setFieldErrors({});
+    setStatusMessage(null);
   };
 
   // funkcja do zmiany wartości pola formularza
@@ -159,6 +158,8 @@ const AdminPanel = () => {
     if (!editingUser) return;
 
     setIsSaving(true);
+    setFieldErrors({});
+    setStatusMessage(null);
 
     try {
       const payload = {
@@ -167,10 +168,6 @@ const AdminPanel = () => {
         role: formData.role,
         profilePicture: preview,
       };
-
-      if (formData.password.trim() !== "") {
-        payload.password = formData.password;
-      }
 
       const response = await fetch(
         `http://localhost:3000/api/users/${editingUser.id}`,
@@ -186,10 +183,17 @@ const AdminPanel = () => {
 
       if (!response.ok) {
         if (data.errors) {
-          const fieldErrors = data.errors.map((err) => err.field).join(", ");
-          throw new Error(`Błąd walidacji w polach: ${fieldErrors}`);
+          const errs = {};
+          data.errors.forEach((err) => {
+            errs[err.field] =
+              err.message || "Nieprawidłowa wartość w tym polu.";
+          });
+          setFieldErrors(errs);
+          throw new Error("Proszę poprawić błędy w polach formularza.");
         }
-        throw new Error(data.message || "Nie udało się zapisać zmian użytkownika");
+        throw new Error(
+          data.message || "Nie udało się zapisać zmian użytkownika",
+        );
       }
 
       setUsers((prev) =>
@@ -205,17 +209,20 @@ const AdminPanel = () => {
         ),
       );
 
-      alert("Dane użytkownika zostały pomyślnie zaktualizowane.");
-      handleCloseEdit();
+      setStatusMessage({
+        type: "success",
+        text: "Dane użytkownika zostały pomyślnie zaktualizowane.",
+      });
+      setTimeout(() => {
+        handleCloseEdit();
+      }, 1500);
     } catch (error) {
       console.error("Błąd podczas aktualizacji użytkownika:", error);
-      alert("Wystąpił błąd: " + error.message);
+      setStatusMessage({ type: "error", text: error.message });
     } finally {
       setIsSaving(false);
     }
   };
-
- 
 
   return (
     <div className="min-h-screen bg-zinc-50">
@@ -257,7 +264,11 @@ const AdminPanel = () => {
                         variant="outline"
                         size="sm"
                         disabled={u.id === user?.userId}
-                        title={u.id === user?.userId ? "Nie mozesz usunac wlasnego konta" : undefined}
+                        title={
+                          u.id === user?.userId
+                            ? "Nie mozesz usunac wlasnego konta"
+                            : undefined
+                        }
                         onClick={() => handleOpenEdit(u)}
                       >
                         Edytuj
@@ -266,7 +277,11 @@ const AdminPanel = () => {
                         variant="destructive"
                         size="sm"
                         disabled={u.id === user?.userId}
-                        title={u.id === user?.userId ? "Nie mozesz usunac wlasnego konta" : undefined}
+                        title={
+                          u.id === user?.userId
+                            ? "Nie mozesz usunac wlasnego konta"
+                            : undefined
+                        }
                         onClick={() => handleDelete(u.id)}
                       >
                         Usuń
@@ -279,7 +294,10 @@ const AdminPanel = () => {
           </Table>
         </div>
 
-        <Dialog open={isEditOpen} onOpenChange={(open) => !open && handleCloseEdit()}>
+        <Dialog
+          open={isEditOpen}
+          onOpenChange={(open) => !open && handleCloseEdit()}
+        >
           <DialogContent>
             <DialogHeader>
               <DialogTitle>Edycja użytkownika</DialogTitle>
@@ -290,8 +308,17 @@ const AdminPanel = () => {
 
             {editingUser && (
               <form onSubmit={handleSaveEdit} className="space-y-5">
+                {statusMessage && (
+                  <div
+                    className={`p-3 rounded-md text-sm font-medium ${statusMessage.type === "error" ? "bg-red-50 text-red-700 border border-red-200" : "bg-green-50 text-green-700 border border-green-200"}`}
+                  >
+                    {statusMessage.text}
+                  </div>
+                )}
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Zdjęcie profilowe</Label>
+                  <Label className="text-sm font-medium">
+                    Zdjęcie profilowe
+                  </Label>
                   <div className="flex items-center gap-4">
                     <div className="relative w-16 h-16 rounded-full bg-zinc-100 border border-zinc-200 overflow-hidden flex-shrink-0">
                       {preview ? (
@@ -327,8 +354,15 @@ const AdminPanel = () => {
                       id="admin-edit-nickname"
                       type="text"
                       value={formData.nickname}
-                      onChange={(e) => handleInputChange("nickname", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("nickname", e.target.value)
+                      }
                     />
+                    {fieldErrors.nickname && (
+                      <p className="text-sm text-red-500">
+                        {fieldErrors.nickname}
+                      </p>
+                    )}
                   </div>
 
                   <div className="space-y-2">
@@ -337,19 +371,15 @@ const AdminPanel = () => {
                       id="admin-edit-email"
                       type="email"
                       value={formData.email}
-                      onChange={(e) => handleInputChange("email", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("email", e.target.value)
+                      }
                     />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="admin-edit-password">Nowe hasło</Label>
-                    <Input
-                      id="admin-edit-password"
-                      type="password"
-                      value={formData.password}
-                      onChange={(e) => handleInputChange("password", e.target.value)}
-                      placeholder="Zostaw puste, aby nie zmieniać"
-                    />
+                    {fieldErrors.email && (
+                      <p className="text-sm text-red-500">
+                        {fieldErrors.email}
+                      </p>
+                    )}
                   </div>
 
                   <div className="space-y-2">
@@ -357,7 +387,9 @@ const AdminPanel = () => {
                     <select
                       id="admin-edit-role"
                       value={formData.role}
-                      onChange={(e) => handleInputChange("role", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("role", e.target.value)
+                      }
                       className="w-full h-10 rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2"
                     >
                       <option value="USER">USER</option>
