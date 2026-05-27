@@ -149,76 +149,54 @@ router.get("/yaml", async (req, res) => {
   try {
     const validation = exportSchema.safeParse(req.query);
     if (!validation.success) {
-      const errorMessage = validation.error.issues
-        .map((issue) => issue.message)
-        .join(" | ");
-      return res.status(400).json({ success: false, message: errorMessage });
+      const errors = validation.error.issues.map((issue) => ({
+        field: issue.path.join("."),
+        code: issue.code,
+      }));
+      return res.status(400).json({ success: false, errors });
     }
-    const { cityId, marketType, priceType } = validation.data;
-
-    const city = await prisma.city.findFirst({
-      where: { id: cityId },
-    });
-    if (city === 0) {
-      return res.status(404).json({
-        success: false,
-        message: "Miasto o podanym ID nie zostało znalezione.",
-      });
+    const { cityId, marketType, priceType, yearStart, yearEnd } =
+      validation.data;
+    const city = cityId
+      ? await prisma.city.findUnique({ where: { id: cityId } })
+      : null;
+    const cityName = city?.name || "Wszystkie miasta";
+    let average = false;
+    if (!marketType || !priceType || !cityId) {
+      average = true;
     }
-
-    const prices = await prisma.housingPrice.findMany({
-      where: {
-        cityId: cityId,
-        marketType: marketType,
-        priceType: priceType,
+    const prices = await getTableData("housingPrice", {
+      queryParams: {
+        cityId,
+        marketType,
+        priceType,
+        year: { gte: yearStart, lte: yearEnd },
       },
       orderBy: [{ year: "asc" }, { quarter: "asc" }],
+      averageByQuarter: average,
     });
-
-    if (prices.length === 0) {
-      return res.status(404).json({
-        success: false,
-        message: "Brak danych o cenie dla tych danych.",
-      });
-    }
-    const rates = await prisma.interestRate.findMany({
-      where: {
+    const rates = await getTableData("interestRate", {
+      queryParams: {
         rateType: "ref",
       },
-      orderBy: { validFrom: "desc" },
+      orderBy: [{ validFrom: "desc" }],
     });
-
-    if (rates.length === 0) {
+    if (prices.length === 0 || rates.length === 0) {
       return res.status(404).json({
         success: false,
-        message: "Brak danych o stopach procentowych dla tego typu.",
+        message: "Brak danych dla tych filtrów.",
       });
     }
-
-    const history = prices.map((priceData) => {
-      const quarterEndMonth = priceData.quarter * 3;
-      const quarterEndDate = new Date(
-        Date.UTC(priceData.year, quarterEndMonth, 0, 23, 59, 59),
-      );
-      const rateData = rates.find((r) => r.validFrom <= quarterEndDate);
-      const rawPrice = priceData.price.toNumber();
-      const rawRate = rateData ? rateData.rateValue.toNumber() : null;
-      const period = priceData.year + " Q" + priceData.quarter;
-      return {
-        period: period,
-        price: rawPrice,
-        interestRate: rawRate,
-      };
-    });
+    const history = await formatHistoryData(prices, rates);
     const firstRecord = prices[0];
     const lastRecord = prices[prices.length - 1];
     const reportData = {
       success: true,
       header: {
-        description: `Kwartalny raport średnich cen mieszkań w mieście ${city.name} na tle referencyjnych stóp procentowych NBP.`,
+        description: `Kwartalny raport średnich cen mieszkań na tle referencyjnych stóp procentowych NBP.`,
         generatedAt: new Date().toISOString(),
         filtersApplied: {
-          city: city.name,
+          city: cityName,
           marketType: marketType,
           priceType: priceType,
         },
@@ -227,11 +205,16 @@ router.get("/yaml", async (req, res) => {
           end: `Q${lastRecord.quarter} ${lastRecord.year}`,
         },
       },
-      data: history,
+      data: {
+        history,
+      },
     };
     const yamlString = yaml.stringify(reportData);
+    const dateString = new Date().toISOString().split("T")[0];
+    const filename = `raport_mieszkaniowy_${dateString}.yaml`;
     res.setHeader("Content-Type", "application/x-yaml");
-    res.status(200).send(yamlString);
+    res.setHeader("Content-Disposition", `attachment; filename="${filename}"`);
+    return res.status(200).send(yamlString);
   } catch (error) {
     console.error("Błąd w endpoint /yaml:", error);
     const errorYaml = yaml.stringify({

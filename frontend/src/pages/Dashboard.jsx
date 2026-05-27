@@ -137,10 +137,16 @@ const Dashboard = () => {
       }
 
       const minIndex = periodToIndex(availableYears[0], 1);
-      const maxIndex = periodToIndex(availableYears[availableYears.length - 1], 4);
+      const maxIndex = periodToIndex(
+        availableYears[availableYears.length - 1],
+        4,
+      );
       const minSpan = Math.min(3, Math.max(0, maxIndex - minIndex));
 
-      let fromIndex = periodToIndex(Number(nextFromYear), Number(nextFromQuarter));
+      let fromIndex = periodToIndex(
+        Number(nextFromYear),
+        Number(nextFromQuarter),
+      );
       let toIndex = periodToIndex(Number(nextToYear), Number(nextToQuarter));
 
       if (changedSide === "from") {
@@ -251,14 +257,23 @@ const Dashboard = () => {
       startIndex: fromIndex,
       endIndex: toIndex,
     };
-  }, [availableYears, resolvedYearFrom, quarterFrom, resolvedYearTo, quarterTo]);
+  }, [
+    availableYears,
+    resolvedYearFrom,
+    quarterFrom,
+    resolvedYearTo,
+    quarterTo,
+  ]);
 
   // callback: do zapamiętania tej samej referencji między renderami dopoki nie zmieni się selectedRange
-  const isInSelectedRange = useCallback((year, quarter) => {
-    if (!selectedRange) return true;
-    const idx = periodToIndex(year, quarter);
-    return idx >= selectedRange.startIndex && idx <= selectedRange.endIndex;
-  }, [selectedRange]);
+  const isInSelectedRange = useCallback(
+    (year, quarter) => {
+      if (!selectedRange) return true;
+      const idx = periodToIndex(year, quarter);
+      return idx >= selectedRange.startIndex && idx <= selectedRange.endIndex;
+    },
+    [selectedRange],
+  );
 
   // funkcja do liczenia statystyk
   const stats = useMemo(() => {
@@ -267,7 +282,9 @@ const Dashboard = () => {
     const getBaseFilteredPrices = ({ year = null, withinRange = true } = {}) =>
       prices.filter((p) => {
         const matchYear = year ? p.year === year : true;
-        const matchRange = withinRange ? isInSelectedRange(p.year, p.quarter) : true;
+        const matchRange = withinRange
+          ? isInSelectedRange(p.year, p.quarter)
+          : true;
         const matchCity =
           selectedCity === "all" ? true : p.cityId === parseInt(selectedCity);
         const matchMarket =
@@ -277,11 +294,7 @@ const Dashboard = () => {
             ? true
             : p.priceType === selectedPriceType;
         return (
-          matchYear &&
-          matchRange &&
-          matchCity &&
-          matchMarket &&
-          matchPriceType
+          matchYear && matchRange && matchCity && matchMarket && matchPriceType
         );
       });
 
@@ -368,11 +381,24 @@ const Dashboard = () => {
       spreadLabel: `Spread of./trans. (${latestYearInRange})`,
       marketRangeLabel: `${selectedRange.startYear} Q${selectedRange.startQuarter} - ${selectedRange.endYear} Q${selectedRange.endQuarter}`,
     };
-  }, [prices, rates, selectedCity, selectedMarket, selectedPriceType, selectedRange, isInSelectedRange]);
+  }, [
+    prices,
+    rates,
+    selectedCity,
+    selectedMarket,
+    selectedPriceType,
+    selectedRange,
+    isInSelectedRange,
+  ]);
 
   // dane do wykresu trendu cen vs stopa NBP
   const pricesAndRatesData = useMemo(() => {
-    if (!selectedRange || prices.length === 0 || rates.length === 0 || availableYears.length === 0) {
+    if (
+      !selectedRange ||
+      prices.length === 0 ||
+      rates.length === 0 ||
+      availableYears.length === 0
+    ) {
       return [];
     }
 
@@ -478,7 +504,8 @@ const Dashboard = () => {
 
   // dane do wykresu porównania rynku pierwotnego i wtórnego
   const marketTypeComparisonData = useMemo(() => {
-    if (!selectedRange || prices.length === 0 || availableYears.length === 0) return [];
+    if (!selectedRange || prices.length === 0 || availableYears.length === 0)
+      return [];
 
     const data = [];
     const minYear = availableYears[0];
@@ -509,7 +536,10 @@ const Dashboard = () => {
 
         const calcAvg = (arr) => {
           if (arr.length === 0) return null;
-          const sum = arr.reduce((acc, curr) => acc + parseFloat(curr.price), 0);
+          const sum = arr.reduce(
+            (acc, curr) => acc + parseFloat(curr.price),
+            0,
+          );
           return Math.round(sum / arr.length);
         };
 
@@ -527,7 +557,60 @@ const Dashboard = () => {
     }
 
     return data;
-  }, [prices, selectedCity, selectedPriceType, selectedRange, availableYears, isInSelectedRange]);
+  }, [
+    prices,
+    selectedCity,
+    selectedPriceType,
+    selectedRange,
+    availableYears,
+    isInSelectedRange,
+  ]);
+
+  const handleDataExport = async (format) => {
+    try {
+      const queryParams = new URLSearchParams();
+      if (selectedCity !== "all") queryParams.append("cityId", selectedCity);
+      if (selectedMarket !== "all")
+        queryParams.append("marketType", selectedMarket);
+      if (selectedPriceType !== "all")
+        queryParams.append("priceType", selectedPriceType);
+      queryParams.append("yearStart", resolvedYearFrom);
+      queryParams.append("yearEnd", resolvedYearTo);
+
+      const url = `http://localhost:3000/api/export/${format}?${queryParams.toString()}`;
+
+      const res = await fetch(url, { credentials: "include" });
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => null);
+        throw new Error(
+          errorData?.message ||
+            `Błąd podczas eksportu do ${format.toUpperCase()}`,
+        );
+      }
+
+      const blob = await res.blob();
+      const downloadUrl = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = downloadUrl;
+
+      const contentDisposition = res.headers.get("Content-Disposition");
+      let fileName = `raport_mieszkaniowy.${format}`;
+      if (contentDisposition && contentDisposition.includes("attachment")) {
+        const filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+        const matches = filenameRegex.exec(contentDisposition);
+        if (matches != null && matches[1])
+          fileName = matches[1].replace(/['"]/g, "");
+      }
+
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(downloadUrl);
+    } catch (err) {
+      alert(err.message);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-zinc-50">
@@ -674,7 +757,8 @@ const Dashboard = () => {
         <Card>
           <CardHeader>
             <CardTitle className="text-lg font-semibold">
-              Trend cen vs Stopa NBP ({stats?.marketRangeLabel || "zakres danych"})
+              Trend cen vs Stopa NBP (
+              {stats?.marketRangeLabel || "zakres danych"})
             </CardTitle>
             <CardDescription>
               Oś lewa: średnia cena zł/m² · Oś prawa: stopa procentowa %
@@ -688,7 +772,8 @@ const Dashboard = () => {
         <Card>
           <CardHeader>
             <CardTitle className="text-lg font-semibold">
-              Porównanie miast ({selectedRange ? selectedRange.endYear : "rok końcowy"})
+              Porównanie miast (
+              {selectedRange ? selectedRange.endYear : "rok końcowy"})
             </CardTitle>
             <CardDescription>
               Średnia cena/m² wg aktywnych filtrów
@@ -710,14 +795,15 @@ const Dashboard = () => {
           </CardContent>
         </Card>
 
-        <div className="flex justify-center pt-8 pb-12">
+        <div className="flex flex-col sm:flex-row justify-end gap-3 pt-4 pb-12">
           <Button
-            size="lg"
+            className="bg-red-600"
             onClick={() => alert("Eksport do PDF - funkcja w przygotowaniu!")}
-            className="shadow-lg text-xl px-14 py-8 font-bold tracking-wide w-full sm:w-auto"
           >
-            Eksportuj wykresy do PDF
+            Eksport do PDF
           </Button>
+          <Button className="bg-yellow-400" onClick={() => handleDataExport("json")}>Eksport do JSON</Button>
+          <Button className="bg-cyan-600" onClick={() => handleDataExport("yaml")}>Eksport do YAML</Button>
         </div>
       </main>
     </div>
