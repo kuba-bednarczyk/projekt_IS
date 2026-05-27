@@ -9,13 +9,11 @@ const {
 } = require("../middleware/auth");
 
 const bcrypt = require("bcryptjs");
+const { success } = require("zod");
 
 const parseImage = (profilePicture) =>
   profilePicture
-    ? Buffer.from(
-        profilePicture.replace(/^data:.*?;base64,/, ""),
-        "base64",
-      )
+    ? Buffer.from(profilePicture.replace(/^data:.*?;base64,/, ""), "base64")
     : null;
 
 router.get("/", verifyToken, requireRole("ADMIN"), async (req, res) => {
@@ -31,6 +29,9 @@ router.get("/", verifyToken, requireRole("ADMIN"), async (req, res) => {
         password: true,
         profilePicture: false,
         createdAt: true,
+      },
+      orderBy: {
+        role: "asc",
       },
     });
     res.status(200).json({ success: true, data: users });
@@ -92,7 +93,7 @@ router.get("/:id/picture", verifyToken, async (req, res) => {
     if (!user?.profilePicture) return res.status(404).send("Not found");
 
     const base64 = Buffer.from(user.profilePicture).toString("base64");
-    
+
     // Proste zgadywanie MIME typu po "magic bytes" (nagłówkach formatu w Base64)
     // Eliminuje to crashowanie serwera w przypadku braku paczki "file-type"
     let mimeType = "image/jpeg";
@@ -173,6 +174,15 @@ router.delete("/:id", verifyToken, requireRole("ADMIN"), async (req, res) => {
   if (isNaN(userId)) {
     return res.status(400).json({ error: "Nieprawidłowe ID użytkownika" });
   }
+
+  const currentUserId = req.user.userId || req.user.id;
+  if (userId === currentUserId) {
+    return res.status(403).json({
+      success: false,
+      message: "Administrator nie moze usunac wlasnego konta."
+    })
+  }
+
   try {
     const user = await prisma.user.findUnique({ where: { id: userId } });
     if (!user) {

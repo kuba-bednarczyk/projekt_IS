@@ -24,7 +24,9 @@ const HeroSection = ({
         <div>
           <CardTitle className="text-xl font-bold flex items-center gap-2">
             Rynek nieruchomości{" "}
-            <span className="text-muted-foreground font-normal">· 2015–2024</span>
+            <span className="text-muted-foreground font-normal">
+              · {stats?.marketRangeLabel || "zakres danych"}
+            </span>
           </CardTitle>
           <CardDescription className="text-sm mt-1">
             Ceny mieszkań na tle stóp procentowych NBP
@@ -38,10 +40,10 @@ const HeroSection = ({
           <Card className="bg-muted/40 border-none">
             <CardHeader className="p-4 pb-2">
               <CardDescription className="text-xs font-medium uppercase tracking-wider">
-                Śr. cena/m² (2024)
+                {stats?.avgPriceLabel || "Śr. cena/m²"}
               </CardDescription>
               <CardTitle className="text-2xl font-bold">
-                {stats?.avg2024 || "---"}
+                {stats?.avgPrice || "---"}
               </CardTitle>
             </CardHeader>
             <CardContent className="p-4 pt-0">
@@ -67,7 +69,9 @@ const HeroSection = ({
               </CardTitle>
             </CardHeader>
             <CardContent className="p-4 pt-0">
-              <p className="text-xs text-muted-foreground">2019 → 2024</p>
+              <p className="text-xs text-muted-foreground">
+                {stats?.growth5YRangeLabel || ""}
+              </p>
             </CardContent>
           </Card>
 
@@ -83,7 +87,7 @@ const HeroSection = ({
             </CardHeader>
             <CardContent className="p-4 pt-0">
               <p className="text-xs text-muted-foreground">
-                od {stats?.latestRateDate || "---"}
+                {stats?.latestRatePrefix || "od"} {stats?.latestRateDate || "---"}
               </p>
             </CardContent>
           </Card>
@@ -92,7 +96,7 @@ const HeroSection = ({
           <Card className="bg-muted/40 border-none">
             <CardHeader className="p-4 pb-2">
               <CardDescription className="text-xs font-medium uppercase tracking-wider">
-                Spread of./trans.
+                {stats?.spreadLabel || "Spread of./trans."}
               </CardDescription>
               <CardTitle className="text-2xl font-bold">
                 {stats?.spread || "---"}

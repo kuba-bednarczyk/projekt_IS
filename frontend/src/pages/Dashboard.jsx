@@ -1,14 +1,13 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import { useNavigate } from "react-router";
 
 import Header from "@/components/Header";
 
-import HeroMarketStats from "@/components/dashboard/HeroMarketStats";
-import PriceTrendChart from "@/components/dashboard/charts/PriceTrendChart";
-import CityPriceChart from "@/components/dashboard/charts/CityPriceChart";
-import MarketTypePricesChart from "@/components/dashboard/charts/MarketTypePricesChart";
+import HeroMarketStats from "@/components/HeroMarketStats";
+import PriceTrendChart from "@/components/PriceTrendChart";
+import CityPriceChart from "@/components/CityPriceChart";
+import MarketTypePricesChart from "@/components/MarketTypePricesChart";
 
-// shadcn components
 import {
   CardTitle,
   Card,
@@ -18,6 +17,17 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
+const periodToIndex = (year, quarter) => year * 4 + quarter;
+const quarterEndDate = (year, quarter) =>
+  new Date(Date.UTC(year, quarter * 3, 0, 23, 59, 59));
+const indexToPeriod = (index) => ({
+  year: Math.floor((index - 1) / 4),
+  quarter: ((index - 1) % 4) + 1,
+});
+
+const DEFAULT_FROM_YEAR = 2014;
+const DEFAULT_TO_YEAR = 2024;
+
 const Dashboard = () => {
   const navigate = useNavigate();
 
@@ -25,19 +35,16 @@ const Dashboard = () => {
   const [prices, setPrices] = useState([]);
   const [rates, setRates] = useState([]);
 
-  // selects
   const [selectedCity, setSelectedCity] = useState("all");
   const [selectedMarket, setSelectedMarket] = useState("all");
   const [selectedPriceType, setSelectedPriceType] = useState("ofertowe");
 
-  // nowe filtry czasu TYLKO UI - BRAK PODPIETEJ LOGIKI
-  const [yearFrom, setYearFrom] = useState("all");
-  const [quarterFrom, setQuarterFrom] = useState("all");
-  const [yearTo, setYearTo] = useState("all");
-  const [quarterTo, setQuarterTo] = useState("all");
+  const [yearFrom, setYearFrom] = useState("2014");
+  const [quarterFrom, setQuarterFrom] = useState("1");
+  const [yearTo, setYearTo] = useState("2024");
+  const [quarterTo, setQuarterTo] = useState("4");
 
   useEffect(() => {
-    //fetchowanie potrzebnych danych do dashboardu
     const fetchAllData = async () => {
       if (!localStorage.getItem("isAuthenticated")) {
         navigate("/", { replace: true });
@@ -47,11 +54,9 @@ const Dashboard = () => {
       const headers = {
         "Content-Type": "application/json",
       };
-      // opcja credentials jest wymagana żeby przeglądarka wysłała ciastko
       const fetchOptions = { headers, credentials: "include" };
 
       try {
-        // pobieramy dane z backendu
         const [citiesRes, pricesRes, ratesRes] = await Promise.all([
           fetch("http://localhost:3000/api/cities", fetchOptions),
           fetch("http://localhost:3000/api/prices", fetchOptions),
@@ -60,7 +65,6 @@ const Dashboard = () => {
 
         const responses = [citiesRes, pricesRes, ratesRes];
 
-        // jezeli ktorakolwiek odpowiedz jest nieprawidlowa - wylogowujemy uzytkownika
         for (const res of responses) {
           if (!res.ok) {
             if (res.status === 401 || res.status === 403) {
@@ -91,14 +95,179 @@ const Dashboard = () => {
     fetchAllData();
   }, [navigate]);
 
-  // dane do StatsHero
-  const stats = useMemo(() => {
-    if (prices.length === 0) return null;
+  // funkcja do pobierania dostępnych lat z bazy danych
+  const availableYears = useMemo(() => {
+    const years = new Set(prices.map((p) => p.year));
+    return [...years].sort((a, b) => a - b);
+  }, [prices]);
 
-    // filtry cen, typu rynku i ofert - po danym roku
-    const getBaseFilteredPrices = (year) => {
-      return prices.filter((p) => {
+  // funkcja do pobierania domyślnego roku "od" z bazy danych
+  const fallbackFromYear = useMemo(() => {
+    if (availableYears.length === 0) return DEFAULT_FROM_YEAR;
+    return availableYears.includes(DEFAULT_FROM_YEAR)
+      ? DEFAULT_FROM_YEAR
+      : availableYears[0];
+  }, [availableYears]);
+
+  // funkcja do pobierania domyślnego roku "do" z bazy danych
+  const fallbackToYear = useMemo(() => {
+    if (availableYears.length === 0) return DEFAULT_TO_YEAR;
+    return availableYears.includes(DEFAULT_TO_YEAR)
+      ? DEFAULT_TO_YEAR
+      : availableYears[availableYears.length - 1];
+  }, [availableYears]);
+
+  // zmienne pomocnicze do zabezpieczenia wybranego roku przed niezgodnością z bazą danych
+  const resolvedYearFrom = availableYears.includes(Number(yearFrom))
+    ? yearFrom
+    : String(fallbackFromYear);
+  const resolvedYearTo = availableYears.includes(Number(yearTo))
+    ? yearTo
+    : String(fallbackToYear);
+
+  const applyRangeConstraints = useCallback(
+    (nextFromYear, nextFromQuarter, nextToYear, nextToQuarter, changedSide) => {
+      if (availableYears.length === 0) {
+        return {
+          fromYear: String(nextFromYear),
+          fromQuarter: String(nextFromQuarter),
+          toYear: String(nextToYear),
+          toQuarter: String(nextToQuarter),
+        };
+      }
+
+      const minIndex = periodToIndex(availableYears[0], 1);
+      const maxIndex = periodToIndex(availableYears[availableYears.length - 1], 4);
+      const minSpan = Math.min(3, Math.max(0, maxIndex - minIndex));
+
+      let fromIndex = periodToIndex(Number(nextFromYear), Number(nextFromQuarter));
+      let toIndex = periodToIndex(Number(nextToYear), Number(nextToQuarter));
+
+      if (changedSide === "from") {
+        toIndex = Math.max(toIndex, fromIndex + minSpan);
+      } else {
+        fromIndex = Math.min(fromIndex, toIndex - minSpan);
+      }
+
+      fromIndex = Math.max(minIndex, fromIndex);
+      toIndex = Math.min(maxIndex, toIndex);
+
+      if (toIndex - fromIndex < minSpan) {
+        if (changedSide === "from") {
+          toIndex = Math.min(maxIndex, fromIndex + minSpan);
+          fromIndex = Math.max(minIndex, toIndex - minSpan);
+        } else {
+          fromIndex = Math.max(minIndex, toIndex - minSpan);
+          toIndex = Math.min(maxIndex, fromIndex + minSpan);
+        }
+      }
+
+      const fromPeriod = indexToPeriod(fromIndex);
+      const toPeriod = indexToPeriod(toIndex);
+
+      return {
+        fromYear: String(fromPeriod.year),
+        fromQuarter: String(fromPeriod.quarter),
+        toYear: String(toPeriod.year),
+        toQuarter: String(toPeriod.quarter),
+      };
+    },
+    [availableYears],
+  );
+
+  const handleFromYearChange = (value) => {
+    const constrained = applyRangeConstraints(
+      value,
+      quarterFrom,
+      resolvedYearTo,
+      quarterTo,
+      "from",
+    );
+    setYearFrom(constrained.fromYear);
+    setQuarterFrom(constrained.fromQuarter);
+    setYearTo(constrained.toYear);
+    setQuarterTo(constrained.toQuarter);
+  };
+
+  const handleFromQuarterChange = (value) => {
+    const constrained = applyRangeConstraints(
+      resolvedYearFrom,
+      value,
+      resolvedYearTo,
+      quarterTo,
+      "from",
+    );
+    setYearFrom(constrained.fromYear);
+    setQuarterFrom(constrained.fromQuarter);
+    setYearTo(constrained.toYear);
+    setQuarterTo(constrained.toQuarter);
+  };
+
+  const handleToYearChange = (value) => {
+    const constrained = applyRangeConstraints(
+      resolvedYearFrom,
+      quarterFrom,
+      value,
+      quarterTo,
+      "to",
+    );
+    setYearFrom(constrained.fromYear);
+    setQuarterFrom(constrained.fromQuarter);
+    setYearTo(constrained.toYear);
+    setQuarterTo(constrained.toQuarter);
+  };
+
+  const handleToQuarterChange = (value) => {
+    const constrained = applyRangeConstraints(
+      resolvedYearFrom,
+      quarterFrom,
+      resolvedYearTo,
+      value,
+      "to",
+    );
+    setYearFrom(constrained.fromYear);
+    setQuarterFrom(constrained.fromQuarter);
+    setYearTo(constrained.toYear);
+    setQuarterTo(constrained.toQuarter);
+  };
+
+  // funkcja do pobierania zakresu lat z bazy danych
+  const selectedRange = useMemo(() => {
+    if (availableYears.length === 0) return null;
+
+    const startYear = Number(resolvedYearFrom);
+    const startQuarter = Number(quarterFrom);
+    const endYear = Number(resolvedYearTo);
+    const endQuarter = Number(quarterTo);
+
+    const fromIndex = periodToIndex(startYear, startQuarter);
+    const toIndex = periodToIndex(endYear, endQuarter);
+
+    return {
+      startYear,
+      startQuarter,
+      endYear,
+      endQuarter,
+      startIndex: fromIndex,
+      endIndex: toIndex,
+    };
+  }, [availableYears, resolvedYearFrom, quarterFrom, resolvedYearTo, quarterTo]);
+
+  // callback: do zapamiętania tej samej referencji między renderami dopoki nie zmieni się selectedRange
+  const isInSelectedRange = useCallback((year, quarter) => {
+    if (!selectedRange) return true;
+    const idx = periodToIndex(year, quarter);
+    return idx >= selectedRange.startIndex && idx <= selectedRange.endIndex;
+  }, [selectedRange]);
+
+  // funkcja do liczenia statystyk
+  const stats = useMemo(() => {
+    if (prices.length === 0 || !selectedRange) return null;
+
+    const getBaseFilteredPrices = ({ year = null, withinRange = true } = {}) =>
+      prices.filter((p) => {
         const matchYear = year ? p.year === year : true;
+        const matchRange = withinRange ? isInSelectedRange(p.year, p.quarter) : true;
         const matchCity =
           selectedCity === "all" ? true : p.cityId === parseInt(selectedCity);
         const matchMarket =
@@ -107,73 +276,85 @@ const Dashboard = () => {
           selectedPriceType === "all"
             ? true
             : p.priceType === selectedPriceType;
-
-        return matchYear && matchCity && matchMarket && matchPriceType;
+        return (
+          matchYear &&
+          matchRange &&
+          matchCity &&
+          matchMarket &&
+          matchPriceType
+        );
       });
-    };
 
-    // funkcja pomocnicza: obliczanie sredniej
     const calcAvg = (arr) => {
       if (arr.length === 0) return 0;
-
       const sum = arr.reduce((acc, curr) => acc + parseFloat(curr.price), 0);
       return sum / arr.length;
     };
 
-    // 1. Śr. cena/m² (2024)
-    const prices2024 = getBaseFilteredPrices(2024);
-    const avg2024 = calcAvg(prices2024);
+    const latestYearInRange = selectedRange.endYear;
+    const previousYear = latestYearInRange - 1;
+    const fiveYearsBack = latestYearInRange - 5;
 
-    // Wzrost r/r (2024 vs 2023) do zielonej strzałki
-    const prices2023 = getBaseFilteredPrices(2023);
-    const avg2023 = calcAvg(prices2023);
-    let rrGrowth = 0;
+    const avgLatestYear = calcAvg(
+      getBaseFilteredPrices({ year: latestYearInRange, withinRange: true }),
+    );
+    const avgPreviousYear = calcAvg(
+      getBaseFilteredPrices({ year: previousYear, withinRange: false }),
+    );
+    const avgFiveYearsBack = calcAvg(
+      getBaseFilteredPrices({ year: fiveYearsBack, withinRange: false }),
+    );
 
-    if (avg2023 > 0) {
-      rrGrowth = ((avg2024 - avg2023) / avg2023) * 100;
-    }
+    const rrGrowth =
+      avgPreviousYear > 0
+        ? ((avgLatestYear - avgPreviousYear) / avgPreviousYear) * 100
+        : 0;
+    const growth5Y =
+      avgFiveYearsBack > 0
+        ? ((avgLatestYear - avgFiveYearsBack) / avgFiveYearsBack) * 100
+        : 0;
 
-    // 2. Wzrost 5-letni (2019 -> 2024)
-    const prices2019 = getBaseFilteredPrices(2019);
-    const avg2019 = calcAvg(prices2019);
-    let growth5Y = 0;
-    if (avg2019 > 0) {
-      growth5Y = ((avg2024 - avg2019) / avg2019) * 100;
-    }
+    const latestRate = [...rates]
+      .filter(
+        (r) =>
+          new Date(r.validFrom) <=
+          quarterEndDate(selectedRange.endYear, selectedRange.endQuarter),
+      )
+      .sort(
+        (a, b) =>
+          new Date(b.validFrom).getTime() - new Date(a.validFrom).getTime(),
+      )[0];
 
-    // 3. Stopa ref. NBP
-    const latestRate = rates.length > 0 ? rates[rates.length - 1] : null;
-
-    // 4. Spread of./trans. (Tylko dla 2024)
-    const spreadPrices2024 = prices.filter(
+    const spreadPrices = prices.filter(
       (p) =>
-        p.year === 2024 &&
+        p.year === latestYearInRange &&
         (selectedCity === "all" ? true : p.cityId === parseInt(selectedCity)) &&
         (selectedMarket === "all" ? true : p.marketType === selectedMarket),
     );
 
     const avgOfertowe = calcAvg(
-      spreadPrices2024.filter((p) => p.priceType === "ofertowe"),
+      spreadPrices.filter((p) => p.priceType === "ofertowe"),
     );
     const avgTransakcyjne = calcAvg(
-      spreadPrices2024.filter((p) => p.priceType === "transakcyjne"),
+      spreadPrices.filter((p) => p.priceType === "transakcyjne"),
     );
-
-    let spread = 0;
-    if (avgTransakcyjne > 0) {
-      spread = ((avgOfertowe - avgTransakcyjne) / avgTransakcyjne) * 100;
-    }
+    const spread =
+      avgTransakcyjne > 0
+        ? ((avgOfertowe - avgTransakcyjne) / avgTransakcyjne) * 100
+        : 0;
 
     return {
-      avg2024:
-        avg2024 > 0
-          ? `${Math.round(avg2024).toLocaleString("pl-PL")} zł`
+      avgPriceLabel: `Śr. cena/m² (${latestYearInRange})`,
+      avgPrice:
+        avgLatestYear > 0
+          ? `${Math.round(avgLatestYear).toLocaleString("pl-PL")} zł`
           : "Brak",
-      rrGrowth: rrGrowth,
+      rrGrowth,
       growth5Y:
         growth5Y !== 0
           ? `${growth5Y > 0 ? "+" : ""}${Math.round(growth5Y)}%`
           : "Brak",
+      growth5YRangeLabel: `${fiveYearsBack} → ${latestYearInRange}`,
       latestRateValue: latestRate
         ? `${parseFloat(latestRate.rateValue).toLocaleString("pl-PL")}%`
         : "Brak",
@@ -184,19 +365,25 @@ const Dashboard = () => {
           })
         : "",
       spread: spread !== 0 ? `${spread.toFixed(1).replace(".", ",")}%` : "Brak",
+      spreadLabel: `Spread of./trans. (${latestYearInRange})`,
+      marketRangeLabel: `${selectedRange.startYear} Q${selectedRange.startQuarter} - ${selectedRange.endYear} Q${selectedRange.endQuarter}`,
     };
-  }, [prices, rates, selectedCity, selectedMarket, selectedPriceType]);
+  }, [prices, rates, selectedCity, selectedMarket, selectedPriceType, selectedRange, isInSelectedRange]);
 
-  // Dane do wykresu trendu cen vs stopy ref.
+  // dane do wykresu trendu cen vs stopa NBP
   const pricesAndRatesData = useMemo(() => {
-    if (prices.length === 0 || rates.length === 0) return [];
+    if (!selectedRange || prices.length === 0 || rates.length === 0 || availableYears.length === 0) {
+      return [];
+    }
 
     const data = [];
+    const minYear = availableYears[0];
+    const maxYear = availableYears[availableYears.length - 1];
 
-    // Iterujemy po latach 2015-2024 i kwartałach 1-4
-    for (let year = 2015; year <= 2024; year++) {
+    for (let year = minYear; year <= maxYear; year++) {
       for (let quarter = 1; quarter <= 4; quarter++) {
-        // Filtrujemy ceny dla danego kwartału i filtrów
+        if (!isInSelectedRange(year, quarter)) continue;
+
         const quarterPrices = prices.filter((p) => {
           const matchYear = p.year === year;
           const matchQuarter = p.quarter === quarter;
@@ -208,7 +395,6 @@ const Dashboard = () => {
             selectedPriceType === "all"
               ? true
               : p.priceType === selectedPriceType;
-
           return (
             matchYear &&
             matchQuarter &&
@@ -218,21 +404,14 @@ const Dashboard = () => {
           );
         });
 
-        // Obliczamy średnią cenę
         const avgPrice =
           quarterPrices.length > 0
             ? quarterPrices.reduce((sum, p) => sum + parseFloat(p.price), 0) /
               quarterPrices.length
             : null;
 
-        // Pobieramy stopę procentową dla konca kwartału
-        const quarterEndMonth = quarter * 3;
-        const quarterEndDate = new Date(
-          Date.UTC(year, quarterEndMonth, 0, 23, 59, 59),
-        );
-
         const rateForQuarter = rates
-          .filter((r) => new Date(r.validFrom) <= quarterEndDate)
+          .filter((r) => new Date(r.validFrom) <= quarterEndDate(year, quarter))
           .sort(
             (a, b) =>
               new Date(b.validFrom).getTime() - new Date(a.validFrom).getTime(),
@@ -242,36 +421,44 @@ const Dashboard = () => {
           ? parseFloat(rateForQuarter.rateValue)
           : null;
 
-        // Dodajemy do danych wykresu tylko jeśli mamy cenę
         if (avgPrice !== null && avgRate !== null) {
           data.push({
             period: `${year} Q${quarter}`,
             avgPrice: Math.round(avgPrice),
-            avgRate: avgRate,
+            avgRate,
           });
         }
       }
     }
 
     return data;
-  }, [prices, rates, selectedCity, selectedMarket, selectedPriceType]);
+  }, [
+    prices,
+    rates,
+    selectedCity,
+    selectedMarket,
+    selectedPriceType,
+    selectedRange,
+    availableYears,
+    isInSelectedRange,
+  ]);
 
-  // Dane do porównania miast (rok 2024)
+  // dane do wykresu porównania miast
   const cityComparisonData = useMemo(() => {
-    if (prices.length === 0 || cities.length === 0) return [];
+    if (prices.length === 0 || cities.length === 0 || !selectedRange) return [];
+    const latestYearInRange = selectedRange.endYear;
 
     return cities
       .map((city) => {
         const cityPrices = prices.filter((p) => {
           const matchCity = p.cityId === city.id;
-          const matchYear = p.year === 2024;
+          const matchYear = p.year === latestYearInRange;
           const matchMarket =
             selectedMarket === "all" ? true : p.marketType === selectedMarket;
           const matchPriceType =
             selectedPriceType === "all"
               ? true
               : p.priceType === selectedPriceType;
-
           return matchCity && matchYear && matchMarket && matchPriceType;
         });
 
@@ -287,28 +474,29 @@ const Dashboard = () => {
         };
       })
       .filter((item) => item.avgPrice > 0);
-  }, [cities, prices, selectedMarket, selectedPriceType]);
+  }, [cities, prices, selectedMarket, selectedPriceType, selectedRange]);
 
-  // Dane do porównania cen dwóch rynków
+  // dane do wykresu porównania rynku pierwotnego i wtórnego
   const marketTypeComparisonData = useMemo(() => {
-    if (prices.length === 0) return [];
+    if (!selectedRange || prices.length === 0 || availableYears.length === 0) return [];
 
     const data = [];
+    const minYear = availableYears[0];
+    const maxYear = availableYears[availableYears.length - 1];
 
-    // Iterujemy po latach (2015-2024)
-    for (let year = 2015; year <= 2024; year++) {
-      // Wewnątrz każdego roku iterujemy po 4 kwartałach
+    for (let year = minYear; year <= maxYear; year++) {
       for (let quarter = 1; quarter <= 4; quarter++) {
+        if (!isInSelectedRange(year, quarter)) continue;
+
         const filteredPrices = prices.filter((p) => {
           const matchYear = p.year === year;
-          const matchQuarter = p.quarter === quarter; // NOWY FILTR KWARTAŁU
+          const matchQuarter = p.quarter === quarter;
           const matchCity =
             selectedCity === "all" ? true : p.cityId === parseInt(selectedCity);
           const matchPriceType =
             selectedPriceType === "all"
               ? true
               : p.priceType === selectedPriceType;
-
           return matchYear && matchQuarter && matchCity && matchPriceType;
         });
 
@@ -321,20 +509,16 @@ const Dashboard = () => {
 
         const calcAvg = (arr) => {
           if (arr.length === 0) return null;
-          const sum = arr.reduce(
-            (acc, curr) => acc + parseFloat(curr.price),
-            0,
-          );
+          const sum = arr.reduce((acc, curr) => acc + parseFloat(curr.price), 0);
           return Math.round(sum / arr.length);
         };
 
         const avgPierwotny = calcAvg(pierwotnyPrices);
         const avgWtorny = calcAvg(wtornyPrices);
 
-        // Wypychamy dane tylko wtedy, gdy którykolwiek rynek ma dane
         if (avgPierwotny !== null || avgWtorny !== null) {
           data.push({
-            period: `${year} Q${quarter}`, // Zmiana z "year" na format "2015 Q1"
+            period: `${year} Q${quarter}`,
             pierwotny: avgPierwotny || 0,
             wtorny: avgWtorny || 0,
           });
@@ -343,13 +527,12 @@ const Dashboard = () => {
     }
 
     return data;
-  }, [prices, selectedCity, selectedPriceType]);
+  }, [prices, selectedCity, selectedPriceType, selectedRange, availableYears, isInSelectedRange]);
 
   return (
     <div className="min-h-screen bg-zinc-50">
       <Header />
       <main className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 space-y-6">
-        {/* Sekcja Filtrów */}
         <Card>
           <CardHeader className="pb-4">
             <CardTitle className="text-lg font-semibold">
@@ -406,7 +589,7 @@ const Dashboard = () => {
                 </select>
               </div>
             </div>
-            {/* filtry czasowe */}
+
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-zinc-100">
               <div className="space-y-2">
                 <label className="text-sm font-medium leading-none">
@@ -414,13 +597,12 @@ const Dashboard = () => {
                 </label>
                 <select
                   className="flex h-9 w-full items-center justify-between rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-zinc-950"
-                  value={yearFrom}
-                  onChange={(e) => setYearFrom(e.target.value)}
+                  value={resolvedYearFrom}
+                  onChange={(e) => handleFromYearChange(e.target.value)}
                 >
-                  <option value="all">Od początku</option>
-                  {[...Array(13)].map((_, i) => (
-                    <option key={2014 + i} value={2014 + i}>
-                      {2014 + i}
+                  {availableYears.map((year) => (
+                    <option key={year} value={year}>
+                      {year}
                     </option>
                   ))}
                 </select>
@@ -433,9 +615,8 @@ const Dashboard = () => {
                 <select
                   className="flex h-9 w-full items-center justify-between rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-zinc-950"
                   value={quarterFrom}
-                  onChange={(e) => setQuarterFrom(e.target.value)}
+                  onChange={(e) => handleFromQuarterChange(e.target.value)}
                 >
-                  <option value="all">Dowolny</option>
                   <option value="1">Q1</option>
                   <option value="2">Q2</option>
                   <option value="3">Q3</option>
@@ -449,13 +630,12 @@ const Dashboard = () => {
                 </label>
                 <select
                   className="flex h-9 w-full items-center justify-between rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-zinc-950"
-                  value={yearTo}
-                  onChange={(e) => setYearTo(e.target.value)}
+                  value={resolvedYearTo}
+                  onChange={(e) => handleToYearChange(e.target.value)}
                 >
-                  <option value="all">Do końca</option>
-                  {[...Array(13)].map((_, i) => (
-                    <option key={2014 + i} value={2014 + i}>
-                      {2014 + i}
+                  {availableYears.map((year) => (
+                    <option key={year} value={year}>
+                      {year}
                     </option>
                   ))}
                 </select>
@@ -468,9 +648,8 @@ const Dashboard = () => {
                 <select
                   className="flex h-9 w-full items-center justify-between rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-zinc-950"
                   value={quarterTo}
-                  onChange={(e) => setQuarterTo(e.target.value)}
+                  onChange={(e) => handleToQuarterChange(e.target.value)}
                 >
-                  <option value="all">Dowolny</option>
                   <option value="1">Q1</option>
                   <option value="2">Q2</option>
                   <option value="3">Q3</option>
@@ -481,7 +660,6 @@ const Dashboard = () => {
           </CardContent>
         </Card>
 
-        {/* Hero: statystyki - cena (2024), wzorst ceny 5-lat, stopa procentowa (latest), stosunek: ofertowe/transakcyjne */}
         <HeroMarketStats
           cities={cities}
           stats={stats}
@@ -493,11 +671,10 @@ const Dashboard = () => {
           setSelectedPriceType={setSelectedPriceType}
         />
 
-        {/* Wykres trendu */}
         <Card>
           <CardHeader>
             <CardTitle className="text-lg font-semibold">
-              Trend cen vs Stopa NBP (2015–2024)
+              Trend cen vs Stopa NBP ({stats?.marketRangeLabel || "zakres danych"})
             </CardTitle>
             <CardDescription>
               Oś lewa: średnia cena zł/m² · Oś prawa: stopa procentowa %
@@ -508,11 +685,10 @@ const Dashboard = () => {
           </CardContent>
         </Card>
 
-        {/* Wykres porownania miast */}
         <Card>
           <CardHeader>
             <CardTitle className="text-lg font-semibold">
-              Porównanie miast (2024)
+              Porównanie miast ({selectedRange ? selectedRange.endYear : "rok końcowy"})
             </CardTitle>
             <CardDescription>
               Średnia cena/m² wg aktywnych filtrów
@@ -523,7 +699,6 @@ const Dashboard = () => {
           </CardContent>
         </Card>
 
-        {/* Wykres nożyc cenowych rynku wtornego i pierwotnego  */}
         <Card>
           <CardHeader>
             <CardTitle className="text-lg font-semibold">
@@ -535,7 +710,6 @@ const Dashboard = () => {
           </CardContent>
         </Card>
 
-        {/* Przycisk eksportu do PDF */}
         <div className="flex justify-center pt-8 pb-12">
           <Button
             size="lg"
