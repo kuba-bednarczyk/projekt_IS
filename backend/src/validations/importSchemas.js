@@ -8,8 +8,18 @@ const pozycjaSchema = z.object({
   "@_id": z.string(),
   "@_cena": z.string().regex(/^\d+(?:,\d+)?$/), //numer w stringu z przecinkiem np 4881,00
 });
+const rateItemSchema = z.object({
+  "@_id": z.string(),
+  "@_oprocentowanie": z.string().regex(/^\d+(?:,\d+)?$/),
+});
 const marketCategorySchema = z.object({
   pozycja: forceArray(pozycjaSchema),
+});
+const pozycjeGroupSchema = z.object({
+  "@_obowiazuje_od": z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, "Date must be in YYYY-MM-DD format"),
+  pozycja: forceArray(rateItemSchema),
 });
 const kwartalSchema = z.object({
   "@_id": z.string(),
@@ -18,26 +28,42 @@ const kwartalSchema = z.object({
   pierwotny_transakcyjne: marketCategorySchema,
   wtorny_transakcyjne: marketCategorySchema,
 });
-//aby dodac limit na ilosc w zod odkomentowac - limit jest tylko w obszarze 1 kwartalu
-// jezeli chcemy wiecej to bedzie wild ride 🦽
-//   .refine(
-//     (data) => {
-//       const len1 = data.pierwotny_ofertowe?.pozycja?.length || 0;
-//       const len2 = data.wtorny_ofertowe?.pozycja?.length || 0;
-//       const len3 = data.pierwotny_transakcyjne?.pozycja?.length || 0;
-//       const len4 = data.wtorny_transakcyjne?.pozycja?.length || 0;
-//       return len1 === len2 && len1 === len3 && len1 === len4;
-//     },
-//     {
-//       path: ["Kwartal"],
-//     },
-//   );
-const pricesSchema = z.object({
-  ceny_mieszkan: z.object({
-    Kwartal: forceArray(kwartalSchema),
+const pricesSchema = z
+  .object({
+    ceny_mieszkan: z.object({
+      Kwartal: forceArray(kwartalSchema),
+    }),
+  })
+  .superRefine((data, e) => {
+    const kwartals = data.ceny_mieszkan.Kwartal;
+    if (!kwartals || kwartals.length === 0) return;
+    const globalBaseline = kwartals[0].pierwotny_ofertowe?.pozycja?.length || 0;
+    kwartals.forEach((kwartal, kIndex) => {
+      const categoriesToCheck = [
+        { name: "pierwotny_ofertowe", data: kwartal.pierwotny_ofertowe },
+        { name: "wtorny_ofertowe", data: kwartal.wtorny_ofertowe },
+        {
+          name: "pierwotny_transakcyjne",
+          data: kwartal.pierwotny_transakcyjne,
+        },
+        { name: "wtorny_transakcyjne", data: kwartal.wtorny_transakcyjne },
+      ];
+      categoriesToCheck.forEach((category) => {
+        const currentLength = category.data?.pozycja?.length || 0;
+        if (currentLength !== globalBaseline) {
+          e.addIssue({
+            message: "Incoherent file",
+            path: ["ceny_mieszkan", "Kwartal", kIndex, category.name],
+          });
+        }
+      });
+    });
+  });
+const ratesSchema = z.object({
+  stopy_procentowe_archiwum: z.object({
+    pozycje: forceArray(pozycjeGroupSchema),
   }),
 });
-const ratesSchema = z.object({});
 module.exports = {
   pricesSchema,
   ratesSchema,
