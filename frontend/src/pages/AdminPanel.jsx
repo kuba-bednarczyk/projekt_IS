@@ -392,7 +392,7 @@ const AdminPanel = () => {
                 <div className="space-y-2">
                   <Label className="text-sm font-medium">Zdjęcie profilowe</Label>
                   <div className="flex items-center gap-4">
-                    <div className="relative w-16 h-16 rounded-full bg-zinc-100 border border-zinc-200 overflow-hidden flex-shrink-0">
+                    <div className="relative w-16 h-16 rounded-full bg-zinc-100 border border-zinc-200 overflow-hidden shrink-0">
                       {preview ? (
                         <img
                           src={preview}

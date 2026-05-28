@@ -190,7 +190,7 @@ const Account = () => {
               {/* Sekcja Avatara */}
               <div className="flex flex-col sm:flex-row sm:items-center gap-6">
                 <div
-                  className="relative w-24 h-24 rounded-full bg-zinc-100 border-2 border-dashed border-zinc-300 overflow-hidden group cursor-pointer flex-shrink-0 transition-colors hover:border-zinc-400"
+                  className="relative w-24 h-24 rounded-full bg-zinc-100 border-2 border-dashed border-zinc-300 overflow-hidden group cursor-pointer shrink-0 transition-colors hover:border-zinc-400"
                   onClick={() => fileInputRef.current?.click()}
                 >
                   {preview ? (
@@ -340,7 +340,7 @@ const Account = () => {
             <CardFooter className="pt-6 flex justify-end">
               <Button
                 type="submit"
-                className="min-w-[140px]"
+                className="min-w-35"
                 disabled={loading}
               >
                 {loading ? (

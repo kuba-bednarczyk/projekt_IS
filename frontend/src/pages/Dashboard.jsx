@@ -797,12 +797,12 @@ const Dashboard = () => {
         </Card>
 
         <div className="flex flex-col sm:flex-row justify-end gap-3 pt-4 pb-12">
-          <Button
+          {/* <Button
             className="bg-red-600"
             onClick={() => alert("Eksport do PDF - funkcja w przygotowaniu!")}
           >
             Eksport do PDF
-          </Button>
+          </Button> */}
           <Button className="bg-yellow-400" onClick={() => handleDataExport("json")}>Eksport do JSON</Button>
           <Button className="bg-cyan-600" onClick={() => handleDataExport("yaml")}>Eksport do YAML</Button>
         </div>
