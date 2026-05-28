@@ -91,10 +91,20 @@ const Login = () => {
               />
             </div>
           </CardContent>
-          <CardFooter>
+          <CardFooter className="flex flex-col gap-3">
             <Button type="submit" className="w-full">
               Zaloguj
             </Button>
+            <div className="text-sm text-center text-zinc-500 mt-2">
+              Nie masz konta?{" "}
+              <button
+                type="button"
+                onClick={() => navigate("/register")}
+                className="text-zinc-900 font-medium hover:underline"
+              >
+                Zarejestruj się
+              </button>
+            </div>
           </CardFooter>
         </form>
       </Card>

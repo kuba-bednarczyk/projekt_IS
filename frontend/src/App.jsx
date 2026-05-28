@@ -1,11 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 
 // pages
+import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Account from "./pages/Account";
 import Calculator from "./pages/Calculator";
 import AdminPanel from "./pages/AdminPanel";
+
 
 // protected Route
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -14,6 +16,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Strona rejestracji */}
+        <Route path="/register" element={<Register />} />
+
         {/* Strona logowania */}
         <Route path="/" element={<Login />} />
 
