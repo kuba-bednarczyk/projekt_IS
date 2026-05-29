@@ -9,6 +9,7 @@ const dataRoutes = require("./routes/dataRoutes"); //import routow
 const authRoutes = require("./routes/authRoutes"); // autoryzacja
 const exportRoutes = require("./routes/exportRoutes"); // import routeow do eksportu danych
 const userRoutes = require("./routes/userRoutes"); // import routow uzytkownikow
+const importRoutes = require("./routes/importRoutes"); // obsluga importu i usuwania danych z db
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use("/api", dataRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/export", exportRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/import", importRoutes);
 
 // endpoint testowy STATUS
 app.get("/api/status", async (req, res) => {
