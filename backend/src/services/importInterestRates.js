@@ -51,21 +51,27 @@ async function importInterestRates(parsedData) {
       const nextRate = ratesArray[i + 1];
 
       let iterDate = new Date(
-        currentRate.validFrom.getFullYear(),
-        currentRate.validFrom.getMonth(),
-        1,
+        Date.UTC(
+          currentRate.validFrom.getFullYear(),
+          currentRate.validFrom.getMonth(),
+          1,
+        ),
       );
 
       let endDate;
       if (nextRate) {
         endDate = new Date(
-          nextRate.validFrom.getFullYear(),
-          nextRate.validFrom.getMonth(),
-          1,
+          Date.UTC(
+            nextRate.validFrom.getFullYear(),
+            nextRate.validFrom.getMonth(),
+            1,
+          ),
         );
       } else {
         const today = new Date();
-        endDate = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+        endDate = new Date(
+          Date.UTC(today.getFullYear(), today.getMonth() + 1, 1),
+        );
       }
 
       while (iterDate < endDate) {
@@ -75,7 +81,7 @@ async function importInterestRates(parsedData) {
           rateValue: averageRateValue,
         });
 
-        iterDate.setMonth(iterDate.getMonth() + 1);
+        iterDate.setUTCMonth(iterDate.getMonth() + 1);
       }
     }
   }
