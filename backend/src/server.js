@@ -7,9 +7,9 @@ const prisma = require("./config/db"); // połączenie z bazą
 
 const dataRoutes = require("./routes/dataRoutes"); //import routow
 const authRoutes = require("./routes/authRoutes"); // autoryzacja
-const exportRoutes = require("./routes/exportRoutes"); // import routeow do eksportu danych
 const userRoutes = require("./routes/userRoutes"); // import routow uzytkownikow
 const importRoutes = require("./routes/importRoutes"); // obsluga importu i usuwania danych z db
+const exportRoutes = require("./routes/exportRoutes"); // import routeow do eksportu danych
 
 const app = express();
 

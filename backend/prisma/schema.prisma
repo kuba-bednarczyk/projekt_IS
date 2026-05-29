@@ -40,7 +40,7 @@ model InterestRate {
 
 model User {
   id        Int      @id @default(autoincrement())
-  nickname  String
+  nickname  String   @unique
   email     String   @unique
   password  String   
   role      String   @default("USER")

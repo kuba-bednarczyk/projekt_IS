@@ -129,12 +129,24 @@ router.post("/", verifyToken, requireRole("ADMIN"), async (req, res) => {
       });
     }
 
-    if (await prisma.user.findUnique({ where: { email } })) {
+    const existingEmail = await prisma.user.findUnique({ where: { email } });
+    if (existingEmail) {
       return res.status(400).json({
         success: false,
-        message: "Użytkownik z tym emailem już istnieje",
+        errors: [{ field: "email", message: "Ten adres e-mail jest już przypisany do innego konta." }]
       });
     }
+
+    if (nickname) {
+      const existingNickname = await prisma.user.findUnique({ where: { nickname } });
+      if (existingNickname) {
+        return res.status(400).json({
+          success: false,
+          errors: [{ field: "nickname", message: "Ta nazwa użytkownika jest już zajęta." }]
+        });
+      }
+    }
+
     const userPassword = await bcrypt.hash(password, 10);
     let imageParsed;
     if (profilePicture !== undefined) {
@@ -213,7 +225,6 @@ router.patch("/:id", verifyToken, requireOwnerOrAdmin, async (req, res) => {
 
     const currentUserId = req.user.userId || req.user.id;
 
-    // Dodajemy .partial(), co informuje Zod, że z racji metody PATCH każde pole z userSchema jest opcjonalne.
     const validatedData = userSchema.partial().safeParse(req.body);
     if (!validatedData.success) {
       const errors = validatedData.error.issues.map((issue) => ({
@@ -228,6 +239,7 @@ router.patch("/:id", verifyToken, requireOwnerOrAdmin, async (req, res) => {
         message: "Użytkownik z tym id nie istnieje",
       });
     }
+
     if (validatedData.data.password) {
       if (req.user.role === "ADMIN" && currentUserId !== id) {
         return res.status(403).json({
@@ -241,6 +253,31 @@ router.patch("/:id", verifyToken, requireOwnerOrAdmin, async (req, res) => {
         10,
       );
     }
+
+    if (validatedData.data.email) {
+      const emailConflict = await prisma.user.findFirst({
+        where: { email: validatedData.data.email, id: { not: id } },
+      });
+      if (emailConflict) {
+        return res.status(400).json({
+          success: false,
+          errors: [{ field: "email", message: "Ten e-mail jest już zajęty." }]
+        });
+      }
+    }
+
+    if (validatedData.data.nickname) {
+      const nicknameConflict = await prisma.user.findFirst({
+        where: { nickname: validatedData.data.nickname, id: { not: id } },
+      });
+      if (nicknameConflict) {
+        return res.status(400).json({
+          success: false,
+          errors: [{ field: "nickname", message: "Ta nazwa użytkownika jest już zajęta." }]
+        });
+      }
+    }
+
     let imageParsed;
     if (validatedData.data.profilePicture !== undefined) {
       imageParsed = validatedData.data.profilePicture

@@ -1,5 +1,2657 @@
 <?xml version="1.0" ?>
 <ceny_mieszkan>
+    <Kwartal id="III 2006">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="2727,00"/>
+            <pozycja id="Bydgoszcz" cena="3243,00"/>
+            <pozycja id="Gdańsk" cena="5004,00"/>
+            <pozycja id="Gdynia" cena="4937,00"/>
+            <pozycja id="Katowice" cena="3986,27"/>
+            <pozycja id="Kielce" cena="2918,64"/>
+            <pozycja id="Kraków" cena="6021,00"/>
+            <pozycja id="Lublin" cena="3456,00"/>
+            <pozycja id="Łódź" cena="3210,00"/>
+            <pozycja id="Olsztyn" cena="4000,00"/>
+            <pozycja id="Opole" cena="3342,84"/>
+            <pozycja id="Poznań" cena="4769,93"/>
+            <pozycja id="Rzeszów" cena="2862,00"/>
+            <pozycja id="Szczecin" cena="3214,98"/>
+            <pozycja id="Warszawa" cena="5873,00"/>
+            <pozycja id="Wrocław" cena="4750,00"/>
+            <pozycja id="Zielona Góra" cena="2754,28"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="3070,00"/>
+            <pozycja id="Bydgoszcz" cena="2530,00"/>
+            <pozycja id="Gdańsk" cena="4541,00"/>
+            <pozycja id="Gdynia" cena="5756,00"/>
+            <pozycja id="Katowice" cena="2507,52"/>
+            <pozycja id="Kielce" cena="2424,92"/>
+            <pozycja id="Kraków" cena="7114,00"/>
+            <pozycja id="Lublin" cena="3160,00"/>
+            <pozycja id="Łódź" cena="2740,00"/>
+            <pozycja id="Olsztyn" cena="3414,43"/>
+            <pozycja id="Opole" cena="3164,08"/>
+            <pozycja id="Poznań" cena="3751,81"/>
+            <pozycja id="Rzeszów" cena="2851,00"/>
+            <pozycja id="Szczecin" cena="3189,80"/>
+            <pozycja id="Warszawa" cena="7179,00"/>
+            <pozycja id="Wrocław" cena="5260,77"/>
+            <pozycja id="Zielona Góra" cena="2136,75"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="3008,00"/>
+            <pozycja id="Bydgoszcz" cena="2663,00"/>
+            <pozycja id="Gdańsk" cena="3494,00"/>
+            <pozycja id="Gdynia" cena="4467,00"/>
+            <pozycja id="Katowice" cena="3522,59"/>
+            <pozycja id="Kielce" cena="2834,84"/>
+            <pozycja id="Kraków" cena="6816,00"/>
+            <pozycja id="Lublin" cena="3022,00"/>
+            <pozycja id="Łódź" cena="2860,00"/>
+            <pozycja id="Olsztyn" cena="2640,00"/>
+            <pozycja id="Opole" cena="3299,15"/>
+            <pozycja id="Poznań" cena="3620,85"/>
+            <pozycja id="Rzeszów" cena="2656,00"/>
+            <pozycja id="Szczecin" cena="3233,92"/>
+            <pozycja id="Warszawa" cena="5605,00"/>
+            <pozycja id="Wrocław" cena="3211,00"/>
+            <pozycja id="Zielona Góra" cena="2499,01"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="2529,00"/>
+            <pozycja id="Bydgoszcz" cena="2424,00"/>
+            <pozycja id="Gdańsk" cena="3926,00"/>
+            <pozycja id="Gdynia" cena="2782,00"/>
+            <pozycja id="Katowice" cena="2027,90"/>
+            <pozycja id="Kielce" cena="2354,89"/>
+            <pozycja id="Kraków" cena="5193,00"/>
+            <pozycja id="Lublin" cena="2769,00"/>
+            <pozycja id="Łódź" cena="1905,00"/>
+            <pozycja id="Olsztyn" cena="3125,57"/>
+            <pozycja id="Opole" cena="2776,76"/>
+            <pozycja id="Poznań" cena="3332,05"/>
+            <pozycja id="Rzeszów" cena="2591,00"/>
+            <pozycja id="Szczecin" cena="2887,60"/>
+            <pozycja id="Warszawa" cena="6232,00"/>
+            <pozycja id="Wrocław" cena="4734,45"/>
+            <pozycja id="Zielona Góra" cena="1959,94"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="IV 2006">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="2727,00"/>
+            <pozycja id="Bydgoszcz" cena="3947,00"/>
+            <pozycja id="Gdańsk" cena="6199,00"/>
+            <pozycja id="Gdynia" cena="5284,00"/>
+            <pozycja id="Katowice" cena="4062,31"/>
+            <pozycja id="Kielce" cena="3492,62"/>
+            <pozycja id="Kraków" cena="7929,00"/>
+            <pozycja id="Lublin" cena="3314,00"/>
+            <pozycja id="Łódź" cena="4237,00"/>
+            <pozycja id="Olsztyn" cena="4800,00"/>
+            <pozycja id="Opole" cena="3703,01"/>
+            <pozycja id="Poznań" cena="4827,23"/>
+            <pozycja id="Rzeszów" cena="3401,00"/>
+            <pozycja id="Szczecin" cena="3679,12"/>
+            <pozycja id="Warszawa" cena="6095,00"/>
+            <pozycja id="Wrocław" cena="5759,00"/>
+            <pozycja id="Zielona Góra" cena="2869,30"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="3408,00"/>
+            <pozycja id="Bydgoszcz" cena="2784,00"/>
+            <pozycja id="Gdańsk" cena="5406,00"/>
+            <pozycja id="Gdynia" cena="6496,00"/>
+            <pozycja id="Katowice" cena="2649,12"/>
+            <pozycja id="Kielce" cena="3127,42"/>
+            <pozycja id="Kraków" cena="7383,00"/>
+            <pozycja id="Lublin" cena="3562,00"/>
+            <pozycja id="Łódź" cena="3316,00"/>
+            <pozycja id="Olsztyn" cena="3925,00"/>
+            <pozycja id="Opole" cena="3584,54"/>
+            <pozycja id="Poznań" cena="4461,66"/>
+            <pozycja id="Rzeszów" cena="3734,00"/>
+            <pozycja id="Szczecin" cena="3856,59"/>
+            <pozycja id="Warszawa" cena="8751,00"/>
+            <pozycja id="Wrocław" cena="5856,74"/>
+            <pozycja id="Zielona Góra" cena="2384,11"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="3117,00"/>
+            <pozycja id="Bydgoszcz" cena="2811,00"/>
+            <pozycja id="Gdańsk" cena="5252,00"/>
+            <pozycja id="Gdynia" cena="5284,00"/>
+            <pozycja id="Katowice" cena="3734,72"/>
+            <pozycja id="Kielce" cena="3014,09"/>
+            <pozycja id="Kraków" cena="7089,00"/>
+            <pozycja id="Lublin" cena="3304,00"/>
+            <pozycja id="Łódź" cena="3642,00"/>
+            <pozycja id="Olsztyn" cena="2869,00"/>
+            <pozycja id="Opole" cena="3342,84"/>
+            <pozycja id="Poznań" cena="4725,66"/>
+            <pozycja id="Rzeszów" cena="3013,00"/>
+            <pozycja id="Szczecin" cena="3575,02"/>
+            <pozycja id="Warszawa" cena="6186,00"/>
+            <pozycja id="Wrocław" cena="3777,00"/>
+            <pozycja id="Zielona Góra" cena="2768,75"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="2998,00"/>
+            <pozycja id="Bydgoszcz" cena="2359,00"/>
+            <pozycja id="Gdańsk" cena="4072,00"/>
+            <pozycja id="Gdynia" cena="4561,00"/>
+            <pozycja id="Katowice" cena="2160,05"/>
+            <pozycja id="Kielce" cena="2672,77"/>
+            <pozycja id="Kraków" cena="6349,00"/>
+            <pozycja id="Lublin" cena="2884,00"/>
+            <pozycja id="Łódź" cena="2160,00"/>
+            <pozycja id="Olsztyn" cena="3665,46"/>
+            <pozycja id="Opole" cena="2885,42"/>
+            <pozycja id="Poznań" cena="3903,30"/>
+            <pozycja id="Rzeszów" cena="2935,00"/>
+            <pozycja id="Szczecin" cena="3132,58"/>
+            <pozycja id="Warszawa" cena="7143,00"/>
+            <pozycja id="Wrocław" cena="4931,84"/>
+            <pozycja id="Zielona Góra" cena="2381,25"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="I 2007">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4181,00"/>
+            <pozycja id="Bydgoszcz" cena="4501,00"/>
+            <pozycja id="Gdańsk" cena="6437,00"/>
+            <pozycja id="Gdynia" cena="6466,00"/>
+            <pozycja id="Katowice" cena="4518,37"/>
+            <pozycja id="Kielce" cena="3381,72"/>
+            <pozycja id="Kraków" cena="8247,00"/>
+            <pozycja id="Lublin" cena="3604,00"/>
+            <pozycja id="Łódź" cena="4927,00"/>
+            <pozycja id="Olsztyn" cena="5149,00"/>
+            <pozycja id="Opole" cena="4064,91"/>
+            <pozycja id="Poznań" cena="7274,75"/>
+            <pozycja id="Rzeszów" cena="3420,00"/>
+            <pozycja id="Szczecin" cena="4749,12"/>
+            <pozycja id="Warszawa" cena="7509,00"/>
+            <pozycja id="Wrocław" cena="6308,70"/>
+            <pozycja id="Zielona Góra" cena="2871,94"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="3986,00"/>
+            <pozycja id="Bydgoszcz" cena="3607,00"/>
+            <pozycja id="Gdańsk" cena="6115,00"/>
+            <pozycja id="Gdynia" cena="7211,00"/>
+            <pozycja id="Katowice" cena="3703,64"/>
+            <pozycja id="Kielce" cena="3903,90"/>
+            <pozycja id="Kraków" cena="8369,00"/>
+            <pozycja id="Lublin" cena="3986,00"/>
+            <pozycja id="Łódź" cena="4130,00"/>
+            <pozycja id="Olsztyn" cena="5049,13"/>
+            <pozycja id="Opole" cena="3349,43"/>
+            <pozycja id="Poznań" cena="6104,06"/>
+            <pozycja id="Rzeszów" cena="4187,00"/>
+            <pozycja id="Szczecin" cena="4734,75"/>
+            <pozycja id="Warszawa" cena="9316,00"/>
+            <pozycja id="Wrocław" cena="6746,54"/>
+            <pozycja id="Zielona Góra" cena="2993,46"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="3500,00"/>
+            <pozycja id="Bydgoszcz" cena="3017,00"/>
+            <pozycja id="Gdańsk" cena="5490,00"/>
+            <pozycja id="Gdynia" cena="5797,00"/>
+            <pozycja id="Katowice" cena="3805,67"/>
+            <pozycja id="Kielce" cena="3241,42"/>
+            <pozycja id="Kraków" cena="7192,00"/>
+            <pozycja id="Lublin" cena="3309,00"/>
+            <pozycja id="Łódź" cena="4209,00"/>
+            <pozycja id="Olsztyn" cena="2960,00"/>
+            <pozycja id="Opole" cena="3325,39"/>
+            <pozycja id="Poznań" cena="6444,72"/>
+            <pozycja id="Rzeszów" cena="3469,00"/>
+            <pozycja id="Szczecin" cena="3831,40"/>
+            <pozycja id="Warszawa" cena="7302,00"/>
+            <pozycja id="Wrocław" cena="7062,86"/>
+            <pozycja id="Zielona Góra" cena="2499,81"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="3590,00"/>
+            <pozycja id="Bydgoszcz" cena="2836,00"/>
+            <pozycja id="Gdańsk" cena="4787,00"/>
+            <pozycja id="Gdynia" cena="4966,00"/>
+            <pozycja id="Katowice" cena="2542,27"/>
+            <pozycja id="Kielce" cena="3021,52"/>
+            <pozycja id="Kraków" cena="6267,00"/>
+            <pozycja id="Lublin" cena="3373,00"/>
+            <pozycja id="Łódź" cena="3360,00"/>
+            <pozycja id="Olsztyn" cena="4081,97"/>
+            <pozycja id="Opole" cena="3294,77"/>
+            <pozycja id="Poznań" cena="4522,56"/>
+            <pozycja id="Rzeszów" cena="3916,00"/>
+            <pozycja id="Szczecin" cena="3754,53"/>
+            <pozycja id="Warszawa" cena="7730,00"/>
+            <pozycja id="Wrocław" cena="5732,06"/>
+            <pozycja id="Zielona Góra" cena="2264,24"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="II 2007">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4725,00"/>
+            <pozycja id="Bydgoszcz" cena="5700,00"/>
+            <pozycja id="Gdańsk" cena="7999,00"/>
+            <pozycja id="Gdynia" cena="8934,00"/>
+            <pozycja id="Katowice" cena="5180,56"/>
+            <pozycja id="Kielce" cena="3901,58"/>
+            <pozycja id="Kraków" cena="8129,00"/>
+            <pozycja id="Lublin" cena="4143,00"/>
+            <pozycja id="Łódź" cena="5453,00"/>
+            <pozycja id="Olsztyn" cena="4776,00"/>
+            <pozycja id="Opole" cena="4424,12"/>
+            <pozycja id="Poznań" cena="7360,02"/>
+            <pozycja id="Rzeszów" cena="4080,00"/>
+            <pozycja id="Szczecin" cena="5049,97"/>
+            <pozycja id="Warszawa" cena="8000,00"/>
+            <pozycja id="Wrocław" cena="6294,00"/>
+            <pozycja id="Zielona Góra" cena="4153,49"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4418,00"/>
+            <pozycja id="Bydgoszcz" cena="3932,00"/>
+            <pozycja id="Gdańsk" cena="6602,00"/>
+            <pozycja id="Gdynia" cena="6747,00"/>
+            <pozycja id="Katowice" cena="4152,12"/>
+            <pozycja id="Kielce" cena="4120,78"/>
+            <pozycja id="Kraków" cena="8272,00"/>
+            <pozycja id="Lublin" cena="4699,00"/>
+            <pozycja id="Łódź" cena="4609,00"/>
+            <pozycja id="Olsztyn" cena="5352,28"/>
+            <pozycja id="Opole" cena="4149,53"/>
+            <pozycja id="Poznań" cena="6698,11"/>
+            <pozycja id="Rzeszów" cena="4647,00"/>
+            <pozycja id="Szczecin" cena="4958,81"/>
+            <pozycja id="Warszawa" cena="9740,00"/>
+            <pozycja id="Wrocław" cena="7038,09"/>
+            <pozycja id="Zielona Góra" cena="3199,25"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4422,00"/>
+            <pozycja id="Bydgoszcz" cena="4092,00"/>
+            <pozycja id="Gdańsk" cena="7137,00"/>
+            <pozycja id="Gdynia" cena="6992,00"/>
+            <pozycja id="Katowice" cena="5093,57"/>
+            <pozycja id="Kielce" cena="3017,73"/>
+            <pozycja id="Kraków" cena="7856,00"/>
+            <pozycja id="Lublin" cena="3503,00"/>
+            <pozycja id="Łódź" cena="5403,00"/>
+            <pozycja id="Olsztyn" cena="3318,00"/>
+            <pozycja id="Opole" cena="3307,35"/>
+            <pozycja id="Poznań" cena="7242,73"/>
+            <pozycja id="Rzeszów" cena="3517,00"/>
+            <pozycja id="Szczecin" cena="4932,75"/>
+            <pozycja id="Warszawa" cena="7523,00"/>
+            <pozycja id="Wrocław" cena="5289,00"/>
+            <pozycja id="Zielona Góra" cena="3258,09"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4009,00"/>
+            <pozycja id="Bydgoszcz" cena="3424,00"/>
+            <pozycja id="Gdańsk" cena="5806,00"/>
+            <pozycja id="Gdynia" cena="5817,00"/>
+            <pozycja id="Katowice" cena="3013,02"/>
+            <pozycja id="Kielce" cena="3660,77"/>
+            <pozycja id="Kraków" cena="7309,00"/>
+            <pozycja id="Lublin" cena="3870,00"/>
+            <pozycja id="Łódź" cena="3749,00"/>
+            <pozycja id="Olsztyn" cena="4687,42"/>
+            <pozycja id="Opole" cena="3771,10"/>
+            <pozycja id="Poznań" cena="5537,79"/>
+            <pozycja id="Rzeszów" cena="3918,00"/>
+            <pozycja id="Szczecin" cena="4083,30"/>
+            <pozycja id="Warszawa" cena="8696,00"/>
+            <pozycja id="Wrocław" cena="6217,14"/>
+            <pozycja id="Zielona Góra" cena="3125,79"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="III 2007">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4199,00"/>
+            <pozycja id="Bydgoszcz" cena="4994,00"/>
+            <pozycja id="Gdańsk" cena="8053,00"/>
+            <pozycja id="Gdynia" cena="8114,00"/>
+            <pozycja id="Katowice" cena="6235,53"/>
+            <pozycja id="Kielce" cena="4651,06"/>
+            <pozycja id="Kraków" cena="8420,00"/>
+            <pozycja id="Lublin" cena="4645,00"/>
+            <pozycja id="Łódź" cena="5201,00"/>
+            <pozycja id="Olsztyn" cena="4900,00"/>
+            <pozycja id="Opole" cena="4784,14"/>
+            <pozycja id="Poznań" cena="6837,76"/>
+            <pozycja id="Rzeszów" cena="4069,00"/>
+            <pozycja id="Szczecin" cena="5034,72"/>
+            <pozycja id="Warszawa" cena="8740,00"/>
+            <pozycja id="Wrocław" cena="6444,29"/>
+            <pozycja id="Zielona Góra" cena="4207,57"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4580,00"/>
+            <pozycja id="Bydgoszcz" cena="4150,00"/>
+            <pozycja id="Gdańsk" cena="6740,00"/>
+            <pozycja id="Gdynia" cena="7188,00"/>
+            <pozycja id="Katowice" cena="4150,53"/>
+            <pozycja id="Kielce" cena="4230,50"/>
+            <pozycja id="Kraków" cena="8255,00"/>
+            <pozycja id="Lublin" cena="4815,00"/>
+            <pozycja id="Łódź" cena="4721,00"/>
+            <pozycja id="Olsztyn" cena="5394,15"/>
+            <pozycja id="Opole" cena="4135,53"/>
+            <pozycja id="Poznań" cena="6386,66"/>
+            <pozycja id="Rzeszów" cena="4814,00"/>
+            <pozycja id="Szczecin" cena="5093,84"/>
+            <pozycja id="Warszawa" cena="10078,00"/>
+            <pozycja id="Wrocław" cena="7193,98"/>
+            <pozycja id="Zielona Góra" cena="3565,48"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4651,00"/>
+            <pozycja id="Bydgoszcz" cena="4466,00"/>
+            <pozycja id="Gdańsk" cena="7440,00"/>
+            <pozycja id="Gdynia" cena="7238,00"/>
+            <pozycja id="Katowice" cena="5697,62"/>
+            <pozycja id="Kielce" cena="4765,98"/>
+            <pozycja id="Kraków" cena="8060,00"/>
+            <pozycja id="Lublin" cena="4125,00"/>
+            <pozycja id="Łódź" cena="5212,00"/>
+            <pozycja id="Olsztyn" cena="3588,00"/>
+            <pozycja id="Opole" cena="4253,28"/>
+            <pozycja id="Poznań" cena="5425,82"/>
+            <pozycja id="Rzeszów" cena="4124,00"/>
+            <pozycja id="Szczecin" cena="5121,05"/>
+            <pozycja id="Warszawa" cena="7879,00"/>
+            <pozycja id="Wrocław" cena="5835,81"/>
+            <pozycja id="Zielona Góra" cena="4015,41"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4635,00"/>
+            <pozycja id="Bydgoszcz" cena="3913,00"/>
+            <pozycja id="Gdańsk" cena="6059,00"/>
+            <pozycja id="Gdynia" cena="6483,00"/>
+            <pozycja id="Katowice" cena="3870,00"/>
+            <pozycja id="Kielce" cena="3669,71"/>
+            <pozycja id="Kraków" cena="7193,00"/>
+            <pozycja id="Lublin" cena="4265,00"/>
+            <pozycja id="Łódź" cena="3981,00"/>
+            <pozycja id="Olsztyn" cena="4715,71"/>
+            <pozycja id="Opole" cena="3957,76"/>
+            <pozycja id="Poznań" cena="5804,55"/>
+            <pozycja id="Rzeszów" cena="4073,00"/>
+            <pozycja id="Szczecin" cena="4321,12"/>
+            <pozycja id="Warszawa" cena="9137,00"/>
+            <pozycja id="Wrocław" cena="6861,63"/>
+            <pozycja id="Zielona Góra" cena="3483,10"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="IV 2007">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4995,00"/>
+            <pozycja id="Bydgoszcz" cena="4829,00"/>
+            <pozycja id="Gdańsk" cena="7402,00"/>
+            <pozycja id="Gdynia" cena="7887,00"/>
+            <pozycja id="Katowice" cena="6457,54"/>
+            <pozycja id="Kielce" cena="4475,16"/>
+            <pozycja id="Kraków" cena="8355,00"/>
+            <pozycja id="Lublin" cena="5047,00"/>
+            <pozycja id="Łódź" cena="5062,00"/>
+            <pozycja id="Olsztyn" cena="4900,00"/>
+            <pozycja id="Opole" cena="4937,43"/>
+            <pozycja id="Poznań" cena="7563,71"/>
+            <pozycja id="Rzeszów" cena="4357,00"/>
+            <pozycja id="Szczecin" cena="5731,14"/>
+            <pozycja id="Warszawa" cena="9561,00"/>
+            <pozycja id="Wrocław" cena="5495,14"/>
+            <pozycja id="Zielona Góra" cena="3965,48"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4637,00"/>
+            <pozycja id="Bydgoszcz" cena="3956,00"/>
+            <pozycja id="Gdańsk" cena="6824,00"/>
+            <pozycja id="Gdynia" cena="6917,00"/>
+            <pozycja id="Katowice" cena="4473,12"/>
+            <pozycja id="Kielce" cena="4299,54"/>
+            <pozycja id="Kraków" cena="8140,00"/>
+            <pozycja id="Lublin" cena="4962,00"/>
+            <pozycja id="Łódź" cena="4686,00"/>
+            <pozycja id="Olsztyn" cena="5169,65"/>
+            <pozycja id="Opole" cena="4362,62"/>
+            <pozycja id="Poznań" cena="6471,78"/>
+            <pozycja id="Rzeszów" cena="4849,00"/>
+            <pozycja id="Szczecin" cena="5297,29"/>
+            <pozycja id="Warszawa" cena="9952,00"/>
+            <pozycja id="Wrocław" cena="7265,66"/>
+            <pozycja id="Zielona Góra" cena="3441,15"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="5079,00"/>
+            <pozycja id="Bydgoszcz" cena="4582,00"/>
+            <pozycja id="Gdańsk" cena="6294,00"/>
+            <pozycja id="Gdynia" cena="7495,00"/>
+            <pozycja id="Katowice" cena="5717,63"/>
+            <pozycja id="Kielce" cena="4629,10"/>
+            <pozycja id="Kraków" cena="7985,00"/>
+            <pozycja id="Lublin" cena="4597,00"/>
+            <pozycja id="Łódź" cena="5076,00"/>
+            <pozycja id="Olsztyn" cena="3806,00"/>
+            <pozycja id="Opole" cena="4441,74"/>
+            <pozycja id="Poznań" cena="6865,07"/>
+            <pozycja id="Rzeszów" cena="4365,00"/>
+            <pozycja id="Szczecin" cena="4697,02"/>
+            <pozycja id="Warszawa" cena="8571,00"/>
+            <pozycja id="Wrocław" cena="5625,00"/>
+            <pozycja id="Zielona Góra" cena="3822,87"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4637,00"/>
+            <pozycja id="Bydgoszcz" cena="3758,00"/>
+            <pozycja id="Gdańsk" cena="6267,00"/>
+            <pozycja id="Gdynia" cena="6069,00"/>
+            <pozycja id="Katowice" cena="3611,95"/>
+            <pozycja id="Kielce" cena="3876,18"/>
+            <pozycja id="Kraków" cena="6715,00"/>
+            <pozycja id="Lublin" cena="4713,00"/>
+            <pozycja id="Łódź" cena="4039,00"/>
+            <pozycja id="Olsztyn" cena="4938,17"/>
+            <pozycja id="Opole" cena="3967,27"/>
+            <pozycja id="Poznań" cena="5947,93"/>
+            <pozycja id="Rzeszów" cena="4424,00"/>
+            <pozycja id="Szczecin" cena="4647,45"/>
+            <pozycja id="Warszawa" cena="9034,00"/>
+            <pozycja id="Wrocław" cena="5965,09"/>
+            <pozycja id="Zielona Góra" cena="3269,63"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="I 2008">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="5128,00"/>
+            <pozycja id="Bydgoszcz" cena="4893,00"/>
+            <pozycja id="Gdańsk" cena="7210,00"/>
+            <pozycja id="Gdynia" cena="7737,00"/>
+            <pozycja id="Katowice" cena="6257,59"/>
+            <pozycja id="Kielce" cena="4528,61"/>
+            <pozycja id="Kraków" cena="8084,00"/>
+            <pozycja id="Lublin" cena="5011,00"/>
+            <pozycja id="Łódź" cena="5048,00"/>
+            <pozycja id="Olsztyn" cena="4800,00"/>
+            <pozycja id="Opole" cena="4919,78"/>
+            <pozycja id="Poznań" cena="7479,83"/>
+            <pozycja id="Rzeszów" cena="4188,00"/>
+            <pozycja id="Szczecin" cena="5722,91"/>
+            <pozycja id="Warszawa" cena="9427,00"/>
+            <pozycja id="Wrocław" cena="5728,24"/>
+            <pozycja id="Zielona Góra" cena="3965,33"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4738,00"/>
+            <pozycja id="Bydgoszcz" cena="3685,00"/>
+            <pozycja id="Gdańsk" cena="6795,00"/>
+            <pozycja id="Gdynia" cena="6984,00"/>
+            <pozycja id="Katowice" cena="4739,42"/>
+            <pozycja id="Kielce" cena="4528,46"/>
+            <pozycja id="Kraków" cena="7979,00"/>
+            <pozycja id="Lublin" cena="5141,00"/>
+            <pozycja id="Łódź" cena="4737,00"/>
+            <pozycja id="Olsztyn" cena="5199,61"/>
+            <pozycja id="Opole" cena="4235,14"/>
+            <pozycja id="Poznań" cena="6235,31"/>
+            <pozycja id="Rzeszów" cena="4901,00"/>
+            <pozycja id="Szczecin" cena="5124,49"/>
+            <pozycja id="Warszawa" cena="9850,00"/>
+            <pozycja id="Wrocław" cena="7138,06"/>
+            <pozycja id="Zielona Góra" cena="3416,91"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="5160,00"/>
+            <pozycja id="Bydgoszcz" cena="4540,00"/>
+            <pozycja id="Gdańsk" cena="6473,00"/>
+            <pozycja id="Gdynia" cena="7301,00"/>
+            <pozycja id="Katowice" cena="5791,06"/>
+            <pozycja id="Kielce" cena="4407,71"/>
+            <pozycja id="Kraków" cena="8000,00"/>
+            <pozycja id="Lublin" cena="4861,00"/>
+            <pozycja id="Łódź" cena="5103,00"/>
+            <pozycja id="Olsztyn" cena="4389,00"/>
+            <pozycja id="Opole" cena="4252,54"/>
+            <pozycja id="Poznań" cena="7597,51"/>
+            <pozycja id="Rzeszów" cena="4163,00"/>
+            <pozycja id="Szczecin" cena="5361,71"/>
+            <pozycja id="Warszawa" cena="8535,00"/>
+            <pozycja id="Wrocław" cena="5268,00"/>
+            <pozycja id="Zielona Góra" cena="4108,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4168,00"/>
+            <pozycja id="Bydgoszcz" cena="3801,00"/>
+            <pozycja id="Gdańsk" cena="6074,00"/>
+            <pozycja id="Gdynia" cena="6321,00"/>
+            <pozycja id="Katowice" cena="3685,13"/>
+            <pozycja id="Kielce" cena="4078,46"/>
+            <pozycja id="Kraków" cena="6777,00"/>
+            <pozycja id="Lublin" cena="4718,00"/>
+            <pozycja id="Łódź" cena="4160,00"/>
+            <pozycja id="Olsztyn" cena="4854,35"/>
+            <pozycja id="Opole" cena="3711,78"/>
+            <pozycja id="Poznań" cena="6356,71"/>
+            <pozycja id="Rzeszów" cena="4169,00"/>
+            <pozycja id="Szczecin" cena="4438,17"/>
+            <pozycja id="Warszawa" cena="8921,00"/>
+            <pozycja id="Wrocław" cena="5757,73"/>
+            <pozycja id="Zielona Góra" cena="3491,89"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="II 2008">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="5651,00"/>
+            <pozycja id="Bydgoszcz" cena="5035,00"/>
+            <pozycja id="Gdańsk" cena="8509,00"/>
+            <pozycja id="Gdynia" cena="7897,00"/>
+            <pozycja id="Katowice" cena="6599,00"/>
+            <pozycja id="Kielce" cena="5281,05"/>
+            <pozycja id="Kraków" cena="8034,00"/>
+            <pozycja id="Lublin" cena="5174,00"/>
+            <pozycja id="Łódź" cena="4962,00"/>
+            <pozycja id="Olsztyn" cena="4800,00"/>
+            <pozycja id="Opole" cena="4930,92"/>
+            <pozycja id="Poznań" cena="7338,03"/>
+            <pozycja id="Rzeszów" cena="4215,00"/>
+            <pozycja id="Szczecin" cena="5663,60"/>
+            <pozycja id="Warszawa" cena="9300,00"/>
+            <pozycja id="Wrocław" cena="6299,31"/>
+            <pozycja id="Zielona Góra" cena="3985,64"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4853,00"/>
+            <pozycja id="Bydgoszcz" cena="4202,00"/>
+            <pozycja id="Gdańsk" cena="6704,00"/>
+            <pozycja id="Gdynia" cena="6854,00"/>
+            <pozycja id="Katowice" cena="4638,18"/>
+            <pozycja id="Kielce" cena="4478,01"/>
+            <pozycja id="Kraków" cena="7934,00"/>
+            <pozycja id="Lublin" cena="5071,00"/>
+            <pozycja id="Łódź" cena="4668,00"/>
+            <pozycja id="Olsztyn" cena="5014,25"/>
+            <pozycja id="Opole" cena="4068,43"/>
+            <pozycja id="Poznań" cena="6096,79"/>
+            <pozycja id="Rzeszów" cena="4824,00"/>
+            <pozycja id="Szczecin" cena="5179,89"/>
+            <pozycja id="Warszawa" cena="9783,00"/>
+            <pozycja id="Wrocław" cena="7158,82"/>
+            <pozycja id="Zielona Góra" cena="3489,98"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4973,00"/>
+            <pozycja id="Bydgoszcz" cena="4982,00"/>
+            <pozycja id="Gdańsk" cena="7740,00"/>
+            <pozycja id="Gdynia" cena="7209,00"/>
+            <pozycja id="Katowice" cena="5113,46"/>
+            <pozycja id="Kielce" cena="4879,70"/>
+            <pozycja id="Kraków" cena="8027,00"/>
+            <pozycja id="Lublin" cena="4531,00"/>
+            <pozycja id="Łódź" cena="5041,00"/>
+            <pozycja id="Olsztyn" cena="4324,00"/>
+            <pozycja id="Opole" cena="3916,84"/>
+            <pozycja id="Poznań" cena="7070,44"/>
+            <pozycja id="Rzeszów" cena="4177,00"/>
+            <pozycja id="Szczecin" cena="5448,25"/>
+            <pozycja id="Warszawa" cena="8611,00"/>
+            <pozycja id="Wrocław" cena="5349,00"/>
+            <pozycja id="Zielona Góra" cena="3842,16"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4404,00"/>
+            <pozycja id="Bydgoszcz" cena="3984,00"/>
+            <pozycja id="Gdańsk" cena="6087,00"/>
+            <pozycja id="Gdynia" cena="6119,00"/>
+            <pozycja id="Katowice" cena="3967,51"/>
+            <pozycja id="Kielce" cena="4126,73"/>
+            <pozycja id="Kraków" cena="6629,00"/>
+            <pozycja id="Lublin" cena="4890,00"/>
+            <pozycja id="Łódź" cena="3961,00"/>
+            <pozycja id="Olsztyn" cena="4725,51"/>
+            <pozycja id="Opole" cena="3729,41"/>
+            <pozycja id="Poznań" cena="5857,66"/>
+            <pozycja id="Rzeszów" cena="4187,00"/>
+            <pozycja id="Szczecin" cena="4698,73"/>
+            <pozycja id="Warszawa" cena="8546,00"/>
+            <pozycja id="Wrocław" cena="5890,83"/>
+            <pozycja id="Zielona Góra" cena="3354,49"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="III 2008">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="5115,00"/>
+            <pozycja id="Bydgoszcz" cena="4959,00"/>
+            <pozycja id="Gdańsk" cena="8454,00"/>
+            <pozycja id="Gdynia" cena="7169,00"/>
+            <pozycja id="Katowice" cena="6303,43"/>
+            <pozycja id="Kielce" cena="5395,88"/>
+            <pozycja id="Kraków" cena="8012,00"/>
+            <pozycja id="Lublin" cena="5170,00"/>
+            <pozycja id="Łódź" cena="5480,00"/>
+            <pozycja id="Olsztyn" cena="4924,00"/>
+            <pozycja id="Opole" cena="4943,05"/>
+            <pozycja id="Poznań" cena="7320,22"/>
+            <pozycja id="Rzeszów" cena="4433,00"/>
+            <pozycja id="Szczecin" cena="5520,67"/>
+            <pozycja id="Warszawa" cena="9235,00"/>
+            <pozycja id="Wrocław" cena="5704,48"/>
+            <pozycja id="Zielona Góra" cena="4012,37"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4777,00"/>
+            <pozycja id="Bydgoszcz" cena="4151,00"/>
+            <pozycja id="Gdańsk" cena="6608,00"/>
+            <pozycja id="Gdynia" cena="6960,00"/>
+            <pozycja id="Katowice" cena="4554,93"/>
+            <pozycja id="Kielce" cena="4573,55"/>
+            <pozycja id="Kraków" cena="7180,00"/>
+            <pozycja id="Lublin" cena="5111,00"/>
+            <pozycja id="Łódź" cena="4544,00"/>
+            <pozycja id="Olsztyn" cena="4964,12"/>
+            <pozycja id="Opole" cena="4186,67"/>
+            <pozycja id="Poznań" cena="5979,68"/>
+            <pozycja id="Rzeszów" cena="4790,00"/>
+            <pozycja id="Szczecin" cena="5174,22"/>
+            <pozycja id="Warszawa" cena="9679,00"/>
+            <pozycja id="Wrocław" cena="6921,94"/>
+            <pozycja id="Zielona Góra" cena="3505,57"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="5141,00"/>
+            <pozycja id="Bydgoszcz" cena="4670,00"/>
+            <pozycja id="Gdańsk" cena="7042,00"/>
+            <pozycja id="Gdynia" cena="6694,00"/>
+            <pozycja id="Katowice" cena="5153,52"/>
+            <pozycja id="Kielce" cena="4917,53"/>
+            <pozycja id="Kraków" cena="7814,00"/>
+            <pozycja id="Lublin" cena="5073,00"/>
+            <pozycja id="Łódź" cena="5214,00"/>
+            <pozycja id="Olsztyn" cena="4524,00"/>
+            <pozycja id="Opole" cena="3916,20"/>
+            <pozycja id="Poznań" cena="6854,37"/>
+            <pozycja id="Rzeszów" cena="3947,00"/>
+            <pozycja id="Szczecin" cena="5454,73"/>
+            <pozycja id="Warszawa" cena="8325,00"/>
+            <pozycja id="Wrocław" cena="5891,00"/>
+            <pozycja id="Zielona Góra" cena="3892,24"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4604,00"/>
+            <pozycja id="Bydgoszcz" cena="3957,00"/>
+            <pozycja id="Gdańsk" cena="5952,00"/>
+            <pozycja id="Gdynia" cena="5816,00"/>
+            <pozycja id="Katowice" cena="3622,18"/>
+            <pozycja id="Kielce" cena="4122,16"/>
+            <pozycja id="Kraków" cena="6294,00"/>
+            <pozycja id="Lublin" cena="4885,00"/>
+            <pozycja id="Łódź" cena="3780,00"/>
+            <pozycja id="Olsztyn" cena="4560,15"/>
+            <pozycja id="Opole" cena="3797,02"/>
+            <pozycja id="Poznań" cena="6142,95"/>
+            <pozycja id="Rzeszów" cena="4366,00"/>
+            <pozycja id="Szczecin" cena="4793,68"/>
+            <pozycja id="Warszawa" cena="8528,00"/>
+            <pozycja id="Wrocław" cena="6104,73"/>
+            <pozycja id="Zielona Góra" cena="3179,63"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="IV 2008">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4725,00"/>
+            <pozycja id="Bydgoszcz" cena="4989,00"/>
+            <pozycja id="Gdańsk" cena="6609,00"/>
+            <pozycja id="Gdynia" cena="6342,00"/>
+            <pozycja id="Katowice" cena="6676,96"/>
+            <pozycja id="Kielce" cena="5208,20"/>
+            <pozycja id="Kraków" cena="7751,00"/>
+            <pozycja id="Lublin" cena="5266,00"/>
+            <pozycja id="Łódź" cena="5329,00"/>
+            <pozycja id="Olsztyn" cena="4761,00"/>
+            <pozycja id="Opole" cena="4967,62"/>
+            <pozycja id="Poznań" cena="7277,03"/>
+            <pozycja id="Rzeszów" cena="4069,00"/>
+            <pozycja id="Szczecin" cena="5469,04"/>
+            <pozycja id="Warszawa" cena="9821,00"/>
+            <pozycja id="Wrocław" cena="5027,14"/>
+            <pozycja id="Zielona Góra" cena="3891,69"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4744,00"/>
+            <pozycja id="Bydgoszcz" cena="4240,00"/>
+            <pozycja id="Gdańsk" cena="6793,00"/>
+            <pozycja id="Gdynia" cena="7059,00"/>
+            <pozycja id="Katowice" cena="4360,31"/>
+            <pozycja id="Kielce" cena="4356,19"/>
+            <pozycja id="Kraków" cena="7251,00"/>
+            <pozycja id="Lublin" cena="5091,00"/>
+            <pozycja id="Łódź" cena="4873,00"/>
+            <pozycja id="Olsztyn" cena="4946,72"/>
+            <pozycja id="Opole" cena="4142,94"/>
+            <pozycja id="Poznań" cena="5953,70"/>
+            <pozycja id="Rzeszów" cena="4640,00"/>
+            <pozycja id="Szczecin" cena="5079,09"/>
+            <pozycja id="Warszawa" cena="10196,00"/>
+            <pozycja id="Wrocław" cena="6859,45"/>
+            <pozycja id="Zielona Góra" cena="3487,54"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="5177,00"/>
+            <pozycja id="Bydgoszcz" cena="4749,00"/>
+            <pozycja id="Gdańsk" cena="6193,00"/>
+            <pozycja id="Gdynia" cena="6384,00"/>
+            <pozycja id="Katowice" cena="5772,17"/>
+            <pozycja id="Kielce" cena="4608,75"/>
+            <pozycja id="Kraków" cena="7518,00"/>
+            <pozycja id="Lublin" cena="5217,00"/>
+            <pozycja id="Łódź" cena="5542,00"/>
+            <pozycja id="Olsztyn" cena="4353,00"/>
+            <pozycja id="Opole" cena="3765,31"/>
+            <pozycja id="Poznań" cena="6767,98"/>
+            <pozycja id="Rzeszów" cena="4401,00"/>
+            <pozycja id="Szczecin" cena="5663,19"/>
+            <pozycja id="Warszawa" cena="8149,00"/>
+            <pozycja id="Wrocław" cena="5513,00"/>
+            <pozycja id="Zielona Góra" cena="3770,75"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4601,00"/>
+            <pozycja id="Bydgoszcz" cena="3917,00"/>
+            <pozycja id="Gdańsk" cena="6048,00"/>
+            <pozycja id="Gdynia" cena="6208,00"/>
+            <pozycja id="Katowice" cena="3952,20"/>
+            <pozycja id="Kielce" cena="3996,21"/>
+            <pozycja id="Kraków" cena="6530,00"/>
+            <pozycja id="Lublin" cena="4859,00"/>
+            <pozycja id="Łódź" cena="4020,00"/>
+            <pozycja id="Olsztyn" cena="4570,16"/>
+            <pozycja id="Opole" cena="3700,45"/>
+            <pozycja id="Poznań" cena="5430,20"/>
+            <pozycja id="Rzeszów" cena="4217,00"/>
+            <pozycja id="Szczecin" cena="4650,67"/>
+            <pozycja id="Warszawa" cena="9046,00"/>
+            <pozycja id="Wrocław" cena="5867,29"/>
+            <pozycja id="Zielona Góra" cena="3143,17"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="I 2009">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="5510,00"/>
+            <pozycja id="Bydgoszcz" cena="4940,00"/>
+            <pozycja id="Gdańsk" cena="6800,00"/>
+            <pozycja id="Gdynia" cena="6290,00"/>
+            <pozycja id="Katowice" cena="6482,04"/>
+            <pozycja id="Kielce" cena="5110,59"/>
+            <pozycja id="Kraków" cena="7675,00"/>
+            <pozycja id="Lublin" cena="5177,00"/>
+            <pozycja id="Łódź" cena="5308,00"/>
+            <pozycja id="Olsztyn" cena="4650,00"/>
+            <pozycja id="Opole" cena="4993,30"/>
+            <pozycja id="Poznań" cena="7200,44"/>
+            <pozycja id="Rzeszów" cena="3966,00"/>
+            <pozycja id="Szczecin" cena="5310,29"/>
+            <pozycja id="Warszawa" cena="9880,00"/>
+            <pozycja id="Wrocław" cena="5014,00"/>
+            <pozycja id="Zielona Góra" cena="3574,89"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4613,00"/>
+            <pozycja id="Bydgoszcz" cena="4095,00"/>
+            <pozycja id="Gdańsk" cena="6648,00"/>
+            <pozycja id="Gdynia" cena="7104,00"/>
+            <pozycja id="Katowice" cena="4340,42"/>
+            <pozycja id="Kielce" cena="4467,06"/>
+            <pozycja id="Kraków" cena="6864,00"/>
+            <pozycja id="Lublin" cena="5062,00"/>
+            <pozycja id="Łódź" cena="4730,00"/>
+            <pozycja id="Olsztyn" cena="4730,22"/>
+            <pozycja id="Opole" cena="4234,59"/>
+            <pozycja id="Poznań" cena="5978,52"/>
+            <pozycja id="Rzeszów" cena="4683,00"/>
+            <pozycja id="Szczecin" cena="4965,16"/>
+            <pozycja id="Warszawa" cena="9626,00"/>
+            <pozycja id="Wrocław" cena="6784,57"/>
+            <pozycja id="Zielona Góra" cena="3430,32"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="5005,00"/>
+            <pozycja id="Bydgoszcz" cena="5023,00"/>
+            <pozycja id="Gdańsk" cena="5309,00"/>
+            <pozycja id="Gdynia" cena="6241,00"/>
+            <pozycja id="Katowice" cena="4994,94"/>
+            <pozycja id="Kielce" cena="4821,62"/>
+            <pozycja id="Kraków" cena="7373,00"/>
+            <pozycja id="Lublin" cena="4746,00"/>
+            <pozycja id="Łódź" cena="4746,00"/>
+            <pozycja id="Olsztyn" cena="4419,00"/>
+            <pozycja id="Opole" cena="3776,49"/>
+            <pozycja id="Poznań" cena="6364,83"/>
+            <pozycja id="Rzeszów" cena="3965,00"/>
+            <pozycja id="Szczecin" cena="5174,41"/>
+            <pozycja id="Warszawa" cena="7543,00"/>
+            <pozycja id="Wrocław" cena="5218,00"/>
+            <pozycja id="Zielona Góra" cena="3646,17"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4432,00"/>
+            <pozycja id="Bydgoszcz" cena="3876,00"/>
+            <pozycja id="Gdańsk" cena="6166,00"/>
+            <pozycja id="Gdynia" cena="6063,00"/>
+            <pozycja id="Katowice" cena="3776,62"/>
+            <pozycja id="Kielce" cena="3970,22"/>
+            <pozycja id="Kraków" cena="6110,00"/>
+            <pozycja id="Lublin" cena="4805,00"/>
+            <pozycja id="Łódź" cena="3874,00"/>
+            <pozycja id="Olsztyn" cena="4454,67"/>
+            <pozycja id="Opole" cena="3772,27"/>
+            <pozycja id="Poznań" cena="5226,13"/>
+            <pozycja id="Rzeszów" cena="4071,00"/>
+            <pozycja id="Szczecin" cena="4615,54"/>
+            <pozycja id="Warszawa" cena="8406,00"/>
+            <pozycja id="Wrocław" cena="5752,78"/>
+            <pozycja id="Zielona Góra" cena="3114,18"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="II 2009">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4738,00"/>
+            <pozycja id="Bydgoszcz" cena="4897,00"/>
+            <pozycja id="Gdańsk" cena="6875,00"/>
+            <pozycja id="Gdynia" cena="6084,00"/>
+            <pozycja id="Katowice" cena="6614,53"/>
+            <pozycja id="Kielce" cena="5098,61"/>
+            <pozycja id="Kraków" cena="7622,00"/>
+            <pozycja id="Lublin" cena="5079,00"/>
+            <pozycja id="Łódź" cena="4960,00"/>
+            <pozycja id="Olsztyn" cena="4600,00"/>
+            <pozycja id="Opole" cena="5015,08"/>
+            <pozycja id="Poznań" cena="7232,72"/>
+            <pozycja id="Rzeszów" cena="3787,00"/>
+            <pozycja id="Szczecin" cena="5323,81"/>
+            <pozycja id="Warszawa" cena="9859,00"/>
+            <pozycja id="Wrocław" cena="5093,00"/>
+            <pozycja id="Zielona Góra" cena="3538,33"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4614,00"/>
+            <pozycja id="Bydgoszcz" cena="4017,00"/>
+            <pozycja id="Gdańsk" cena="6644,00"/>
+            <pozycja id="Gdynia" cena="6949,00"/>
+            <pozycja id="Katowice" cena="4288,48"/>
+            <pozycja id="Kielce" cena="4286,91"/>
+            <pozycja id="Kraków" cena="6678,00"/>
+            <pozycja id="Lublin" cena="5017,00"/>
+            <pozycja id="Łódź" cena="4431,00"/>
+            <pozycja id="Olsztyn" cena="4710,13"/>
+            <pozycja id="Opole" cena="4282,80"/>
+            <pozycja id="Poznań" cena="6216,01"/>
+            <pozycja id="Rzeszów" cena="4684,00"/>
+            <pozycja id="Szczecin" cena="4860,20"/>
+            <pozycja id="Warszawa" cena="10133,00"/>
+            <pozycja id="Wrocław" cena="6748,86"/>
+            <pozycja id="Zielona Góra" cena="3364,64"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4976,00"/>
+            <pozycja id="Bydgoszcz" cena="4835,00"/>
+            <pozycja id="Gdańsk" cena="5907,00"/>
+            <pozycja id="Gdynia" cena="5891,00"/>
+            <pozycja id="Katowice" cena="5410,83"/>
+            <pozycja id="Kielce" cena="4715,52"/>
+            <pozycja id="Kraków" cena="7169,00"/>
+            <pozycja id="Lublin" cena="4693,00"/>
+            <pozycja id="Łódź" cena="5101,00"/>
+            <pozycja id="Olsztyn" cena="4485,00"/>
+            <pozycja id="Opole" cena="3471,46"/>
+            <pozycja id="Poznań" cena="6283,93"/>
+            <pozycja id="Rzeszów" cena="3849,00"/>
+            <pozycja id="Szczecin" cena="4958,18"/>
+            <pozycja id="Warszawa" cena="7461,00"/>
+            <pozycja id="Wrocław" cena="5095,00"/>
+            <pozycja id="Zielona Góra" cena="3366,42"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4301,00"/>
+            <pozycja id="Bydgoszcz" cena="3541,00"/>
+            <pozycja id="Gdańsk" cena="5651,00"/>
+            <pozycja id="Gdynia" cena="5554,00"/>
+            <pozycja id="Katowice" cena="3563,41"/>
+            <pozycja id="Kielce" cena="3982,21"/>
+            <pozycja id="Kraków" cena="6065,00"/>
+            <pozycja id="Lublin" cena="4650,00"/>
+            <pozycja id="Łódź" cena="3870,00"/>
+            <pozycja id="Olsztyn" cena="4424,45"/>
+            <pozycja id="Opole" cena="3814,50"/>
+            <pozycja id="Poznań" cena="5613,34"/>
+            <pozycja id="Rzeszów" cena="4058,00"/>
+            <pozycja id="Szczecin" cena="4426,19"/>
+            <pozycja id="Warszawa" cena="8406,00"/>
+            <pozycja id="Wrocław" cena="5615,34"/>
+            <pozycja id="Zielona Góra" cena="2972,31"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="III 2009">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4925,00"/>
+            <pozycja id="Bydgoszcz" cena="4920,00"/>
+            <pozycja id="Gdańsk" cena="6096,00"/>
+            <pozycja id="Gdynia" cena="6294,00"/>
+            <pozycja id="Katowice" cena="5990,00"/>
+            <pozycja id="Kielce" cena="5121,86"/>
+            <pozycja id="Kraków" cena="7631,00"/>
+            <pozycja id="Lublin" cena="5329,00"/>
+            <pozycja id="Łódź" cena="5255,00"/>
+            <pozycja id="Olsztyn" cena="4496,00"/>
+            <pozycja id="Opole" cena="5082,90"/>
+            <pozycja id="Poznań" cena="7029,87"/>
+            <pozycja id="Rzeszów" cena="3742,00"/>
+            <pozycja id="Szczecin" cena="5181,48"/>
+            <pozycja id="Warszawa" cena="9992,96"/>
+            <pozycja id="Wrocław" cena="5362,00"/>
+            <pozycja id="Zielona Góra" cena="3571,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4641,00"/>
+            <pozycja id="Bydgoszcz" cena="4244,00"/>
+            <pozycja id="Gdańsk" cena="6449,00"/>
+            <pozycja id="Gdynia" cena="6901,00"/>
+            <pozycja id="Katowice" cena="4370,00"/>
+            <pozycja id="Kielce" cena="4498,77"/>
+            <pozycja id="Kraków" cena="6564,00"/>
+            <pozycja id="Lublin" cena="5010,00"/>
+            <pozycja id="Łódź" cena="4643,00"/>
+            <pozycja id="Olsztyn" cena="4733,41"/>
+            <pozycja id="Opole" cena="4082,64"/>
+            <pozycja id="Poznań" cena="5970,06"/>
+            <pozycja id="Rzeszów" cena="4641,00"/>
+            <pozycja id="Szczecin" cena="4964,27"/>
+            <pozycja id="Warszawa" cena="9705,24"/>
+            <pozycja id="Wrocław" cena="6841,82"/>
+            <pozycja id="Zielona Góra" cena="3347,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4787,00"/>
+            <pozycja id="Bydgoszcz" cena="4757,00"/>
+            <pozycja id="Gdańsk" cena="5804,00"/>
+            <pozycja id="Gdynia" cena="5504,00"/>
+            <pozycja id="Katowice" cena="4524,00"/>
+            <pozycja id="Kielce" cena="4678,35"/>
+            <pozycja id="Kraków" cena="6866,00"/>
+            <pozycja id="Lublin" cena="4437,00"/>
+            <pozycja id="Łódź" cena="4755,00"/>
+            <pozycja id="Olsztyn" cena="4297,00"/>
+            <pozycja id="Opole" cena="3669,26"/>
+            <pozycja id="Poznań" cena="6145,97"/>
+            <pozycja id="Rzeszów" cena="3969,00"/>
+            <pozycja id="Szczecin" cena="5406,04"/>
+            <pozycja id="Warszawa" cena="7585,24"/>
+            <pozycja id="Wrocław" cena="5105,00"/>
+            <pozycja id="Zielona Góra" cena="3500,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4201,00"/>
+            <pozycja id="Bydgoszcz" cena="3885,00"/>
+            <pozycja id="Gdańsk" cena="5570,00"/>
+            <pozycja id="Gdynia" cena="5582,00"/>
+            <pozycja id="Katowice" cena="3541,00"/>
+            <pozycja id="Kielce" cena="3910,77"/>
+            <pozycja id="Kraków" cena="5975,00"/>
+            <pozycja id="Lublin" cena="4589,00"/>
+            <pozycja id="Łódź" cena="3677,00"/>
+            <pozycja id="Olsztyn" cena="4477,59"/>
+            <pozycja id="Opole" cena="3581,67"/>
+            <pozycja id="Poznań" cena="5220,60"/>
+            <pozycja id="Rzeszów" cena="3896,00"/>
+            <pozycja id="Szczecin" cena="4329,81"/>
+            <pozycja id="Warszawa" cena="7948,94"/>
+            <pozycja id="Wrocław" cena="5927,18"/>
+            <pozycja id="Zielona Góra" cena="2941,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="IV 2009">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4830,00"/>
+            <pozycja id="Bydgoszcz" cena="4939,00"/>
+            <pozycja id="Gdańsk" cena="6179,00"/>
+            <pozycja id="Gdynia" cena="6134,00"/>
+            <pozycja id="Katowice" cena="5909,00"/>
+            <pozycja id="Kielce" cena="4978,29"/>
+            <pozycja id="Kraków" cena="7521,00"/>
+            <pozycja id="Lublin" cena="5287,00"/>
+            <pozycja id="Łódź" cena="5250,00"/>
+            <pozycja id="Olsztyn" cena="4913,00"/>
+            <pozycja id="Opole" cena="5223,49"/>
+            <pozycja id="Poznań" cena="6725,23"/>
+            <pozycja id="Rzeszów" cena="4021,00"/>
+            <pozycja id="Szczecin" cena="4987,35"/>
+            <pozycja id="Warszawa" cena="9915,28"/>
+            <pozycja id="Wrocław" cena="5640,00"/>
+            <pozycja id="Zielona Góra" cena="3530,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4620,00"/>
+            <pozycja id="Bydgoszcz" cena="4203,00"/>
+            <pozycja id="Gdańsk" cena="6350,00"/>
+            <pozycja id="Gdynia" cena="6991,00"/>
+            <pozycja id="Katowice" cena="4181,00"/>
+            <pozycja id="Kielce" cena="4433,91"/>
+            <pozycja id="Kraków" cena="6734,00"/>
+            <pozycja id="Lublin" cena="4977,00"/>
+            <pozycja id="Łódź" cena="4400,00"/>
+            <pozycja id="Olsztyn" cena="4719,66"/>
+            <pozycja id="Opole" cena="4154,50"/>
+            <pozycja id="Poznań" cena="5924,45"/>
+            <pozycja id="Rzeszów" cena="4681,00"/>
+            <pozycja id="Szczecin" cena="4834,07"/>
+            <pozycja id="Warszawa" cena="9671,30"/>
+            <pozycja id="Wrocław" cena="6757,76"/>
+            <pozycja id="Zielona Góra" cena="3331,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4838,00"/>
+            <pozycja id="Bydgoszcz" cena="4694,00"/>
+            <pozycja id="Gdańsk" cena="5476,00"/>
+            <pozycja id="Gdynia" cena="5774,00"/>
+            <pozycja id="Katowice" cena="4866,00"/>
+            <pozycja id="Kielce" cena="4778,48"/>
+            <pozycja id="Kraków" cena="6981,00"/>
+            <pozycja id="Lublin" cena="4830,00"/>
+            <pozycja id="Łódź" cena="5275,00"/>
+            <pozycja id="Olsztyn" cena="4494,00"/>
+            <pozycja id="Opole" cena="3492,07"/>
+            <pozycja id="Poznań" cena="6129,59"/>
+            <pozycja id="Rzeszów" cena="3843,00"/>
+            <pozycja id="Szczecin" cena="5056,84"/>
+            <pozycja id="Warszawa" cena="7679,59"/>
+            <pozycja id="Wrocław" cena="5472,00"/>
+            <pozycja id="Zielona Góra" cena="3459,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4086,00"/>
+            <pozycja id="Bydgoszcz" cena="3964,00"/>
+            <pozycja id="Gdańsk" cena="5653,00"/>
+            <pozycja id="Gdynia" cena="5797,00"/>
+            <pozycja id="Katowice" cena="3303,00"/>
+            <pozycja id="Kielce" cena="4166,58"/>
+            <pozycja id="Kraków" cena="6155,00"/>
+            <pozycja id="Lublin" cena="4926,00"/>
+            <pozycja id="Łódź" cena="3636,00"/>
+            <pozycja id="Olsztyn" cena="4540,64"/>
+            <pozycja id="Opole" cena="3649,14"/>
+            <pozycja id="Poznań" cena="5181,05"/>
+            <pozycja id="Rzeszów" cena="4096,00"/>
+            <pozycja id="Szczecin" cena="4320,38"/>
+            <pozycja id="Warszawa" cena="8496,86"/>
+            <pozycja id="Wrocław" cena="5753,37"/>
+            <pozycja id="Zielona Góra" cena="3085,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="I 2010">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4791,00"/>
+            <pozycja id="Bydgoszcz" cena="5080,00"/>
+            <pozycja id="Gdańsk" cena="6077,71"/>
+            <pozycja id="Gdynia" cena="6128,00"/>
+            <pozycja id="Katowice" cena="6467,00"/>
+            <pozycja id="Kielce" cena="4958,34"/>
+            <pozycja id="Kraków" cena="7595,00"/>
+            <pozycja id="Lublin" cena="5113,00"/>
+            <pozycja id="Łódź" cena="5290,00"/>
+            <pozycja id="Olsztyn" cena="5290,00"/>
+            <pozycja id="Opole" cena="5275,84"/>
+            <pozycja id="Poznań" cena="6685,47"/>
+            <pozycja id="Rzeszów" cena="4159,00"/>
+            <pozycja id="Szczecin" cena="5205,83"/>
+            <pozycja id="Warszawa" cena="9118,69"/>
+            <pozycja id="Wrocław" cena="6020,00"/>
+            <pozycja id="Zielona Góra" cena="3554,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4729,00"/>
+            <pozycja id="Bydgoszcz" cena="4202,00"/>
+            <pozycja id="Gdańsk" cena="6465,00"/>
+            <pozycja id="Gdynia" cena="7032,00"/>
+            <pozycja id="Katowice" cena="4136,00"/>
+            <pozycja id="Kielce" cena="4604,93"/>
+            <pozycja id="Kraków" cena="6916,00"/>
+            <pozycja id="Lublin" cena="5028,00"/>
+            <pozycja id="Łódź" cena="4558,00"/>
+            <pozycja id="Olsztyn" cena="4763,00"/>
+            <pozycja id="Opole" cena="4166,15"/>
+            <pozycja id="Poznań" cena="6073,87"/>
+            <pozycja id="Rzeszów" cena="4611,00"/>
+            <pozycja id="Szczecin" cena="4867,64"/>
+            <pozycja id="Warszawa" cena="9901,01"/>
+            <pozycja id="Wrocław" cena="6725,00"/>
+            <pozycja id="Zielona Góra" cena="3402,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4790,00"/>
+            <pozycja id="Bydgoszcz" cena="4524,00"/>
+            <pozycja id="Gdańsk" cena="5839,45"/>
+            <pozycja id="Gdynia" cena="5495,15"/>
+            <pozycja id="Katowice" cena="5303,00"/>
+            <pozycja id="Kielce" cena="4797,97"/>
+            <pozycja id="Kraków" cena="6985,00"/>
+            <pozycja id="Lublin" cena="4495,00"/>
+            <pozycja id="Łódź" cena="5020,00"/>
+            <pozycja id="Olsztyn" cena="4877,00"/>
+            <pozycja id="Opole" cena="3626,90"/>
+            <pozycja id="Poznań" cena="6436,41"/>
+            <pozycja id="Rzeszów" cena="3837,00"/>
+            <pozycja id="Szczecin" cena="4916,49"/>
+            <pozycja id="Warszawa" cena="8173,22"/>
+            <pozycja id="Wrocław" cena="5628,00"/>
+            <pozycja id="Zielona Góra" cena="3511,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4243,00"/>
+            <pozycja id="Bydgoszcz" cena="3850,00"/>
+            <pozycja id="Gdańsk" cena="6052,38"/>
+            <pozycja id="Gdynia" cena="5981,00"/>
+            <pozycja id="Katowice" cena="3722,00"/>
+            <pozycja id="Kielce" cena="4048,82"/>
+            <pozycja id="Kraków" cena="6182,00"/>
+            <pozycja id="Lublin" cena="4720,00"/>
+            <pozycja id="Łódź" cena="3933,00"/>
+            <pozycja id="Olsztyn" cena="4474,98"/>
+            <pozycja id="Opole" cena="3617,11"/>
+            <pozycja id="Poznań" cena="5397,08"/>
+            <pozycja id="Rzeszów" cena="4134,00"/>
+            <pozycja id="Szczecin" cena="4174,71"/>
+            <pozycja id="Warszawa" cena="8619,71"/>
+            <pozycja id="Wrocław" cena="5871,00"/>
+            <pozycja id="Zielona Góra" cena="2963,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="II 2010">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4640,00"/>
+            <pozycja id="Bydgoszcz" cena="5026,00"/>
+            <pozycja id="Gdańsk" cena="5730,01"/>
+            <pozycja id="Gdynia" cena="5693,00"/>
+            <pozycja id="Katowice" cena="6360,00"/>
+            <pozycja id="Kielce" cena="4947,13"/>
+            <pozycja id="Kraków" cena="7559,00"/>
+            <pozycja id="Lublin" cena="5257,00"/>
+            <pozycja id="Łódź" cena="5366,00"/>
+            <pozycja id="Olsztyn" cena="4840,00"/>
+            <pozycja id="Opole" cena="5355,09"/>
+            <pozycja id="Poznań" cena="6586,99"/>
+            <pozycja id="Rzeszów" cena="4274,00"/>
+            <pozycja id="Szczecin" cena="5003,88"/>
+            <pozycja id="Warszawa" cena="8551,00"/>
+            <pozycja id="Wrocław" cena="6090,00"/>
+            <pozycja id="Zielona Góra" cena="3584,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4709,00"/>
+            <pozycja id="Bydgoszcz" cena="4270,00"/>
+            <pozycja id="Gdańsk" cena="6491,00"/>
+            <pozycja id="Gdynia" cena="6901,00"/>
+            <pozycja id="Katowice" cena="4256,00"/>
+            <pozycja id="Kielce" cena="4505,51"/>
+            <pozycja id="Kraków" cena="6937,00"/>
+            <pozycja id="Lublin" cena="5037,00"/>
+            <pozycja id="Łódź" cena="4407,00"/>
+            <pozycja id="Olsztyn" cena="4709,39"/>
+            <pozycja id="Opole" cena="4193,79"/>
+            <pozycja id="Poznań" cena="6122,49"/>
+            <pozycja id="Rzeszów" cena="4654,00"/>
+            <pozycja id="Szczecin" cena="4843,57"/>
+            <pozycja id="Warszawa" cena="9982,01"/>
+            <pozycja id="Wrocław" cena="6678,00"/>
+            <pozycja id="Zielona Góra" cena="3332,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4802,00"/>
+            <pozycja id="Bydgoszcz" cena="4856,00"/>
+            <pozycja id="Gdańsk" cena="5677,56"/>
+            <pozycja id="Gdynia" cena="5277,71"/>
+            <pozycja id="Katowice" cena="4511,00"/>
+            <pozycja id="Kielce" cena="4829,23"/>
+            <pozycja id="Kraków" cena="6920,00"/>
+            <pozycja id="Lublin" cena="4535,00"/>
+            <pozycja id="Łódź" cena="4846,00"/>
+            <pozycja id="Olsztyn" cena="4602,31"/>
+            <pozycja id="Opole" cena="4125,44"/>
+            <pozycja id="Poznań" cena="6631,57"/>
+            <pozycja id="Rzeszów" cena="4039,00"/>
+            <pozycja id="Szczecin" cena="4751,18"/>
+            <pozycja id="Warszawa" cena="7973,89"/>
+            <pozycja id="Wrocław" cena="5938,00"/>
+            <pozycja id="Zielona Góra" cena="3538,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4369,00"/>
+            <pozycja id="Bydgoszcz" cena="3596,00"/>
+            <pozycja id="Gdańsk" cena="5797,92"/>
+            <pozycja id="Gdynia" cena="5416,00"/>
+            <pozycja id="Katowice" cena="3455,00"/>
+            <pozycja id="Kielce" cena="4229,68"/>
+            <pozycja id="Kraków" cena="6115,00"/>
+            <pozycja id="Lublin" cena="4959,00"/>
+            <pozycja id="Łódź" cena="3845,00"/>
+            <pozycja id="Olsztyn" cena="4520,15"/>
+            <pozycja id="Opole" cena="3919,33"/>
+            <pozycja id="Poznań" cena="5575,33"/>
+            <pozycja id="Rzeszów" cena="4232,00"/>
+            <pozycja id="Szczecin" cena="4303,28"/>
+            <pozycja id="Warszawa" cena="8932,82"/>
+            <pozycja id="Wrocław" cena="6102,00"/>
+            <pozycja id="Zielona Góra" cena="3098,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="III 2010">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4790,00"/>
+            <pozycja id="Bydgoszcz" cena="5036,00"/>
+            <pozycja id="Gdańsk" cena="5456,09"/>
+            <pozycja id="Gdynia" cena="6030,00"/>
+            <pozycja id="Katowice" cena="6420,00"/>
+            <pozycja id="Kielce" cena="4944,53"/>
+            <pozycja id="Kraków" cena="7526,00"/>
+            <pozycja id="Lublin" cena="5002,00"/>
+            <pozycja id="Łódź" cena="5367,00"/>
+            <pozycja id="Olsztyn" cena="5100,00"/>
+            <pozycja id="Opole" cena="5429,24"/>
+            <pozycja id="Poznań" cena="6599,82"/>
+            <pozycja id="Rzeszów" cena="4305,00"/>
+            <pozycja id="Szczecin" cena="4983,14"/>
+            <pozycja id="Warszawa" cena="8294,77"/>
+            <pozycja id="Wrocław" cena="6231,00"/>
+            <pozycja id="Zielona Góra" cena="3628,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4752,00"/>
+            <pozycja id="Bydgoszcz" cena="4233,00"/>
+            <pozycja id="Gdańsk" cena="6286,00"/>
+            <pozycja id="Gdynia" cena="6700,00"/>
+            <pozycja id="Katowice" cena="4323,00"/>
+            <pozycja id="Kielce" cena="4626,17"/>
+            <pozycja id="Kraków" cena="6909,00"/>
+            <pozycja id="Lublin" cena="5063,00"/>
+            <pozycja id="Łódź" cena="4406,00"/>
+            <pozycja id="Olsztyn" cena="4759,09"/>
+            <pozycja id="Opole" cena="4295,47"/>
+            <pozycja id="Poznań" cena="6012,14"/>
+            <pozycja id="Rzeszów" cena="4615,00"/>
+            <pozycja id="Szczecin" cena="4864,11"/>
+            <pozycja id="Warszawa" cena="9787,59"/>
+            <pozycja id="Wrocław" cena="6562,00"/>
+            <pozycja id="Zielona Góra" cena="3388,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4732,00"/>
+            <pozycja id="Bydgoszcz" cena="4954,00"/>
+            <pozycja id="Gdańsk" cena="5272,05"/>
+            <pozycja id="Gdynia" cena="5460,65"/>
+            <pozycja id="Katowice" cena="5071,00"/>
+            <pozycja id="Kielce" cena="4523,10"/>
+            <pozycja id="Kraków" cena="6834,00"/>
+            <pozycja id="Lublin" cena="4821,00"/>
+            <pozycja id="Łódź" cena="4936,00"/>
+            <pozycja id="Olsztyn" cena="5025,00"/>
+            <pozycja id="Opole" cena="4053,83"/>
+            <pozycja id="Poznań" cena="6303,85"/>
+            <pozycja id="Rzeszów" cena="4191,00"/>
+            <pozycja id="Szczecin" cena="4840,47"/>
+            <pozycja id="Warszawa" cena="7940,21"/>
+            <pozycja id="Wrocław" cena="5614,00"/>
+            <pozycja id="Zielona Góra" cena="3563,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4286,00"/>
+            <pozycja id="Bydgoszcz" cena="3866,00"/>
+            <pozycja id="Gdańsk" cena="5579,00"/>
+            <pozycja id="Gdynia" cena="5470,00"/>
+            <pozycja id="Katowice" cena="3632,00"/>
+            <pozycja id="Kielce" cena="4114,16"/>
+            <pozycja id="Kraków" cena="6296,00"/>
+            <pozycja id="Lublin" cena="4930,00"/>
+            <pozycja id="Łódź" cena="3874,00"/>
+            <pozycja id="Olsztyn" cena="4467,15"/>
+            <pozycja id="Opole" cena="3735,34"/>
+            <pozycja id="Poznań" cena="5495,82"/>
+            <pozycja id="Rzeszów" cena="4359,00"/>
+            <pozycja id="Szczecin" cena="4392,16"/>
+            <pozycja id="Warszawa" cena="8492,70"/>
+            <pozycja id="Wrocław" cena="5990,00"/>
+            <pozycja id="Zielona Góra" cena="3009,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="IV 2010">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4778,00"/>
+            <pozycja id="Bydgoszcz" cena="4733,00"/>
+            <pozycja id="Gdańsk" cena="5577,00"/>
+            <pozycja id="Gdynia" cena="6327,00"/>
+            <pozycja id="Katowice" cena="6085,00"/>
+            <pozycja id="Kielce" cena="4951,12"/>
+            <pozycja id="Kraków" cena="7564,00"/>
+            <pozycja id="Lublin" cena="5003,00"/>
+            <pozycja id="Łódź" cena="5215,00"/>
+            <pozycja id="Olsztyn" cena="5135,00"/>
+            <pozycja id="Opole" cena="5497,05"/>
+            <pozycja id="Poznań" cena="6527,89"/>
+            <pozycja id="Rzeszów" cena="4254,00"/>
+            <pozycja id="Szczecin" cena="4959,42"/>
+            <pozycja id="Warszawa" cena="8133,26"/>
+            <pozycja id="Wrocław" cena="6342,00"/>
+            <pozycja id="Zielona Góra" cena="3673,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4809,00"/>
+            <pozycja id="Bydgoszcz" cena="4005,00"/>
+            <pozycja id="Gdańsk" cena="6494,00"/>
+            <pozycja id="Gdynia" cena="6510,00"/>
+            <pozycja id="Katowice" cena="4108,00"/>
+            <pozycja id="Kielce" cena="4706,91"/>
+            <pozycja id="Kraków" cena="6964,00"/>
+            <pozycja id="Lublin" cena="5139,00"/>
+            <pozycja id="Łódź" cena="4457,00"/>
+            <pozycja id="Olsztyn" cena="4726,00"/>
+            <pozycja id="Opole" cena="4137,34"/>
+            <pozycja id="Poznań" cena="6047,34"/>
+            <pozycja id="Rzeszów" cena="4696,00"/>
+            <pozycja id="Szczecin" cena="4760,22"/>
+            <pozycja id="Warszawa" cena="9766,84"/>
+            <pozycja id="Wrocław" cena="6602,00"/>
+            <pozycja id="Zielona Góra" cena="3507,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4755,00"/>
+            <pozycja id="Bydgoszcz" cena="4606,00"/>
+            <pozycja id="Gdańsk" cena="5216,00"/>
+            <pozycja id="Gdynia" cena="5617,00"/>
+            <pozycja id="Katowice" cena="4914,00"/>
+            <pozycja id="Kielce" cena="4803,28"/>
+            <pozycja id="Kraków" cena="6789,00"/>
+            <pozycja id="Lublin" cena="4819,00"/>
+            <pozycja id="Łódź" cena="4905,00"/>
+            <pozycja id="Olsztyn" cena="5010,00"/>
+            <pozycja id="Opole" cena="3816,67"/>
+            <pozycja id="Poznań" cena="6591,29"/>
+            <pozycja id="Rzeszów" cena="4572,00"/>
+            <pozycja id="Szczecin" cena="4794,24"/>
+            <pozycja id="Warszawa" cena="7440,56"/>
+            <pozycja id="Wrocław" cena="5735,00"/>
+            <pozycja id="Zielona Góra" cena="3663,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4169,00"/>
+            <pozycja id="Bydgoszcz" cena="3814,00"/>
+            <pozycja id="Gdańsk" cena="5432,73"/>
+            <pozycja id="Gdynia" cena="5317,00"/>
+            <pozycja id="Katowice" cena="3528,00"/>
+            <pozycja id="Kielce" cena="4222,51"/>
+            <pozycja id="Kraków" cena="6284,00"/>
+            <pozycja id="Lublin" cena="4774,00"/>
+            <pozycja id="Łódź" cena="3924,00"/>
+            <pozycja id="Olsztyn" cena="4403,60"/>
+            <pozycja id="Opole" cena="3742,31"/>
+            <pozycja id="Poznań" cena="5245,64"/>
+            <pozycja id="Rzeszów" cena="4224,00"/>
+            <pozycja id="Szczecin" cena="4345,51"/>
+            <pozycja id="Warszawa" cena="8023,55"/>
+            <pozycja id="Wrocław" cena="6050,00"/>
+            <pozycja id="Zielona Góra" cena="3150,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="I 2011">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4830,00"/>
+            <pozycja id="Bydgoszcz" cena="4764,00"/>
+            <pozycja id="Gdańsk" cena="5732,00"/>
+            <pozycja id="Gdynia" cena="6344,00"/>
+            <pozycja id="Katowice" cena="6122,00"/>
+            <pozycja id="Kielce" cena="4906,83"/>
+            <pozycja id="Kraków" cena="7517,00"/>
+            <pozycja id="Lublin" cena="4993,00"/>
+            <pozycja id="Łódź" cena="5265,00"/>
+            <pozycja id="Olsztyn" cena="4858,00"/>
+            <pozycja id="Opole" cena="4840,00"/>
+            <pozycja id="Poznań" cena="6376,38"/>
+            <pozycja id="Rzeszów" cena="4077,00"/>
+            <pozycja id="Szczecin" cena="4980,00"/>
+            <pozycja id="Warszawa" cena="8211,00"/>
+            <pozycja id="Wrocław" cena="6129,00"/>
+            <pozycja id="Zielona Góra" cena="3660,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4862,00"/>
+            <pozycja id="Bydgoszcz" cena="4055,00"/>
+            <pozycja id="Gdańsk" cena="6536,00"/>
+            <pozycja id="Gdynia" cena="6522,00"/>
+            <pozycja id="Katowice" cena="4233,84"/>
+            <pozycja id="Kielce" cena="4678,33"/>
+            <pozycja id="Kraków" cena="7206,00"/>
+            <pozycja id="Lublin" cena="5161,00"/>
+            <pozycja id="Łódź" cena="4469,00"/>
+            <pozycja id="Olsztyn" cena="4719,00"/>
+            <pozycja id="Opole" cena="4222,24"/>
+            <pozycja id="Poznań" cena="5940,19"/>
+            <pozycja id="Rzeszów" cena="4726,00"/>
+            <pozycja id="Szczecin" cena="4759,00"/>
+            <pozycja id="Warszawa" cena="9706,00"/>
+            <pozycja id="Wrocław" cena="6576,00"/>
+            <pozycja id="Zielona Góra" cena="3579,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4821,00"/>
+            <pozycja id="Bydgoszcz" cena="4730,00"/>
+            <pozycja id="Gdańsk" cena="5692,00"/>
+            <pozycja id="Gdynia" cena="6004,00"/>
+            <pozycja id="Katowice" cena="5329,00"/>
+            <pozycja id="Kielce" cena="4790,08"/>
+            <pozycja id="Kraków" cena="6886,00"/>
+            <pozycja id="Lublin" cena="4896,00"/>
+            <pozycja id="Łódź" cena="5066,00"/>
+            <pozycja id="Olsztyn" cena="4955,00"/>
+            <pozycja id="Opole" cena="4759,14"/>
+            <pozycja id="Poznań" cena="6263,62"/>
+            <pozycja id="Rzeszów" cena="4264,00"/>
+            <pozycja id="Szczecin" cena="4855,00"/>
+            <pozycja id="Warszawa" cena="8037,00"/>
+            <pozycja id="Wrocław" cena="5905,00"/>
+            <pozycja id="Zielona Góra" cena="3651,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4391,00"/>
+            <pozycja id="Bydgoszcz" cena="3945,00"/>
+            <pozycja id="Gdańsk" cena="5383,00"/>
+            <pozycja id="Gdynia" cena="5481,00"/>
+            <pozycja id="Katowice" cena="3606,68"/>
+            <pozycja id="Kielce" cena="4285,15"/>
+            <pozycja id="Kraków" cena="6394,00"/>
+            <pozycja id="Lublin" cena="5019,00"/>
+            <pozycja id="Łódź" cena="3738,00"/>
+            <pozycja id="Olsztyn" cena="4562,67"/>
+            <pozycja id="Opole" cena="4010,15"/>
+            <pozycja id="Poznań" cena="5520,20"/>
+            <pozycja id="Rzeszów" cena="4333,00"/>
+            <pozycja id="Szczecin" cena="4153,00"/>
+            <pozycja id="Warszawa" cena="7915,00"/>
+            <pozycja id="Wrocław" cena="5883,00"/>
+            <pozycja id="Zielona Góra" cena="3166,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="II 2011">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4823,00"/>
+            <pozycja id="Bydgoszcz" cena="4849,00"/>
+            <pozycja id="Gdańsk" cena="5630,00"/>
+            <pozycja id="Gdynia" cena="6541,00"/>
+            <pozycja id="Katowice" cena="6141,00"/>
+            <pozycja id="Kielce" cena="4953,59"/>
+            <pozycja id="Kraków" cena="7209,00"/>
+            <pozycja id="Lublin" cena="5053,00"/>
+            <pozycja id="Łódź" cena="5002,00"/>
+            <pozycja id="Olsztyn" cena="4938,00"/>
+            <pozycja id="Opole" cena="4841,00"/>
+            <pozycja id="Poznań" cena="6328,44"/>
+            <pozycja id="Rzeszów" cena="4142,00"/>
+            <pozycja id="Szczecin" cena="5049,00"/>
+            <pozycja id="Warszawa" cena="8396,15"/>
+            <pozycja id="Wrocław" cena="6281,00"/>
+            <pozycja id="Zielona Góra" cena="3644,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4810,00"/>
+            <pozycja id="Bydgoszcz" cena="4153,00"/>
+            <pozycja id="Gdańsk" cena="6573,00"/>
+            <pozycja id="Gdynia" cena="6493,00"/>
+            <pozycja id="Katowice" cena="3974,14"/>
+            <pozycja id="Kielce" cena="4622,27"/>
+            <pozycja id="Kraków" cena="7246,00"/>
+            <pozycja id="Lublin" cena="5199,00"/>
+            <pozycja id="Łódź" cena="4363,00"/>
+            <pozycja id="Olsztyn" cena="4698,00"/>
+            <pozycja id="Opole" cena="4246,00"/>
+            <pozycja id="Poznań" cena="5910,99"/>
+            <pozycja id="Rzeszów" cena="4777,00"/>
+            <pozycja id="Szczecin" cena="4733,00"/>
+            <pozycja id="Warszawa" cena="9471,75"/>
+            <pozycja id="Wrocław" cena="6582,00"/>
+            <pozycja id="Zielona Góra" cena="3522,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4782,00"/>
+            <pozycja id="Bydgoszcz" cena="4635,00"/>
+            <pozycja id="Gdańsk" cena="5661,00"/>
+            <pozycja id="Gdynia" cena="6205,00"/>
+            <pozycja id="Katowice" cena="4417,00"/>
+            <pozycja id="Kielce" cena="4966,79"/>
+            <pozycja id="Kraków" cena="7082,00"/>
+            <pozycja id="Lublin" cena="4827,00"/>
+            <pozycja id="Łódź" cena="5123,00"/>
+            <pozycja id="Olsztyn" cena="4963,00"/>
+            <pozycja id="Opole" cena="4776,00"/>
+            <pozycja id="Poznań" cena="6535,63"/>
+            <pozycja id="Rzeszów" cena="4202,00"/>
+            <pozycja id="Szczecin" cena="4819,00"/>
+            <pozycja id="Warszawa" cena="7526,77"/>
+            <pozycja id="Wrocław" cena="5949,00"/>
+            <pozycja id="Zielona Góra" cena="3671,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4334,00"/>
+            <pozycja id="Bydgoszcz" cena="3733,00"/>
+            <pozycja id="Gdańsk" cena="5671,00"/>
+            <pozycja id="Gdynia" cena="5483,00"/>
+            <pozycja id="Katowice" cena="3500,23"/>
+            <pozycja id="Kielce" cena="4426,80"/>
+            <pozycja id="Kraków" cena="6478,00"/>
+            <pozycja id="Lublin" cena="4945,00"/>
+            <pozycja id="Łódź" cena="3843,00"/>
+            <pozycja id="Olsztyn" cena="4571,52"/>
+            <pozycja id="Opole" cena="3958,78"/>
+            <pozycja id="Poznań" cena="5320,94"/>
+            <pozycja id="Rzeszów" cena="4485,00"/>
+            <pozycja id="Szczecin" cena="4171,00"/>
+            <pozycja id="Warszawa" cena="7920,25"/>
+            <pozycja id="Wrocław" cena="6004,00"/>
+            <pozycja id="Zielona Góra" cena="3222,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="III 2011">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4828,00"/>
+            <pozycja id="Bydgoszcz" cena="4841,00"/>
+            <pozycja id="Gdańsk" cena="5804,00"/>
+            <pozycja id="Gdynia" cena="6344,00"/>
+            <pozycja id="Katowice" cena="5451,00"/>
+            <pozycja id="Kielce" cena="4866,77"/>
+            <pozycja id="Kraków" cena="7061,00"/>
+            <pozycja id="Lublin" cena="5121,00"/>
+            <pozycja id="Łódź" cena="5101,00"/>
+            <pozycja id="Olsztyn" cena="4920,00"/>
+            <pozycja id="Opole" cena="4839,48"/>
+            <pozycja id="Poznań" cena="6286,10"/>
+            <pozycja id="Rzeszów" cena="4283,00"/>
+            <pozycja id="Szczecin" cena="5017,00"/>
+            <pozycja id="Warszawa" cena="8025,11"/>
+            <pozycja id="Wrocław" cena="6388,00"/>
+            <pozycja id="Zielona Góra" cena="3757,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4778,00"/>
+            <pozycja id="Bydgoszcz" cena="4058,00"/>
+            <pozycja id="Gdańsk" cena="6472,00"/>
+            <pozycja id="Gdynia" cena="6430,00"/>
+            <pozycja id="Katowice" cena="3964,85"/>
+            <pozycja id="Kielce" cena="4436,11"/>
+            <pozycja id="Kraków" cena="6949,00"/>
+            <pozycja id="Lublin" cena="5149,00"/>
+            <pozycja id="Łódź" cena="4238,00"/>
+            <pozycja id="Olsztyn" cena="4679,00"/>
+            <pozycja id="Opole" cena="4455,65"/>
+            <pozycja id="Poznań" cena="5804,14"/>
+            <pozycja id="Rzeszów" cena="4729,00"/>
+            <pozycja id="Szczecin" cena="4707,00"/>
+            <pozycja id="Warszawa" cena="9396,57"/>
+            <pozycja id="Wrocław" cena="6541,00"/>
+            <pozycja id="Zielona Góra" cena="3511,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4843,00"/>
+            <pozycja id="Bydgoszcz" cena="4575,00"/>
+            <pozycja id="Gdańsk" cena="5479,00"/>
+            <pozycja id="Gdynia" cena="6430,00"/>
+            <pozycja id="Katowice" cena="4697,00"/>
+            <pozycja id="Kielce" cena="4803,88"/>
+            <pozycja id="Kraków" cena="6958,00"/>
+            <pozycja id="Lublin" cena="5133,00"/>
+            <pozycja id="Łódź" cena="4907,00"/>
+            <pozycja id="Olsztyn" cena="4896,34"/>
+            <pozycja id="Opole" cena="4726,36"/>
+            <pozycja id="Poznań" cena="6155,14"/>
+            <pozycja id="Rzeszów" cena="4178,00"/>
+            <pozycja id="Szczecin" cena="5048,00"/>
+            <pozycja id="Warszawa" cena="7422,75"/>
+            <pozycja id="Wrocław" cena="6098,00"/>
+            <pozycja id="Zielona Góra" cena="3679,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4044,00"/>
+            <pozycja id="Bydgoszcz" cena="3583,00"/>
+            <pozycja id="Gdańsk" cena="5548,00"/>
+            <pozycja id="Gdynia" cena="5288,00"/>
+            <pozycja id="Katowice" cena="3417,70"/>
+            <pozycja id="Kielce" cena="4201,48"/>
+            <pozycja id="Kraków" cena="6369,00"/>
+            <pozycja id="Lublin" cena="5206,00"/>
+            <pozycja id="Łódź" cena="3798,00"/>
+            <pozycja id="Olsztyn" cena="4577,16"/>
+            <pozycja id="Opole" cena="4002,39"/>
+            <pozycja id="Poznań" cena="5380,08"/>
+            <pozycja id="Rzeszów" cena="4472,00"/>
+            <pozycja id="Szczecin" cena="4161,00"/>
+            <pozycja id="Warszawa" cena="7919,58"/>
+            <pozycja id="Wrocław" cena="5918,00"/>
+            <pozycja id="Zielona Góra" cena="3070,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="IV 2011">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4825,00"/>
+            <pozycja id="Bydgoszcz" cena="4880,00"/>
+            <pozycja id="Gdańsk" cena="5910,00"/>
+            <pozycja id="Gdynia" cena="6441,29"/>
+            <pozycja id="Katowice" cena="5412,73"/>
+            <pozycja id="Kielce" cena="4876,31"/>
+            <pozycja id="Kraków" cena="7039,00"/>
+            <pozycja id="Lublin" cena="5031,00"/>
+            <pozycja id="Łódź" cena="5038,00"/>
+            <pozycja id="Olsztyn" cena="4772,64"/>
+            <pozycja id="Opole" cena="4837,14"/>
+            <pozycja id="Poznań" cena="6203,60"/>
+            <pozycja id="Rzeszów" cena="4271,00"/>
+            <pozycja id="Szczecin" cena="5000,00"/>
+            <pozycja id="Warszawa" cena="7826,25"/>
+            <pozycja id="Wrocław" cena="6370,00"/>
+            <pozycja id="Zielona Góra" cena="3764,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4754,00"/>
+            <pozycja id="Bydgoszcz" cena="3923,00"/>
+            <pozycja id="Gdańsk" cena="6241,91"/>
+            <pozycja id="Gdynia" cena="6462,60"/>
+            <pozycja id="Katowice" cena="4152,49"/>
+            <pozycja id="Kielce" cena="4535,64"/>
+            <pozycja id="Kraków" cena="6989,00"/>
+            <pozycja id="Lublin" cena="5050,00"/>
+            <pozycja id="Łódź" cena="3990,00"/>
+            <pozycja id="Olsztyn" cena="4625,00"/>
+            <pozycja id="Opole" cena="4174,98"/>
+            <pozycja id="Poznań" cena="5736,53"/>
+            <pozycja id="Rzeszów" cena="4791,00"/>
+            <pozycja id="Szczecin" cena="4704,00"/>
+            <pozycja id="Warszawa" cena="9363,30"/>
+            <pozycja id="Wrocław" cena="6397,00"/>
+            <pozycja id="Zielona Góra" cena="3555,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4601,00"/>
+            <pozycja id="Bydgoszcz" cena="4626,00"/>
+            <pozycja id="Gdańsk" cena="5506,00"/>
+            <pozycja id="Gdynia" cena="6313,13"/>
+            <pozycja id="Katowice" cena="4603,60"/>
+            <pozycja id="Kielce" cena="4768,50"/>
+            <pozycja id="Kraków" cena="6711,00"/>
+            <pozycja id="Lublin" cena="4644,00"/>
+            <pozycja id="Łódź" cena="4793,00"/>
+            <pozycja id="Olsztyn" cena="4703,00"/>
+            <pozycja id="Opole" cena="4675,77"/>
+            <pozycja id="Poznań" cena="6218,92"/>
+            <pozycja id="Rzeszów" cena="4239,00"/>
+            <pozycja id="Szczecin" cena="4847,00"/>
+            <pozycja id="Warszawa" cena="7225,68"/>
+            <pozycja id="Wrocław" cena="5720,00"/>
+            <pozycja id="Zielona Góra" cena="3747,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4349,00"/>
+            <pozycja id="Bydgoszcz" cena="3625,00"/>
+            <pozycja id="Gdańsk" cena="5316,25"/>
+            <pozycja id="Gdynia" cena="5369,62"/>
+            <pozycja id="Katowice" cena="3355,63"/>
+            <pozycja id="Kielce" cena="4238,80"/>
+            <pozycja id="Kraków" cena="6224,00"/>
+            <pozycja id="Lublin" cena="4989,00"/>
+            <pozycja id="Łódź" cena="3939,00"/>
+            <pozycja id="Olsztyn" cena="4395,40"/>
+            <pozycja id="Opole" cena="3863,55"/>
+            <pozycja id="Poznań" cena="5254,22"/>
+            <pozycja id="Rzeszów" cena="4522,00"/>
+            <pozycja id="Szczecin" cena="3990,00"/>
+            <pozycja id="Warszawa" cena="7888,95"/>
+            <pozycja id="Wrocław" cena="5728,00"/>
+            <pozycja id="Zielona Góra" cena="3078,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="I 2012">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4776,00"/>
+            <pozycja id="Bydgoszcz" cena="4846,00"/>
+            <pozycja id="Gdańsk" cena="6248,00"/>
+            <pozycja id="Gdynia" cena="6879,00"/>
+            <pozycja id="Katowice" cena="4740,80"/>
+            <pozycja id="Kielce" cena="4982,14"/>
+            <pozycja id="Kraków" cena="7111,90"/>
+            <pozycja id="Lublin" cena="5080,00"/>
+            <pozycja id="Łódź" cena="5176,00"/>
+            <pozycja id="Olsztyn" cena="4775,02"/>
+            <pozycja id="Opole" cena="4835,00"/>
+            <pozycja id="Poznań" cena="6183,14"/>
+            <pozycja id="Rzeszów" cena="4457,00"/>
+            <pozycja id="Szczecin" cena="4951,05"/>
+            <pozycja id="Warszawa" cena="7879,18"/>
+            <pozycja id="Wrocław" cena="6406,00"/>
+            <pozycja id="Zielona Góra" cena="3756,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4724,00"/>
+            <pozycja id="Bydgoszcz" cena="3885,00"/>
+            <pozycja id="Gdańsk" cena="6384,00"/>
+            <pozycja id="Gdynia" cena="6370,00"/>
+            <pozycja id="Katowice" cena="4052,69"/>
+            <pozycja id="Kielce" cena="4510,47"/>
+            <pozycja id="Kraków" cena="6775,56"/>
+            <pozycja id="Lublin" cena="5057,00"/>
+            <pozycja id="Łódź" cena="4006,00"/>
+            <pozycja id="Olsztyn" cena="4628,00"/>
+            <pozycja id="Opole" cena="4171,12"/>
+            <pozycja id="Poznań" cena="5604,16"/>
+            <pozycja id="Rzeszów" cena="4801,00"/>
+            <pozycja id="Szczecin" cena="4586,21"/>
+            <pozycja id="Warszawa" cena="9110,86"/>
+            <pozycja id="Wrocław" cena="6367,00"/>
+            <pozycja id="Zielona Góra" cena="3570,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4577,00"/>
+            <pozycja id="Bydgoszcz" cena="4520,00"/>
+            <pozycja id="Gdańsk" cena="5594,00"/>
+            <pozycja id="Gdynia" cena="6106,00"/>
+            <pozycja id="Katowice" cena="4678,79"/>
+            <pozycja id="Kielce" cena="4662,53"/>
+            <pozycja id="Kraków" cena="6637,00"/>
+            <pozycja id="Lublin" cena="4935,00"/>
+            <pozycja id="Łódź" cena="4610,00"/>
+            <pozycja id="Olsztyn" cena="4663,00"/>
+            <pozycja id="Opole" cena="4644,74"/>
+            <pozycja id="Poznań" cena="5931,56"/>
+            <pozycja id="Rzeszów" cena="4138,00"/>
+            <pozycja id="Szczecin" cena="4734,92"/>
+            <pozycja id="Warszawa" cena="6966,77"/>
+            <pozycja id="Wrocław" cena="5606,00"/>
+            <pozycja id="Zielona Góra" cena="3750,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4304,00"/>
+            <pozycja id="Bydgoszcz" cena="3503,00"/>
+            <pozycja id="Gdańsk" cena="5295,00"/>
+            <pozycja id="Gdynia" cena="5219,00"/>
+            <pozycja id="Katowice" cena="3317,75"/>
+            <pozycja id="Kielce" cena="4217,56"/>
+            <pozycja id="Kraków" cena="6489,41"/>
+            <pozycja id="Lublin" cena="4848,00"/>
+            <pozycja id="Łódź" cena="3647,00"/>
+            <pozycja id="Olsztyn" cena="4250,61"/>
+            <pozycja id="Opole" cena="3744,72"/>
+            <pozycja id="Poznań" cena="5395,79"/>
+            <pozycja id="Rzeszów" cena="4325,00"/>
+            <pozycja id="Szczecin" cena="3996,32"/>
+            <pozycja id="Warszawa" cena="7601,06"/>
+            <pozycja id="Wrocław" cena="5533,00"/>
+            <pozycja id="Zielona Góra" cena="3064,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="II 2012">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4731,00"/>
+            <pozycja id="Bydgoszcz" cena="4851,00"/>
+            <pozycja id="Gdańsk" cena="6357,57"/>
+            <pozycja id="Gdynia" cena="6119,04"/>
+            <pozycja id="Katowice" cena="5351,42"/>
+            <pozycja id="Kielce" cena="5070,75"/>
+            <pozycja id="Kraków" cena="7082,54"/>
+            <pozycja id="Lublin" cena="5134,00"/>
+            <pozycja id="Łódź" cena="4948,00"/>
+            <pozycja id="Olsztyn" cena="4787,65"/>
+            <pozycja id="Opole" cena="4832,04"/>
+            <pozycja id="Poznań" cena="6058,02"/>
+            <pozycja id="Rzeszów" cena="4565,00"/>
+            <pozycja id="Szczecin" cena="4973,00"/>
+            <pozycja id="Warszawa" cena="8122,66"/>
+            <pozycja id="Wrocław" cena="6467,00"/>
+            <pozycja id="Zielona Góra" cena="3734,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4674,00"/>
+            <pozycja id="Bydgoszcz" cena="3932,00"/>
+            <pozycja id="Gdańsk" cena="6309,52"/>
+            <pozycja id="Gdynia" cena="6475,04"/>
+            <pozycja id="Katowice" cena="4121,55"/>
+            <pozycja id="Kielce" cena="4545,12"/>
+            <pozycja id="Kraków" cena="6724,24"/>
+            <pozycja id="Lublin" cena="5076,00"/>
+            <pozycja id="Łódź" cena="4033,00"/>
+            <pozycja id="Olsztyn" cena="4632,00"/>
+            <pozycja id="Opole" cena="3981,23"/>
+            <pozycja id="Poznań" cena="5534,71"/>
+            <pozycja id="Rzeszów" cena="4905,00"/>
+            <pozycja id="Szczecin" cena="4431,00"/>
+            <pozycja id="Warszawa" cena="9035,28"/>
+            <pozycja id="Wrocław" cena="6307,00"/>
+            <pozycja id="Zielona Góra" cena="3621,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4384,00"/>
+            <pozycja id="Bydgoszcz" cena="4686,00"/>
+            <pozycja id="Gdańsk" cena="5604,39"/>
+            <pozycja id="Gdynia" cena="6603,66"/>
+            <pozycja id="Katowice" cena="4443,22"/>
+            <pozycja id="Kielce" cena="4944,02"/>
+            <pozycja id="Kraków" cena="6616,38"/>
+            <pozycja id="Lublin" cena="4906,00"/>
+            <pozycja id="Łódź" cena="4668,00"/>
+            <pozycja id="Olsztyn" cena="4451,95"/>
+            <pozycja id="Opole" cena="4557,26"/>
+            <pozycja id="Poznań" cena="5880,13"/>
+            <pozycja id="Rzeszów" cena="4135,00"/>
+            <pozycja id="Szczecin" cena="4762,00"/>
+            <pozycja id="Warszawa" cena="7042,94"/>
+            <pozycja id="Wrocław" cena="5808,00"/>
+            <pozycja id="Zielona Góra" cena="3602,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4018,00"/>
+            <pozycja id="Bydgoszcz" cena="3429,00"/>
+            <pozycja id="Gdańsk" cena="5113,22"/>
+            <pozycja id="Gdynia" cena="5131,01"/>
+            <pozycja id="Katowice" cena="3399,00"/>
+            <pozycja id="Kielce" cena="3941,15"/>
+            <pozycja id="Kraków" cena="6010,84"/>
+            <pozycja id="Lublin" cena="4805,00"/>
+            <pozycja id="Łódź" cena="3587,00"/>
+            <pozycja id="Olsztyn" cena="4268,47"/>
+            <pozycja id="Opole" cena="3828,63"/>
+            <pozycja id="Poznań" cena="5159,03"/>
+            <pozycja id="Rzeszów" cena="4422,00"/>
+            <pozycja id="Szczecin" cena="3944,00"/>
+            <pozycja id="Warszawa" cena="7522,35"/>
+            <pozycja id="Wrocław" cena="5357,00"/>
+            <pozycja id="Zielona Góra" cena="3186,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="III 2012">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="5011,00"/>
+            <pozycja id="Bydgoszcz" cena="4859,00"/>
+            <pozycja id="Gdańsk" cena="6475,00"/>
+            <pozycja id="Gdynia" cena="6278,63"/>
+            <pozycja id="Katowice" cena="5411,42"/>
+            <pozycja id="Kielce" cena="5219,01"/>
+            <pozycja id="Kraków" cena="6893,04"/>
+            <pozycja id="Lublin" cena="5111,00"/>
+            <pozycja id="Łódź" cena="4969,00"/>
+            <pozycja id="Olsztyn" cena="4840,00"/>
+            <pozycja id="Opole" cena="4828,53"/>
+            <pozycja id="Poznań" cena="6160,99"/>
+            <pozycja id="Rzeszów" cena="4507,00"/>
+            <pozycja id="Szczecin" cena="4981,84"/>
+            <pozycja id="Warszawa" cena="7874,93"/>
+            <pozycja id="Wrocław" cena="6267,00"/>
+            <pozycja id="Zielona Góra" cena="3744,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4588,00"/>
+            <pozycja id="Bydgoszcz" cena="3606,00"/>
+            <pozycja id="Gdańsk" cena="6273,74"/>
+            <pozycja id="Gdynia" cena="6451,45"/>
+            <pozycja id="Katowice" cena="4057,38"/>
+            <pozycja id="Kielce" cena="4464,39"/>
+            <pozycja id="Kraków" cena="6617,04"/>
+            <pozycja id="Lublin" cena="5065,00"/>
+            <pozycja id="Łódź" cena="3794,00"/>
+            <pozycja id="Olsztyn" cena="4544,00"/>
+            <pozycja id="Opole" cena="4065,77"/>
+            <pozycja id="Poznań" cena="5518,54"/>
+            <pozycja id="Rzeszów" cena="4935,00"/>
+            <pozycja id="Szczecin" cena="4441,71"/>
+            <pozycja id="Warszawa" cena="8899,90"/>
+            <pozycja id="Wrocław" cena="6182,00"/>
+            <pozycja id="Zielona Góra" cena="3493,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4507,00"/>
+            <pozycja id="Bydgoszcz" cena="4502,00"/>
+            <pozycja id="Gdańsk" cena="5554,58"/>
+            <pozycja id="Gdynia" cena="6439,36"/>
+            <pozycja id="Katowice" cena="5003,60"/>
+            <pozycja id="Kielce" cena="5160,70"/>
+            <pozycja id="Kraków" cena="6710,52"/>
+            <pozycja id="Lublin" cena="4864,00"/>
+            <pozycja id="Łódź" cena="4473,00"/>
+            <pozycja id="Olsztyn" cena="4480,00"/>
+            <pozycja id="Opole" cena="4428,31"/>
+            <pozycja id="Poznań" cena="5978,40"/>
+            <pozycja id="Rzeszów" cena="4496,00"/>
+            <pozycja id="Szczecin" cena="4759,43"/>
+            <pozycja id="Warszawa" cena="6756,71"/>
+            <pozycja id="Wrocław" cena="5521,00"/>
+            <pozycja id="Zielona Góra" cena="3673,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="4177,00"/>
+            <pozycja id="Bydgoszcz" cena="3405,00"/>
+            <pozycja id="Gdańsk" cena="5268,62"/>
+            <pozycja id="Gdynia" cena="4473,90"/>
+            <pozycja id="Katowice" cena="3370,80"/>
+            <pozycja id="Kielce" cena="3986,94"/>
+            <pozycja id="Kraków" cena="6096,41"/>
+            <pozycja id="Lublin" cena="4886,00"/>
+            <pozycja id="Łódź" cena="3418,00"/>
+            <pozycja id="Olsztyn" cena="4202,36"/>
+            <pozycja id="Opole" cena="3739,98"/>
+            <pozycja id="Poznań" cena="5074,19"/>
+            <pozycja id="Rzeszów" cena="4547,00"/>
+            <pozycja id="Szczecin" cena="3810,69"/>
+            <pozycja id="Warszawa" cena="7247,43"/>
+            <pozycja id="Wrocław" cena="5477,00"/>
+            <pozycja id="Zielona Góra" cena="3184,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="IV 2012">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4951,00"/>
+            <pozycja id="Bydgoszcz" cena="4787,00"/>
+            <pozycja id="Gdańsk" cena="6514,00"/>
+            <pozycja id="Gdynia" cena="6186,07"/>
+            <pozycja id="Katowice" cena="5317,69"/>
+            <pozycja id="Kielce" cena="5109,78"/>
+            <pozycja id="Kraków" cena="6773,49"/>
+            <pozycja id="Lublin" cena="5043,00"/>
+            <pozycja id="Łódź" cena="4646,00"/>
+            <pozycja id="Olsztyn" cena="4570,10"/>
+            <pozycja id="Opole" cena="4828,53"/>
+            <pozycja id="Poznań" cena="6130,55"/>
+            <pozycja id="Rzeszów" cena="4555,00"/>
+            <pozycja id="Szczecin" cena="4985,89"/>
+            <pozycja id="Warszawa" cena="7695,08"/>
+            <pozycja id="Wrocław" cena="6069,00"/>
+            <pozycja id="Zielona Góra" cena="3653,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4583,00"/>
+            <pozycja id="Bydgoszcz" cena="3882,00"/>
+            <pozycja id="Gdańsk" cena="6239,75"/>
+            <pozycja id="Gdynia" cena="6474,53"/>
+            <pozycja id="Katowice" cena="4137,88"/>
+            <pozycja id="Kielce" cena="4469,15"/>
+            <pozycja id="Kraków" cena="6648,38"/>
+            <pozycja id="Lublin" cena="4995,00"/>
+            <pozycja id="Łódź" cena="3854,00"/>
+            <pozycja id="Olsztyn" cena="4465,00"/>
+            <pozycja id="Opole" cena="4012,61"/>
+            <pozycja id="Poznań" cena="5446,27"/>
+            <pozycja id="Rzeszów" cena="4912,00"/>
+            <pozycja id="Szczecin" cena="4336,21"/>
+            <pozycja id="Warszawa" cena="8767,55"/>
+            <pozycja id="Wrocław" cena="6100,00"/>
+            <pozycja id="Zielona Góra" cena="3504,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4357,00"/>
+            <pozycja id="Bydgoszcz" cena="4615,00"/>
+            <pozycja id="Gdańsk" cena="5335,86"/>
+            <pozycja id="Gdynia" cena="6002,14"/>
+            <pozycja id="Katowice" cena="5685,23"/>
+            <pozycja id="Kielce" cena="4515,76"/>
+            <pozycja id="Kraków" cena="6416,81"/>
+            <pozycja id="Lublin" cena="4699,00"/>
+            <pozycja id="Łódź" cena="4536,00"/>
+            <pozycja id="Olsztyn" cena="4556,00"/>
+            <pozycja id="Opole" cena="4203,18"/>
+            <pozycja id="Poznań" cena="5338,92"/>
+            <pozycja id="Rzeszów" cena="4407,00"/>
+            <pozycja id="Szczecin" cena="4567,48"/>
+            <pozycja id="Warszawa" cena="6466,03"/>
+            <pozycja id="Wrocław" cena="5593,00"/>
+            <pozycja id="Zielona Góra" cena="3691,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="3797,00"/>
+            <pozycja id="Bydgoszcz" cena="3371,00"/>
+            <pozycja id="Gdańsk" cena="4902,67"/>
+            <pozycja id="Gdynia" cena="5208,82"/>
+            <pozycja id="Katowice" cena="3356,54"/>
+            <pozycja id="Kielce" cena="3829,33"/>
+            <pozycja id="Kraków" cena="6115,32"/>
+            <pozycja id="Lublin" cena="4588,00"/>
+            <pozycja id="Łódź" cena="3341,00"/>
+            <pozycja id="Olsztyn" cena="4081,23"/>
+            <pozycja id="Opole" cena="3752,74"/>
+            <pozycja id="Poznań" cena="5067,30"/>
+            <pozycja id="Rzeszów" cena="4549,00"/>
+            <pozycja id="Szczecin" cena="3750,27"/>
+            <pozycja id="Warszawa" cena="7237,90"/>
+            <pozycja id="Wrocław" cena="5401,00"/>
+            <pozycja id="Zielona Góra" cena="2978,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="I 2013">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4965,00"/>
+            <pozycja id="Bydgoszcz" cena="4934,00"/>
+            <pozycja id="Gdańsk" cena="6452,58"/>
+            <pozycja id="Gdynia" cena="6063,43"/>
+            <pozycja id="Katowice" cena="5526,31"/>
+            <pozycja id="Kielce" cena="5061,17"/>
+            <pozycja id="Kraków" cena="6361,70"/>
+            <pozycja id="Lublin" cena="5126,00"/>
+            <pozycja id="Łódź" cena="4898,00"/>
+            <pozycja id="Olsztyn" cena="4597,90"/>
+            <pozycja id="Opole" cena="4821,00"/>
+            <pozycja id="Poznań" cena="6382,25"/>
+            <pozycja id="Rzeszów" cena="4463,00"/>
+            <pozycja id="Szczecin" cena="4836,29"/>
+            <pozycja id="Warszawa" cena="8076,08"/>
+            <pozycja id="Wrocław" cena="6031,00"/>
+            <pozycja id="Zielona Góra" cena="3634,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4576,00"/>
+            <pozycja id="Bydgoszcz" cena="3639,00"/>
+            <pozycja id="Gdańsk" cena="6277,90"/>
+            <pozycja id="Gdynia" cena="6608,04"/>
+            <pozycja id="Katowice" cena="3955,35"/>
+            <pozycja id="Kielce" cena="4366,75"/>
+            <pozycja id="Kraków" cena="6644,00"/>
+            <pozycja id="Lublin" cena="4491,00"/>
+            <pozycja id="Łódź" cena="3975,00"/>
+            <pozycja id="Olsztyn" cena="4364,80"/>
+            <pozycja id="Opole" cena="4073,76"/>
+            <pozycja id="Poznań" cena="5406,26"/>
+            <pozycja id="Rzeszów" cena="4908,00"/>
+            <pozycja id="Szczecin" cena="4434,36"/>
+            <pozycja id="Warszawa" cena="8606,02"/>
+            <pozycja id="Wrocław" cena="5959,00"/>
+            <pozycja id="Zielona Góra" cena="3533,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4610,00"/>
+            <pozycja id="Bydgoszcz" cena="4855,00"/>
+            <pozycja id="Gdańsk" cena="5291,97"/>
+            <pozycja id="Gdynia" cena="5732,08"/>
+            <pozycja id="Katowice" cena="5103,60"/>
+            <pozycja id="Kielce" cena="4647,24"/>
+            <pozycja id="Kraków" cena="5926,33"/>
+            <pozycja id="Lublin" cena="4679,00"/>
+            <pozycja id="Łódź" cena="4629,00"/>
+            <pozycja id="Olsztyn" cena="4394,54"/>
+            <pozycja id="Opole" cena="4428,00"/>
+            <pozycja id="Poznań" cena="6147,07"/>
+            <pozycja id="Rzeszów" cena="4467,00"/>
+            <pozycja id="Szczecin" cena="4547,00"/>
+            <pozycja id="Warszawa" cena="6989,64"/>
+            <pozycja id="Wrocław" cena="5430,00"/>
+            <pozycja id="Zielona Góra" cena="3655,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="3899,00"/>
+            <pozycja id="Bydgoszcz" cena="3434,00"/>
+            <pozycja id="Gdańsk" cena="5019,57"/>
+            <pozycja id="Gdynia" cena="4613,48"/>
+            <pozycja id="Katowice" cena="3115,80"/>
+            <pozycja id="Kielce" cena="3691,44"/>
+            <pozycja id="Kraków" cena="5931,00"/>
+            <pozycja id="Lublin" cena="4917,00"/>
+            <pozycja id="Łódź" cena="3422,00"/>
+            <pozycja id="Olsztyn" cena="3967,74"/>
+            <pozycja id="Opole" cena="3688,99"/>
+            <pozycja id="Poznań" cena="4807,06"/>
+            <pozycja id="Rzeszów" cena="4422,00"/>
+            <pozycja id="Szczecin" cena="3807,60"/>
+            <pozycja id="Warszawa" cena="6686,80"/>
+            <pozycja id="Wrocław" cena="4999,00"/>
+            <pozycja id="Zielona Góra" cena="2867,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="II 2013">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4936,00"/>
+            <pozycja id="Bydgoszcz" cena="5131,00"/>
+            <pozycja id="Gdańsk" cena="6403,00"/>
+            <pozycja id="Gdynia" cena="6582,40"/>
+            <pozycja id="Katowice" cena="5816,82"/>
+            <pozycja id="Kielce" cena="5075,34"/>
+            <pozycja id="Kraków" cena="6265,89"/>
+            <pozycja id="Lublin" cena="5014,00"/>
+            <pozycja id="Łódź" cena="4811,00"/>
+            <pozycja id="Olsztyn" cena="4647,43"/>
+            <pozycja id="Opole" cena="4808,92"/>
+            <pozycja id="Poznań" cena="6334,48"/>
+            <pozycja id="Rzeszów" cena="5141,00"/>
+            <pozycja id="Szczecin" cena="4774,03"/>
+            <pozycja id="Warszawa" cena="8080,51"/>
+            <pozycja id="Wrocław" cena="5970,00"/>
+            <pozycja id="Zielona Góra" cena="3613,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4546,00"/>
+            <pozycja id="Bydgoszcz" cena="3713,00"/>
+            <pozycja id="Gdańsk" cena="6151,73"/>
+            <pozycja id="Gdynia" cena="6337,04"/>
+            <pozycja id="Katowice" cena="4000,76"/>
+            <pozycja id="Kielce" cena="4338,06"/>
+            <pozycja id="Kraków" cena="6488,58"/>
+            <pozycja id="Lublin" cena="4858,00"/>
+            <pozycja id="Łódź" cena="4058,00"/>
+            <pozycja id="Olsztyn" cena="4424,73"/>
+            <pozycja id="Opole" cena="4062,40"/>
+            <pozycja id="Poznań" cena="5657,19"/>
+            <pozycja id="Rzeszów" cena="4890,00"/>
+            <pozycja id="Szczecin" cena="4170,89"/>
+            <pozycja id="Warszawa" cena="8637,97"/>
+            <pozycja id="Wrocław" cena="5986,00"/>
+            <pozycja id="Zielona Góra" cena="3485,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4428,00"/>
+            <pozycja id="Bydgoszcz" cena="4815,00"/>
+            <pozycja id="Gdańsk" cena="5682,00"/>
+            <pozycja id="Gdynia" cena="6082,72"/>
+            <pozycja id="Katowice" cena="5232,12"/>
+            <pozycja id="Kielce" cena="4646,01"/>
+            <pozycja id="Kraków" cena="6298,65"/>
+            <pozycja id="Lublin" cena="4943,00"/>
+            <pozycja id="Łódź" cena="4531,00"/>
+            <pozycja id="Olsztyn" cena="4478,26"/>
+            <pozycja id="Opole" cena="4526,41"/>
+            <pozycja id="Poznań" cena="5997,62"/>
+            <pozycja id="Rzeszów" cena="4383,00"/>
+            <pozycja id="Szczecin" cena="4581,21"/>
+            <pozycja id="Warszawa" cena="7018,10"/>
+            <pozycja id="Wrocław" cena="5603,00"/>
+            <pozycja id="Zielona Góra" cena="3623,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="3728,00"/>
+            <pozycja id="Bydgoszcz" cena="3349,00"/>
+            <pozycja id="Gdańsk" cena="4943,03"/>
+            <pozycja id="Gdynia" cena="4563,61"/>
+            <pozycja id="Katowice" cena="3222,14"/>
+            <pozycja id="Kielce" cena="3706,77"/>
+            <pozycja id="Kraków" cena="5679,92"/>
+            <pozycja id="Lublin" cena="4703,00"/>
+            <pozycja id="Łódź" cena="3360,00"/>
+            <pozycja id="Olsztyn" cena="4046,15"/>
+            <pozycja id="Opole" cena="3618,87"/>
+            <pozycja id="Poznań" cena="4931,52"/>
+            <pozycja id="Rzeszów" cena="4425,00"/>
+            <pozycja id="Szczecin" cena="3741,08"/>
+            <pozycja id="Warszawa" cena="6866,70"/>
+            <pozycja id="Wrocław" cena="4979,00"/>
+            <pozycja id="Zielona Góra" cena="3314,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="III 2013">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4949,00"/>
+            <pozycja id="Bydgoszcz" cena="5185,00"/>
+            <pozycja id="Gdańsk" cena="6397,90"/>
+            <pozycja id="Gdynia" cena="6824,50"/>
+            <pozycja id="Katowice" cena="5897,77"/>
+            <pozycja id="Kielce" cena="4883,55"/>
+            <pozycja id="Kraków" cena="6071,46"/>
+            <pozycja id="Lublin" cena="5140,00"/>
+            <pozycja id="Łódź" cena="4780,00"/>
+            <pozycja id="Olsztyn" cena="4855,69"/>
+            <pozycja id="Opole" cena="4674,42"/>
+            <pozycja id="Poznań" cena="6341,77"/>
+            <pozycja id="Rzeszów" cena="5148,00"/>
+            <pozycja id="Szczecin" cena="4827,82"/>
+            <pozycja id="Warszawa" cena="8145,84"/>
+            <pozycja id="Wrocław" cena="5997,00"/>
+            <pozycja id="Zielona Góra" cena="3613,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4520,00"/>
+            <pozycja id="Bydgoszcz" cena="3607,00"/>
+            <pozycja id="Gdańsk" cena="6007,49"/>
+            <pozycja id="Gdynia" cena="6618,06"/>
+            <pozycja id="Katowice" cena="3973,02"/>
+            <pozycja id="Kielce" cena="4330,15"/>
+            <pozycja id="Kraków" cena="6585,00"/>
+            <pozycja id="Lublin" cena="4935,00"/>
+            <pozycja id="Łódź" cena="4018,00"/>
+            <pozycja id="Olsztyn" cena="4389,59"/>
+            <pozycja id="Opole" cena="4246,39"/>
+            <pozycja id="Poznań" cena="5628,48"/>
+            <pozycja id="Rzeszów" cena="4910,00"/>
+            <pozycja id="Szczecin" cena="4151,63"/>
+            <pozycja id="Warszawa" cena="8544,23"/>
+            <pozycja id="Wrocław" cena="5984,00"/>
+            <pozycja id="Zielona Góra" cena="3516,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4526,00"/>
+            <pozycja id="Bydgoszcz" cena="4896,00"/>
+            <pozycja id="Gdańsk" cena="5794,39"/>
+            <pozycja id="Gdynia" cena="6646,40"/>
+            <pozycja id="Katowice" cena="4670,34"/>
+            <pozycja id="Kielce" cena="4717,68"/>
+            <pozycja id="Kraków" cena="5895,30"/>
+            <pozycja id="Lublin" cena="4770,00"/>
+            <pozycja id="Łódź" cena="4388,00"/>
+            <pozycja id="Olsztyn" cena="4559,69"/>
+            <pozycja id="Opole" cena="4616,53"/>
+            <pozycja id="Poznań" cena="5913,43"/>
+            <pozycja id="Rzeszów" cena="4680,00"/>
+            <pozycja id="Szczecin" cena="4443,71"/>
+            <pozycja id="Warszawa" cena="7172,74"/>
+            <pozycja id="Wrocław" cena="5605,00"/>
+            <pozycja id="Zielona Góra" cena="3606,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="3755,00"/>
+            <pozycja id="Bydgoszcz" cena="3357,00"/>
+            <pozycja id="Gdańsk" cena="4871,05"/>
+            <pozycja id="Gdynia" cena="4327,93"/>
+            <pozycja id="Katowice" cena="3253,81"/>
+            <pozycja id="Kielce" cena="3933,49"/>
+            <pozycja id="Kraków" cena="5884,00"/>
+            <pozycja id="Lublin" cena="4273,00"/>
+            <pozycja id="Łódź" cena="3469,00"/>
+            <pozycja id="Olsztyn" cena="4028,49"/>
+            <pozycja id="Opole" cena="3832,11"/>
+            <pozycja id="Poznań" cena="5041,80"/>
+            <pozycja id="Rzeszów" cena="4462,00"/>
+            <pozycja id="Szczecin" cena="3848,28"/>
+            <pozycja id="Warszawa" cena="6971,05"/>
+            <pozycja id="Wrocław" cena="5094,00"/>
+            <pozycja id="Zielona Góra" cena="2895,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="IV 2013">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4938,00"/>
+            <pozycja id="Bydgoszcz" cena="5279,00"/>
+            <pozycja id="Gdańsk" cena="6568,00"/>
+            <pozycja id="Gdynia" cena="6313,64"/>
+            <pozycja id="Katowice" cena="5455,74"/>
+            <pozycja id="Kielce" cena="4882,12"/>
+            <pozycja id="Kraków" cena="6122,34"/>
+            <pozycja id="Lublin" cena="5017,00"/>
+            <pozycja id="Łódź" cena="4768,00"/>
+            <pozycja id="Olsztyn" cena="4866,64"/>
+            <pozycja id="Opole" cena="4426,26"/>
+            <pozycja id="Poznań" cena="6417,46"/>
+            <pozycja id="Rzeszów" cena="5102,00"/>
+            <pozycja id="Szczecin" cena="4895,96"/>
+            <pozycja id="Warszawa" cena="8088,27"/>
+            <pozycja id="Wrocław" cena="5928,00"/>
+            <pozycja id="Zielona Góra" cena="3674,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4494,00"/>
+            <pozycja id="Bydgoszcz" cena="3736,00"/>
+            <pozycja id="Gdańsk" cena="6136,03"/>
+            <pozycja id="Gdynia" cena="6629,00"/>
+            <pozycja id="Katowice" cena="3927,87"/>
+            <pozycja id="Kielce" cena="4215,41"/>
+            <pozycja id="Kraków" cena="6537,00"/>
+            <pozycja id="Lublin" cena="4901,00"/>
+            <pozycja id="Łódź" cena="3978,00"/>
+            <pozycja id="Olsztyn" cena="4417,78"/>
+            <pozycja id="Opole" cena="4174,43"/>
+            <pozycja id="Poznań" cena="5717,87"/>
+            <pozycja id="Rzeszów" cena="4934,00"/>
+            <pozycja id="Szczecin" cena="4247,23"/>
+            <pozycja id="Warszawa" cena="8626,63"/>
+            <pozycja id="Wrocław" cena="6098,00"/>
+            <pozycja id="Zielona Góra" cena="3447,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4493,00"/>
+            <pozycja id="Bydgoszcz" cena="4528,00"/>
+            <pozycja id="Gdańsk" cena="6154,85"/>
+            <pozycja id="Gdynia" cena="6003,48"/>
+            <pozycja id="Katowice" cena="4529,31"/>
+            <pozycja id="Kielce" cena="4651,07"/>
+            <pozycja id="Kraków" cena="5782,45"/>
+            <pozycja id="Lublin" cena="4796,00"/>
+            <pozycja id="Łódź" cena="4423,00"/>
+            <pozycja id="Olsztyn" cena="4510,61"/>
+            <pozycja id="Opole" cena="4638,23"/>
+            <pozycja id="Poznań" cena="5867,85"/>
+            <pozycja id="Rzeszów" cena="4821,00"/>
+            <pozycja id="Szczecin" cena="4741,50"/>
+            <pozycja id="Warszawa" cena="7427,50"/>
+            <pozycja id="Wrocław" cena="5693,00"/>
+            <pozycja id="Zielona Góra" cena="3625,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="3670,00"/>
+            <pozycja id="Bydgoszcz" cena="3403,00"/>
+            <pozycja id="Gdańsk" cena="4798,00"/>
+            <pozycja id="Gdynia" cena="4623,92"/>
+            <pozycja id="Katowice" cena="3300,83"/>
+            <pozycja id="Kielce" cena="3908,93"/>
+            <pozycja id="Kraków" cena="5827,00"/>
+            <pozycja id="Lublin" cena="4392,00"/>
+            <pozycja id="Łódź" cena="3400,00"/>
+            <pozycja id="Olsztyn" cena="4022,21"/>
+            <pozycja id="Opole" cena="3714,22"/>
+            <pozycja id="Poznań" cena="5062,06"/>
+            <pozycja id="Rzeszów" cena="4491,00"/>
+            <pozycja id="Szczecin" cena="3825,05"/>
+            <pozycja id="Warszawa" cena="7188,57"/>
+            <pozycja id="Wrocław" cena="5037,00"/>
+            <pozycja id="Zielona Góra" cena="3141,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="I 2014">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4856,00"/>
+            <pozycja id="Bydgoszcz" cena="5040,00"/>
+            <pozycja id="Gdańsk" cena="6090,45"/>
+            <pozycja id="Gdynia" cena="6943,81"/>
+            <pozycja id="Katowice" cena="5530,76"/>
+            <pozycja id="Kielce" cena="4851,66"/>
+            <pozycja id="Kraków" cena="6472,43"/>
+            <pozycja id="Lublin" cena="5009,00"/>
+            <pozycja id="Łódź" cena="4808,00"/>
+            <pozycja id="Olsztyn" cena="4861,93"/>
+            <pozycja id="Opole" cena="4457,95"/>
+            <pozycja id="Poznań" cena="6669,89"/>
+            <pozycja id="Rzeszów" cena="5123,00"/>
+            <pozycja id="Szczecin" cena="4878,65"/>
+            <pozycja id="Warszawa" cena="8005,40"/>
+            <pozycja id="Wrocław" cena="6016,00"/>
+            <pozycja id="Zielona Góra" cena="3693,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4510,00"/>
+            <pozycja id="Bydgoszcz" cena="4019,00"/>
+            <pozycja id="Gdańsk" cena="6102,82"/>
+            <pozycja id="Gdynia" cena="6410,00"/>
+            <pozycja id="Katowice" cena="3915,26"/>
+            <pozycja id="Kielce" cena="4215,32"/>
+            <pozycja id="Kraków" cena="6754,22"/>
+            <pozycja id="Lublin" cena="4886,00"/>
+            <pozycja id="Łódź" cena="3984,00"/>
+            <pozycja id="Olsztyn" cena="4442,92"/>
+            <pozycja id="Opole" cena="3974,74"/>
+            <pozycja id="Poznań" cena="5830,06"/>
+            <pozycja id="Rzeszów" cena="4946,00"/>
+            <pozycja id="Szczecin" cena="4370,12"/>
+            <pozycja id="Warszawa" cena="8622,18"/>
+            <pozycja id="Wrocław" cena="6096,00"/>
+            <pozycja id="Zielona Góra" cena="3473,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4501,00"/>
+            <pozycja id="Bydgoszcz" cena="4601,00"/>
+            <pozycja id="Gdańsk" cena="5501,16"/>
+            <pozycja id="Gdynia" cena="6071,85"/>
+            <pozycja id="Katowice" cena="4531,85"/>
+            <pozycja id="Kielce" cena="4587,36"/>
+            <pozycja id="Kraków" cena="5999,94"/>
+            <pozycja id="Lublin" cena="4643,00"/>
+            <pozycja id="Łódź" cena="4433,00"/>
+            <pozycja id="Olsztyn" cena="4492,57"/>
+            <pozycja id="Opole" cena="4370,25"/>
+            <pozycja id="Poznań" cena="6145,53"/>
+            <pozycja id="Rzeszów" cena="4515,00"/>
+            <pozycja id="Szczecin" cena="4732,03"/>
+            <pozycja id="Warszawa" cena="7298,32"/>
+            <pozycja id="Wrocław" cena="5668,00"/>
+            <pozycja id="Zielona Góra" cena="3620,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="3712,00"/>
+            <pozycja id="Bydgoszcz" cena="3342,00"/>
+            <pozycja id="Gdańsk" cena="4791,00"/>
+            <pozycja id="Gdynia" cena="4817,00"/>
+            <pozycja id="Katowice" cena="3377,61"/>
+            <pozycja id="Kielce" cena="3869,89"/>
+            <pozycja id="Kraków" cena="5730,51"/>
+            <pozycja id="Lublin" cena="4382,00"/>
+            <pozycja id="Łódź" cena="3464,00"/>
+            <pozycja id="Olsztyn" cena="4004,73"/>
+            <pozycja id="Opole" cena="3731,78"/>
+            <pozycja id="Poznań" cena="5008,47"/>
+            <pozycja id="Rzeszów" cena="4384,00"/>
+            <pozycja id="Szczecin" cena="3824,00"/>
+            <pozycja id="Warszawa" cena="7169,82"/>
+            <pozycja id="Wrocław" cena="5100,00"/>
+            <pozycja id="Zielona Góra" cena="2994,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="II 2014">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4840,00"/>
+            <pozycja id="Bydgoszcz" cena="4951,00"/>
+            <pozycja id="Gdańsk" cena="6232,00"/>
+            <pozycja id="Gdynia" cena="6341,23"/>
+            <pozycja id="Katowice" cena="5601,90"/>
+            <pozycja id="Kielce" cena="4878,21"/>
+            <pozycja id="Kraków" cena="6433,62"/>
+            <pozycja id="Lublin" cena="4924,00"/>
+            <pozycja id="Łódź" cena="4936,00"/>
+            <pozycja id="Olsztyn" cena="4937,44"/>
+            <pozycja id="Opole" cena="4563,91"/>
+            <pozycja id="Poznań" cena="6560,28"/>
+            <pozycja id="Rzeszów" cena="5027,00"/>
+            <pozycja id="Szczecin" cena="4844,04"/>
+            <pozycja id="Warszawa" cena="7924,03"/>
+            <pozycja id="Wrocław" cena="6092,00"/>
+            <pozycja id="Zielona Góra" cena="3784,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4450,00"/>
+            <pozycja id="Bydgoszcz" cena="3536,00"/>
+            <pozycja id="Gdańsk" cena="6073,01"/>
+            <pozycja id="Gdynia" cena="6492,00"/>
+            <pozycja id="Katowice" cena="4045,57"/>
+            <pozycja id="Kielce" cena="4186,47"/>
+            <pozycja id="Kraków" cena="6682,36"/>
+            <pozycja id="Lublin" cena="4884,00"/>
+            <pozycja id="Łódź" cena="3915,00"/>
+            <pozycja id="Olsztyn" cena="4420,13"/>
+            <pozycja id="Opole" cena="4231,23"/>
+            <pozycja id="Poznań" cena="5742,14"/>
+            <pozycja id="Rzeszów" cena="4908,00"/>
+            <pozycja id="Szczecin" cena="4293,83"/>
+            <pozycja id="Warszawa" cena="8690,68"/>
+            <pozycja id="Wrocław" cena="5899,00"/>
+            <pozycja id="Zielona Góra" cena="3459,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4488,00"/>
+            <pozycja id="Bydgoszcz" cena="4808,00"/>
+            <pozycja id="Gdańsk" cena="5977,00"/>
+            <pozycja id="Gdynia" cena="5648,44"/>
+            <pozycja id="Katowice" cena="4973,86"/>
+            <pozycja id="Kielce" cena="4622,85"/>
+            <pozycja id="Kraków" cena="6172,01"/>
+            <pozycja id="Lublin" cena="4917,00"/>
+            <pozycja id="Łódź" cena="4533,00"/>
+            <pozycja id="Olsztyn" cena="4461,09"/>
+            <pozycja id="Opole" cena="4390,33"/>
+            <pozycja id="Poznań" cena="6116,46"/>
+            <pozycja id="Rzeszów" cena="4828,00"/>
+            <pozycja id="Szczecin" cena="4699,14"/>
+            <pozycja id="Warszawa" cena="7315,61"/>
+            <pozycja id="Wrocław" cena="5860,00"/>
+            <pozycja id="Zielona Góra" cena="3688,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="3685,00"/>
+            <pozycja id="Bydgoszcz" cena="3416,00"/>
+            <pozycja id="Gdańsk" cena="5021,00"/>
+            <pozycja id="Gdynia" cena="4716,00"/>
+            <pozycja id="Katowice" cena="3338,96"/>
+            <pozycja id="Kielce" cena="3738,87"/>
+            <pozycja id="Kraków" cena="5937,00"/>
+            <pozycja id="Lublin" cena="4441,00"/>
+            <pozycja id="Łódź" cena="3421,00"/>
+            <pozycja id="Olsztyn" cena="4137,87"/>
+            <pozycja id="Opole" cena="3793,89"/>
+            <pozycja id="Poznań" cena="4969,71"/>
+            <pozycja id="Rzeszów" cena="4455,00"/>
+            <pozycja id="Szczecin" cena="3709,75"/>
+            <pozycja id="Warszawa" cena="7331,51"/>
+            <pozycja id="Wrocław" cena="5087,00"/>
+            <pozycja id="Zielona Góra" cena="3179,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="III 2014">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4885,00"/>
+            <pozycja id="Bydgoszcz" cena="5100,00"/>
+            <pozycja id="Gdańsk" cena="6074,00"/>
+            <pozycja id="Gdynia" cena="6328,33"/>
+            <pozycja id="Katowice" cena="5397,03"/>
+            <pozycja id="Kielce" cena="4767,40"/>
+            <pozycja id="Kraków" cena="6214,31"/>
+            <pozycja id="Lublin" cena="4922,00"/>
+            <pozycja id="Łódź" cena="4932,00"/>
+            <pozycja id="Olsztyn" cena="4929,20"/>
+            <pozycja id="Opole" cena="4730,89"/>
+            <pozycja id="Poznań" cena="6551,99"/>
+            <pozycja id="Rzeszów" cena="5040,00"/>
+            <pozycja id="Szczecin" cena="4875,73"/>
+            <pozycja id="Warszawa" cena="7819,36"/>
+            <pozycja id="Wrocław" cena="6050,00"/>
+            <pozycja id="Zielona Góra" cena="3769,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4443,00"/>
+            <pozycja id="Bydgoszcz" cena="3758,00"/>
+            <pozycja id="Gdańsk" cena="5858,06"/>
+            <pozycja id="Gdynia" cena="6657,00"/>
+            <pozycja id="Katowice" cena="4026,95"/>
+            <pozycja id="Kielce" cena="4174,16"/>
+            <pozycja id="Kraków" cena="6644,17"/>
+            <pozycja id="Lublin" cena="4831,00"/>
+            <pozycja id="Łódź" cena="3907,00"/>
+            <pozycja id="Olsztyn" cena="4405,31"/>
+            <pozycja id="Opole" cena="4096,66"/>
+            <pozycja id="Poznań" cena="5805,92"/>
+            <pozycja id="Rzeszów" cena="4933,00"/>
+            <pozycja id="Szczecin" cena="4273,12"/>
+            <pozycja id="Warszawa" cena="8625,78"/>
+            <pozycja id="Wrocław" cena="5980,00"/>
+            <pozycja id="Zielona Góra" cena="3429,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4431,00"/>
+            <pozycja id="Bydgoszcz" cena="4797,00"/>
+            <pozycja id="Gdańsk" cena="5805,00"/>
+            <pozycja id="Gdynia" cena="6036,68"/>
+            <pozycja id="Katowice" cena="5015,42"/>
+            <pozycja id="Kielce" cena="4577,56"/>
+            <pozycja id="Kraków" cena="5970,21"/>
+            <pozycja id="Lublin" cena="4843,00"/>
+            <pozycja id="Łódź" cena="4661,00"/>
+            <pozycja id="Olsztyn" cena="4690,02"/>
+            <pozycja id="Opole" cena="4608,71"/>
+            <pozycja id="Poznań" cena="6022,05"/>
+            <pozycja id="Rzeszów" cena="4649,00"/>
+            <pozycja id="Szczecin" cena="4745,12"/>
+            <pozycja id="Warszawa" cena="7445,53"/>
+            <pozycja id="Wrocław" cena="5921,00"/>
+            <pozycja id="Zielona Góra" cena="3736,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="3701,00"/>
+            <pozycja id="Bydgoszcz" cena="3514,00"/>
+            <pozycja id="Gdańsk" cena="5023,00"/>
+            <pozycja id="Gdynia" cena="4734,00"/>
+            <pozycja id="Katowice" cena="3563,15"/>
+            <pozycja id="Kielce" cena="3867,69"/>
+            <pozycja id="Kraków" cena="5929,61"/>
+            <pozycja id="Lublin" cena="4487,00"/>
+            <pozycja id="Łódź" cena="3361,00"/>
+            <pozycja id="Olsztyn" cena="4043,74"/>
+            <pozycja id="Opole" cena="3783,86"/>
+            <pozycja id="Poznań" cena="4994,49"/>
+            <pozycja id="Rzeszów" cena="4551,00"/>
+            <pozycja id="Szczecin" cena="3762,15"/>
+            <pozycja id="Warszawa" cena="7365,30"/>
+            <pozycja id="Wrocław" cena="5100,00"/>
+            <pozycja id="Zielona Góra" cena="3277,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="IV 2014">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="4909,00"/>
+            <pozycja id="Bydgoszcz" cena="5149,00"/>
+            <pozycja id="Gdańsk" cena="6289,23"/>
+            <pozycja id="Gdynia" cena="6004,74"/>
+            <pozycja id="Katowice" cena="5544,66"/>
+            <pozycja id="Kielce" cena="4750,28"/>
+            <pozycja id="Kraków" cena="6491,09"/>
+            <pozycja id="Lublin" cena="5005,00"/>
+            <pozycja id="Łódź" cena="4861,00"/>
+            <pozycja id="Olsztyn" cena="4941,91"/>
+            <pozycja id="Opole" cena="4771,92"/>
+            <pozycja id="Poznań" cena="6546,30"/>
+            <pozycja id="Rzeszów" cena="5034,00"/>
+            <pozycja id="Szczecin" cena="4892,08"/>
+            <pozycja id="Warszawa" cena="7691,36"/>
+            <pozycja id="Wrocław" cena="6075,00"/>
+            <pozycja id="Zielona Góra" cena="3784,00"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="4445,00"/>
+            <pozycja id="Bydgoszcz" cena="3830,00"/>
+            <pozycja id="Gdańsk" cena="5872,59"/>
+            <pozycja id="Gdynia" cena="6466,00"/>
+            <pozycja id="Katowice" cena="3917,61"/>
+            <pozycja id="Kielce" cena="4147,65"/>
+            <pozycja id="Kraków" cena="6860,48"/>
+            <pozycja id="Lublin" cena="4854,00"/>
+            <pozycja id="Łódź" cena="3892,00"/>
+            <pozycja id="Olsztyn" cena="4316,01"/>
+            <pozycja id="Opole" cena="4109,18"/>
+            <pozycja id="Poznań" cena="5693,84"/>
+            <pozycja id="Rzeszów" cena="4953,00"/>
+            <pozycja id="Szczecin" cena="4306,82"/>
+            <pozycja id="Warszawa" cena="8635,85"/>
+            <pozycja id="Wrocław" cena="6017,00"/>
+            <pozycja id="Zielona Góra" cena="3509,00"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="4570,00"/>
+            <pozycja id="Bydgoszcz" cena="4618,00"/>
+            <pozycja id="Gdańsk" cena="5785,16"/>
+            <pozycja id="Gdynia" cena="5877,14"/>
+            <pozycja id="Katowice" cena="4906,69"/>
+            <pozycja id="Kielce" cena="4601,54"/>
+            <pozycja id="Kraków" cena="5722,17"/>
+            <pozycja id="Lublin" cena="4967,00"/>
+            <pozycja id="Łódź" cena="4656,00"/>
+            <pozycja id="Olsztyn" cena="4735,94"/>
+            <pozycja id="Opole" cena="4650,83"/>
+            <pozycja id="Poznań" cena="6225,14"/>
+            <pozycja id="Rzeszów" cena="4709,00"/>
+            <pozycja id="Szczecin" cena="4840,63"/>
+            <pozycja id="Warszawa" cena="7314,72"/>
+            <pozycja id="Wrocław" cena="5793,00"/>
+            <pozycja id="Zielona Góra" cena="3750,00"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="3702,00"/>
+            <pozycja id="Bydgoszcz" cena="3450,00"/>
+            <pozycja id="Gdańsk" cena="5008,00"/>
+            <pozycja id="Gdynia" cena="4617,00"/>
+            <pozycja id="Katowice" cena="3347,71"/>
+            <pozycja id="Kielce" cena="3703,33"/>
+            <pozycja id="Kraków" cena="5833,82"/>
+            <pozycja id="Lublin" cena="4444,00"/>
+            <pozycja id="Łódź" cena="3490,00"/>
+            <pozycja id="Olsztyn" cena="4006,89"/>
+            <pozycja id="Opole" cena="3900,64"/>
+            <pozycja id="Poznań" cena="5010,18"/>
+            <pozycja id="Rzeszów" cena="4582,00"/>
+            <pozycja id="Szczecin" cena="3986,13"/>
+            <pozycja id="Warszawa" cena="7386,72"/>
+            <pozycja id="Wrocław" cena="5194,00"/>
+            <pozycja id="Zielona Góra" cena="2990,00"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
     <Kwartal id="I 2015">
         <pierwotny_ofertowe>
             <pozycja id="Białystok" cena="4881,00"/>
@@ -3118,6 +5770,396 @@
             <pozycja id="Warszawa" cena="16949,43"/>
             <pozycja id="Wrocław" cena="12949,71"/>
             <pozycja id="Zielona Góra" cena="8111,04"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="I 2025">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="11023,16"/>
+            <pozycja id="Bydgoszcz" cena="10586,76"/>
+            <pozycja id="Gdańsk" cena="15275,81"/>
+            <pozycja id="Gdynia" cena="13941,56"/>
+            <pozycja id="Katowice" cena="12476,40"/>
+            <pozycja id="Kielce" cena="10649,00"/>
+            <pozycja id="Kraków" cena="16926,92"/>
+            <pozycja id="Lublin" cena="11277,00"/>
+            <pozycja id="Łódź" cena="11521,42"/>
+            <pozycja id="Olsztyn" cena="10634,89"/>
+            <pozycja id="Opole" cena="11693,68"/>
+            <pozycja id="Poznań" cena="13132,45"/>
+            <pozycja id="Rzeszów" cena="10714,39"/>
+            <pozycja id="Szczecin" cena="13061,06"/>
+            <pozycja id="Warszawa" cena="16948,16"/>
+            <pozycja id="Wrocław" cena="15071,91"/>
+            <pozycja id="Zielona Góra" cena="9496,99"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="10381,72"/>
+            <pozycja id="Bydgoszcz" cena="8453,20"/>
+            <pozycja id="Gdańsk" cena="15517,11"/>
+            <pozycja id="Gdynia" cena="13523,17"/>
+            <pozycja id="Katowice" cena="8901,27"/>
+            <pozycja id="Kielce" cena="8842,32"/>
+            <pozycja id="Kraków" cena="16427,91"/>
+            <pozycja id="Lublin" cena="10532,39"/>
+            <pozycja id="Łódź" cena="8869,28"/>
+            <pozycja id="Olsztyn" cena="9040,97"/>
+            <pozycja id="Opole" cena="9431,20"/>
+            <pozycja id="Poznań" cena="11830,72"/>
+            <pozycja id="Rzeszów" cena="10936,63"/>
+            <pozycja id="Szczecin" cena="9658,72"/>
+            <pozycja id="Warszawa" cena="18491,85"/>
+            <pozycja id="Wrocław" cena="13752,52"/>
+            <pozycja id="Zielona Góra" cena="8791,22"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="10291,28"/>
+            <pozycja id="Bydgoszcz" cena="9389,33"/>
+            <pozycja id="Gdańsk" cena="13903,17"/>
+            <pozycja id="Gdynia" cena="12906,71"/>
+            <pozycja id="Katowice" cena="12000,19"/>
+            <pozycja id="Kielce" cena="10073,95"/>
+            <pozycja id="Kraków" cena="15655,32"/>
+            <pozycja id="Lublin" cena="10999,87"/>
+            <pozycja id="Łódź" cena="9781,14"/>
+            <pozycja id="Olsztyn" cena="9550,40"/>
+            <pozycja id="Opole" cena="11209,78"/>
+            <pozycja id="Poznań" cena="12371,52"/>
+            <pozycja id="Rzeszów" cena="10009,11"/>
+            <pozycja id="Szczecin" cena="12052,18"/>
+            <pozycja id="Warszawa" cena="16436,95"/>
+            <pozycja id="Wrocław" cena="14256,93"/>
+            <pozycja id="Zielona Góra" cena="9505,60"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="9418,24"/>
+            <pozycja id="Bydgoszcz" cena="7424,68"/>
+            <pozycja id="Gdańsk" cena="13058,24"/>
+            <pozycja id="Gdynia" cena="11849,77"/>
+            <pozycja id="Katowice" cena="8063,28"/>
+            <pozycja id="Kielce" cena="8100,01"/>
+            <pozycja id="Kraków" cena="15112,00"/>
+            <pozycja id="Lublin" cena="9964,09"/>
+            <pozycja id="Łódź" cena="7961,13"/>
+            <pozycja id="Olsztyn" cena="8486,08"/>
+            <pozycja id="Opole" cena="8834,93"/>
+            <pozycja id="Poznań" cena="10859,47"/>
+            <pozycja id="Rzeszów" cena="10659,23"/>
+            <pozycja id="Szczecin" cena="8828,72"/>
+            <pozycja id="Warszawa" cena="16681,34"/>
+            <pozycja id="Wrocław" cena="12674,84"/>
+            <pozycja id="Zielona Góra" cena="7902,51"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="II 2025">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="11779,20"/>
+            <pozycja id="Bydgoszcz" cena="10857,89"/>
+            <pozycja id="Gdańsk" cena="15884,96"/>
+            <pozycja id="Gdynia" cena="14060,48"/>
+            <pozycja id="Katowice" cena="12559,48"/>
+            <pozycja id="Kielce" cena="10631,68"/>
+            <pozycja id="Kraków" cena="16748,84"/>
+            <pozycja id="Lublin" cena="11295,90"/>
+            <pozycja id="Łódź" cena="11749,07"/>
+            <pozycja id="Olsztyn" cena="10437,26"/>
+            <pozycja id="Opole" cena="11502,97"/>
+            <pozycja id="Poznań" cena="13226,62"/>
+            <pozycja id="Rzeszów" cena="10670,18"/>
+            <pozycja id="Szczecin" cena="13045,34"/>
+            <pozycja id="Warszawa" cena="17293,02"/>
+            <pozycja id="Wrocław" cena="15573,98"/>
+            <pozycja id="Zielona Góra" cena="9524,69"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="10245,32"/>
+            <pozycja id="Bydgoszcz" cena="8441,78"/>
+            <pozycja id="Gdańsk" cena="15622,00"/>
+            <pozycja id="Gdynia" cena="13916,88"/>
+            <pozycja id="Katowice" cena="9066,90"/>
+            <pozycja id="Kielce" cena="8746,16"/>
+            <pozycja id="Kraków" cena="16567,21"/>
+            <pozycja id="Lublin" cena="10722,75"/>
+            <pozycja id="Łódź" cena="8975,40"/>
+            <pozycja id="Olsztyn" cena="9086,83"/>
+            <pozycja id="Opole" cena="9230,65"/>
+            <pozycja id="Poznań" cena="11857,56"/>
+            <pozycja id="Rzeszów" cena="11008,62"/>
+            <pozycja id="Szczecin" cena="9639,39"/>
+            <pozycja id="Warszawa" cena="18385,54"/>
+            <pozycja id="Wrocław" cena="13560,92"/>
+            <pozycja id="Zielona Góra" cena="8790,41"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="10457,15"/>
+            <pozycja id="Bydgoszcz" cena="9755,39"/>
+            <pozycja id="Gdańsk" cena="14081,56"/>
+            <pozycja id="Gdynia" cena="13000,24"/>
+            <pozycja id="Katowice" cena="11742,31"/>
+            <pozycja id="Kielce" cena="9661,34"/>
+            <pozycja id="Kraków" cena="15701,39"/>
+            <pozycja id="Lublin" cena="10983,53"/>
+            <pozycja id="Łódź" cena="10051,23"/>
+            <pozycja id="Olsztyn" cena="9995,87"/>
+            <pozycja id="Opole" cena="11037,27"/>
+            <pozycja id="Poznań" cena="12462,10"/>
+            <pozycja id="Rzeszów" cena="10758,73"/>
+            <pozycja id="Szczecin" cena="11700,79"/>
+            <pozycja id="Warszawa" cena="16385,57"/>
+            <pozycja id="Wrocław" cena="15020,00"/>
+            <pozycja id="Zielona Góra" cena="9536,02"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="9294,51"/>
+            <pozycja id="Bydgoszcz" cena="7610,12"/>
+            <pozycja id="Gdańsk" cena="13411,86"/>
+            <pozycja id="Gdynia" cena="11807,34"/>
+            <pozycja id="Katowice" cena="8154,27"/>
+            <pozycja id="Kielce" cena="8014,00"/>
+            <pozycja id="Kraków" cena="14957,26"/>
+            <pozycja id="Lublin" cena="10017,22"/>
+            <pozycja id="Łódź" cena="8009,37"/>
+            <pozycja id="Olsztyn" cena="8492,39"/>
+            <pozycja id="Opole" cena="8748,95"/>
+            <pozycja id="Poznań" cena="10879,39"/>
+            <pozycja id="Rzeszów" cena="10720,50"/>
+            <pozycja id="Szczecin" cena="9296,67"/>
+            <pozycja id="Warszawa" cena="16509,34"/>
+            <pozycja id="Wrocław" cena="12625,01"/>
+            <pozycja id="Zielona Góra" cena="8068,05"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="III 2025">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="11930,74"/>
+            <pozycja id="Bydgoszcz" cena="10901,21"/>
+            <pozycja id="Gdańsk" cena="16179,51"/>
+            <pozycja id="Gdynia" cena="14208,73"/>
+            <pozycja id="Katowice" cena="12467,13"/>
+            <pozycja id="Kielce" cena="10644,71"/>
+            <pozycja id="Kraków" cena="16838,94"/>
+            <pozycja id="Lublin" cena="11535,30"/>
+            <pozycja id="Łódź" cena="10960,12"/>
+            <pozycja id="Olsztyn" cena="10416,56"/>
+            <pozycja id="Opole" cena="11396,58"/>
+            <pozycja id="Poznań" cena="13202,54"/>
+            <pozycja id="Rzeszów" cena="10543,44"/>
+            <pozycja id="Szczecin" cena="13202,25"/>
+            <pozycja id="Warszawa" cena="17355,12"/>
+            <pozycja id="Wrocław" cena="15452,26"/>
+            <pozycja id="Zielona Góra" cena="9502,22"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="10233,99"/>
+            <pozycja id="Bydgoszcz" cena="8604,62"/>
+            <pozycja id="Gdańsk" cena="15957,53"/>
+            <pozycja id="Gdynia" cena="14182,98"/>
+            <pozycja id="Katowice" cena="8856,46"/>
+            <pozycja id="Kielce" cena="8580,94"/>
+            <pozycja id="Kraków" cena="16615,41"/>
+            <pozycja id="Lublin" cena="10442,83"/>
+            <pozycja id="Łódź" cena="8940,93"/>
+            <pozycja id="Olsztyn" cena="9245,34"/>
+            <pozycja id="Opole" cena="9521,49"/>
+            <pozycja id="Poznań" cena="11927,03"/>
+            <pozycja id="Rzeszów" cena="10972,15"/>
+            <pozycja id="Szczecin" cena="9956,49"/>
+            <pozycja id="Warszawa" cena="19100,27"/>
+            <pozycja id="Wrocław" cena="13598,85"/>
+            <pozycja id="Zielona Góra" cena="8740,92"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="10061,48"/>
+            <pozycja id="Bydgoszcz" cena="10228,70"/>
+            <pozycja id="Gdańsk" cena="14187,99"/>
+            <pozycja id="Gdynia" cena="13510,02"/>
+            <pozycja id="Katowice" cena="11945,77"/>
+            <pozycja id="Kielce" cena="9752,55"/>
+            <pozycja id="Kraków" cena="15633,71"/>
+            <pozycja id="Lublin" cena="10822,54"/>
+            <pozycja id="Łódź" cena="9837,47"/>
+            <pozycja id="Olsztyn" cena="10245,64"/>
+            <pozycja id="Opole" cena="11646,85"/>
+            <pozycja id="Poznań" cena="12513,69"/>
+            <pozycja id="Rzeszów" cena="10582,88"/>
+            <pozycja id="Szczecin" cena="11745,74"/>
+            <pozycja id="Warszawa" cena="16293,58"/>
+            <pozycja id="Wrocław" cena="14528,86"/>
+            <pozycja id="Zielona Góra" cena="9375,98"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="9474,97"/>
+            <pozycja id="Bydgoszcz" cena="7566,68"/>
+            <pozycja id="Gdańsk" cena="13479,90"/>
+            <pozycja id="Gdynia" cena="11815,95"/>
+            <pozycja id="Katowice" cena="8223,85"/>
+            <pozycja id="Kielce" cena="8247,26"/>
+            <pozycja id="Kraków" cena="14862,59"/>
+            <pozycja id="Lublin" cena="10119,07"/>
+            <pozycja id="Łódź" cena="8112,11"/>
+            <pozycja id="Olsztyn" cena="8762,05"/>
+            <pozycja id="Opole" cena="8980,85"/>
+            <pozycja id="Poznań" cena="10939,19"/>
+            <pozycja id="Rzeszów" cena="10783,00"/>
+            <pozycja id="Szczecin" cena="9255,23"/>
+            <pozycja id="Warszawa" cena="16444,23"/>
+            <pozycja id="Wrocław" cena="12553,49"/>
+            <pozycja id="Zielona Góra" cena="8644,84"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="IV 2025">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="12260,20"/>
+            <pozycja id="Bydgoszcz" cena="11639,65"/>
+            <pozycja id="Gdańsk" cena="16083,53"/>
+            <pozycja id="Gdynia" cena="14287,04"/>
+            <pozycja id="Katowice" cena="12598,44"/>
+            <pozycja id="Kielce" cena="10692,25"/>
+            <pozycja id="Kraków" cena="16845,40"/>
+            <pozycja id="Lublin" cena="11490,23"/>
+            <pozycja id="Łódź" cena="11193,94"/>
+            <pozycja id="Olsztyn" cena="10485,05"/>
+            <pozycja id="Opole" cena="11649,09"/>
+            <pozycja id="Poznań" cena="13592,44"/>
+            <pozycja id="Rzeszów" cena="10555,27"/>
+            <pozycja id="Szczecin" cena="13290,29"/>
+            <pozycja id="Warszawa" cena="17742,54"/>
+            <pozycja id="Wrocław" cena="15510,58"/>
+            <pozycja id="Zielona Góra" cena="9619,06"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="10201,72"/>
+            <pozycja id="Bydgoszcz" cena="8926,48"/>
+            <pozycja id="Gdańsk" cena="15867,53"/>
+            <pozycja id="Gdynia" cena="14046,42"/>
+            <pozycja id="Katowice" cena="8844,50"/>
+            <pozycja id="Kielce" cena="8562,04"/>
+            <pozycja id="Kraków" cena="16445,78"/>
+            <pozycja id="Lublin" cena="10620,96"/>
+            <pozycja id="Łódź" cena="8677,26"/>
+            <pozycja id="Olsztyn" cena="9393,68"/>
+            <pozycja id="Opole" cena="9489,02"/>
+            <pozycja id="Poznań" cena="12153,33"/>
+            <pozycja id="Rzeszów" cena="10932,27"/>
+            <pozycja id="Szczecin" cena="9932,87"/>
+            <pozycja id="Warszawa" cena="18895,79"/>
+            <pozycja id="Wrocław" cena="13551,89"/>
+            <pozycja id="Zielona Góra" cena="8838,51"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="10582,38"/>
+            <pozycja id="Bydgoszcz" cena="10428,31"/>
+            <pozycja id="Gdańsk" cena="14379,37"/>
+            <pozycja id="Gdynia" cena="13893,18"/>
+            <pozycja id="Katowice" cena="11853,59"/>
+            <pozycja id="Kielce" cena="10113,86"/>
+            <pozycja id="Kraków" cena="15592,05"/>
+            <pozycja id="Lublin" cena="11210,01"/>
+            <pozycja id="Łódź" cena="9707,98"/>
+            <pozycja id="Olsztyn" cena="10381,82"/>
+            <pozycja id="Opole" cena="10772,65"/>
+            <pozycja id="Poznań" cena="12420,91"/>
+            <pozycja id="Rzeszów" cena="10028,17"/>
+            <pozycja id="Szczecin" cena="11725,59"/>
+            <pozycja id="Warszawa" cena="16573,75"/>
+            <pozycja id="Wrocław" cena="14061,53"/>
+            <pozycja id="Zielona Góra" cena="8985,41"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="9371,66"/>
+            <pozycja id="Bydgoszcz" cena="7957,50"/>
+            <pozycja id="Gdańsk" cena="13515,83"/>
+            <pozycja id="Gdynia" cena="11683,93"/>
+            <pozycja id="Katowice" cena="8194,04"/>
+            <pozycja id="Kielce" cena="8085,79"/>
+            <pozycja id="Kraków" cena="15063,26"/>
+            <pozycja id="Lublin" cena="9979,78"/>
+            <pozycja id="Łódź" cena="8038,01"/>
+            <pozycja id="Olsztyn" cena="8738,44"/>
+            <pozycja id="Opole" cena="8970,24"/>
+            <pozycja id="Poznań" cena="11054,75"/>
+            <pozycja id="Rzeszów" cena="10493,73"/>
+            <pozycja id="Szczecin" cena="9272,09"/>
+            <pozycja id="Warszawa" cena="16760,63"/>
+            <pozycja id="Wrocław" cena="12546,09"/>
+            <pozycja id="Zielona Góra" cena="8875,29"/>
+        </wtorny_transakcyjne>
+    </Kwartal>
+    <Kwartal id="I 2026">
+        <pierwotny_ofertowe>
+            <pozycja id="Białystok" cena="12178,85"/>
+            <pozycja id="Bydgoszcz" cena="11599,82"/>
+            <pozycja id="Gdańsk" cena="16432,07"/>
+            <pozycja id="Gdynia" cena="14967,07"/>
+            <pozycja id="Katowice" cena="12628,74"/>
+            <pozycja id="Kielce" cena="10617,35"/>
+            <pozycja id="Kraków" cena="16859,05"/>
+            <pozycja id="Lublin" cena="11889,28"/>
+            <pozycja id="Łódź" cena="11562,86"/>
+            <pozycja id="Olsztyn" cena="10544,57"/>
+            <pozycja id="Opole" cena="12047,27"/>
+            <pozycja id="Poznań" cena="13778,05"/>
+            <pozycja id="Rzeszów" cena="10771,94"/>
+            <pozycja id="Szczecin" cena="13142,97"/>
+            <pozycja id="Warszawa" cena="18055,84"/>
+            <pozycja id="Wrocław" cena="15443,80"/>
+            <pozycja id="Zielona Góra" cena="9580,52"/>
+        </pierwotny_ofertowe>
+        <wtorny_ofertowe>
+            <pozycja id="Białystok" cena="10202,02"/>
+            <pozycja id="Bydgoszcz" cena="9113,62"/>
+            <pozycja id="Gdańsk" cena="16260,55"/>
+            <pozycja id="Gdynia" cena="14338,50"/>
+            <pozycja id="Katowice" cena="8753,75"/>
+            <pozycja id="Kielce" cena="8642,34"/>
+            <pozycja id="Kraków" cena="16566,48"/>
+            <pozycja id="Lublin" cena="10527,07"/>
+            <pozycja id="Łódź" cena="8983,77"/>
+            <pozycja id="Olsztyn" cena="9898,40"/>
+            <pozycja id="Opole" cena="9937,90"/>
+            <pozycja id="Poznań" cena="12378,17"/>
+            <pozycja id="Rzeszów" cena="11170,34"/>
+            <pozycja id="Szczecin" cena="9960,50"/>
+            <pozycja id="Warszawa" cena="18919,02"/>
+            <pozycja id="Wrocław" cena="13546,67"/>
+            <pozycja id="Zielona Góra" cena="9071,20"/>
+        </wtorny_ofertowe>
+        <pierwotny_transakcyjne>
+            <pozycja id="Białystok" cena="10650,48"/>
+            <pozycja id="Bydgoszcz" cena="11405,78"/>
+            <pozycja id="Gdańsk" cena="14647,19"/>
+            <pozycja id="Gdynia" cena="13320,26"/>
+            <pozycja id="Katowice" cena="12030,77"/>
+            <pozycja id="Kielce" cena="10539,36"/>
+            <pozycja id="Kraków" cena="15384,47"/>
+            <pozycja id="Lublin" cena="10986,61"/>
+            <pozycja id="Łódź" cena="9757,71"/>
+            <pozycja id="Olsztyn" cena="10304,22"/>
+            <pozycja id="Opole" cena="11107,67"/>
+            <pozycja id="Poznań" cena="12627,50"/>
+            <pozycja id="Rzeszów" cena="10377,93"/>
+            <pozycja id="Szczecin" cena="11575,04"/>
+            <pozycja id="Warszawa" cena="16475,18"/>
+            <pozycja id="Wrocław" cena="13902,72"/>
+            <pozycja id="Zielona Góra" cena="9504,33"/>
+        </pierwotny_transakcyjne>
+        <wtorny_transakcyjne>
+            <pozycja id="Białystok" cena="9163,59"/>
+            <pozycja id="Bydgoszcz" cena="8033,20"/>
+            <pozycja id="Gdańsk" cena="13870,05"/>
+            <pozycja id="Gdynia" cena="12357,21"/>
+            <pozycja id="Katowice" cena="8054,44"/>
+            <pozycja id="Kielce" cena="8124,58"/>
+            <pozycja id="Kraków" cena="15110,04"/>
+            <pozycja id="Lublin" cena="9879,10"/>
+            <pozycja id="Łódź" cena="7970,83"/>
+            <pozycja id="Olsztyn" cena="8666,23"/>
+            <pozycja id="Opole" cena="9118,08"/>
+            <pozycja id="Poznań" cena="10676,57"/>
+            <pozycja id="Rzeszów" cena="10880,84"/>
+            <pozycja id="Szczecin" cena="9378,22"/>
+            <pozycja id="Warszawa" cena="16393,20"/>
+            <pozycja id="Wrocław" cena="12632,07"/>
+            <pozycja id="Zielona Góra" cena="8528,02"/>
         </wtorny_transakcyjne>
     </Kwartal>
 </ceny_mieszkan>

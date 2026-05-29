@@ -2,7 +2,7 @@ const express = require("express");
 const prisma = require("../config/db");
 const router = express.Router();
 const multer = require("multer");
-const { verifyToken } = require("../middleware/auth");
+const { verifyToken, requireRole } = require("../middleware/auth");
 const { importHousingPrices } = require("../services/importHousingPrices.js");
 const { importInterestRates } = require("../services/importInterestRates.js");
 const upload = multer({ storage: multer.memoryStorage() });
@@ -12,9 +12,7 @@ const parse = new XMLParser({
   ignoreAttributes: false,
   attributeNamePrefix: "@_",
 });
-router.post(
-  "/",
-  verifyToken,
+router.post( "/", verifyToken, requireRole("ADMIN"),
   upload.fields([
     { name: "prices", maxCount: 1 },
     { name: "rates", maxCount: 1 },
@@ -72,7 +70,7 @@ router.post(
     }
   },
 );
-router.delete("/rates", verifyToken, async (req, res) => {
+router.delete("/rates", verifyToken, requireRole("ADMIN"), async (req, res) => {
   try {
     const ratesCount = await prisma.interestRate.count();
     await prisma.$executeRaw`TRUNCATE TABLE "InterestRate" RESTART IDENTITY CASCADE;`;
@@ -86,7 +84,8 @@ router.delete("/rates", verifyToken, async (req, res) => {
     });
   }
 });
-router.delete("/cities", verifyToken, async (req, res) => {
+
+router.delete("/cities", verifyToken, requireRole("ADMIN"), async (req, res) => {
   try {
     const cityCount = await prisma.city.count();
     const housingCount = await prisma.housingPrice.count();

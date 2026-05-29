@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { Save, Trash2, User as UserIcon } from "lucide-react";
+
 import Header from "@/components/Header";
+import DataImportModal from "@/components/DataImportModal";
+
 import useCurrentUser from "@/hooks/useCurrentUser";
 
 import {
@@ -56,7 +59,10 @@ const AdminPanel = () => {
     role: "USER",
   });
 
-  // Funkcje pomocznicze
+  // modal importowania plikow
+  const [isImportModalOpen, setIsImportModalOpen] = useState(false);
+
+  // handler do zamknięcia modala z dodawaniem usera
   const handleCloseAdd = () => {
     setIsAddOpen(false);
     setAddFormData({ nickname: "", email: "", password: "", role: "USER" });
@@ -64,6 +70,7 @@ const AdminPanel = () => {
     setStatusMessage(null);
   };
 
+  // handler do zamknięcia modala z edycją
   const handleCloseEdit = () => {
     setIsEditOpen(false);
     setEditingUser(null);
@@ -77,7 +84,7 @@ const AdminPanel = () => {
     setEditFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  // Funkcje api - komunikacja z backendem
+  // dodawanie usera
   const handleAddUser = async (e) => {
     e.preventDefault();
     setIsAdding(true);
@@ -127,7 +134,8 @@ const AdminPanel = () => {
     }
   };
 
-  const handleOpenEdit = async (selectedUser) => {
+  // otwarcie modala z edycją usera
+  const handleOpenEditUser = async (selectedUser) => {
     setEditingUser(selectedUser);
     setEditFormData({
       nickname: selectedUser.nickname || "",
@@ -152,7 +160,8 @@ const AdminPanel = () => {
     }
   };
 
-  const handleSaveEdit = async (e) => {
+  // zapis edytowanego usera
+  const handleSaveEditUser = async (e) => {
     e.preventDefault();
     if (!editingUser) return;
 
@@ -221,7 +230,8 @@ const AdminPanel = () => {
     }
   };
 
-  const handleDelete = async (id) => {
+  // usunięcie usera
+  const handleDeleteUser = async (id) => {
     if (id === user?.userId) {
       alert("Nie mozesz usunac samego siebie");
       return; // zabezpieczenie: return zatrzymuje usuwanie, żeby admin się nie skasował
@@ -247,6 +257,35 @@ const AdminPanel = () => {
       alert("Wystąpił błąd serwera.");
     }
   };
+
+
+  // handler do ręcznego czyszczenia danych z bazy (Ceny i Stopy procentowe)
+  const handleDeleteAllMarketData = async () => {
+    if (!window.confirm("UWAGA: Czy na pewno chcesz całkowicie wyczyścić dane o cenach mieszkań i stopach procentowych? Dashboard przestanie wyświetlać dane. Operacji nie można cofnąć!")) {
+      return;
+    }
+
+    try {
+      const fetchOptions = {
+        method: "DELETE",
+        credentials: "include",
+      };
+
+      // Strzał do endpointów przygotowanych w importRoutes.js
+      const ratesRes = await fetch("http://localhost:3000/api/import/rates", fetchOptions);
+      const citiesRes = await fetch("http://localhost:3000/api/import/cities", fetchOptions);
+
+      if (ratesRes.ok && citiesRes.ok) {
+        alert("Baza danych została pomyślnie wyczyszczona! Przejdź do Dashboardu, aby to sprawdzić.");
+      } else {
+        throw new Error("Wystąpił błąd po stronie serwera podczas usuwania danych.");
+      }
+    } catch (error) {
+      console.error("Błąd podczas czyszczenia bazy:", error);
+      alert(error.message);
+    }
+  };
+
 
   // useEffect - api do backendu, załadowanie userow
   useEffect(() => {
@@ -331,7 +370,7 @@ const AdminPanel = () => {
                             ? "Nie mozesz usunac wlasnego konta"
                             : undefined
                         }
-                        onClick={() => handleOpenEdit(u)}
+                        onClick={() => handleOpenEditUser(u)}
                       >
                         Edytuj
                       </Button>
@@ -344,7 +383,7 @@ const AdminPanel = () => {
                             ? "Nie mozesz usunac wlasnego konta"
                             : undefined
                         }
-                        onClick={() => handleDelete(u.id)}
+                        onClick={() => handleDeleteUser(u.id)}
                       >
                         Usuń
                       </Button>
@@ -355,15 +394,32 @@ const AdminPanel = () => {
             </TableBody>
           </Table>
         </div>
-        <Button
-          variant="outline"
-          className="mt-2"
-          onClick={() => setIsAddOpen(true)}
-        >
-          Dodaj użytkownika
-        </Button>
+        <div className="mt-4">
+          <Button variant="outline" onClick={() => setIsAddOpen(true)}>
+            Dodaj użytkownika
+          </Button>
+        </div>
 
-        {/* Modal - edycja uzytkownikow */}
+        <div className="mt-8 p-6 bg-white rounded-xl shadow-sm border border-zinc-200">
+          <h2 className="text-xl font-semibold text-zinc-900 mb-2">
+            Zarządzanie danymi systemowymi
+          </h2>
+          <p className="text-sm text-zinc-500 mb-6">
+            Zaimportuj nowe raporty NBP z plików XML lub całkowicie wyczyść bazę danych. 
+            Te operacje wpływają na to, co wszyscy użytkownicy widzą na Dashboardzie.
+          </p>
+          <div className="flex gap-4">
+            <Button className="bg-blue-600 hover:bg-blue-700" onClick={() => setIsImportModalOpen(true)}>
+              Importuj dane XML
+            </Button>
+            <Button variant="destructive" onClick={handleDeleteAllMarketData}>
+              Wyczyść całą bazę danych
+            </Button>
+          </div>
+        </div>
+      </main>
+
+      {/* Modal - edycja uzytkownikow */}
         <Dialog
           open={isEditOpen}
           onOpenChange={(open) => !open && handleCloseEdit()}
@@ -377,7 +433,7 @@ const AdminPanel = () => {
             </DialogHeader>
 
             {editingUser && (
-              <form onSubmit={handleSaveEdit} className="space-y-5">
+              <form onSubmit={handleSaveEditUser} className="space-y-5">
                 {statusMessage && (
                   <div
                     className={`p-3 rounded-md text-sm font-medium ${
@@ -581,7 +637,13 @@ const AdminPanel = () => {
             </form>
           </DialogContent>
         </Dialog>
-      </main>
+        
+        {/* Modal do importowania danych do bazy  */}
+        <DataImportModal
+          isOpen={isImportModalOpen}
+          onClose={() => setIsImportModalOpen(false)}
+          onImportSuccess={() => console.log("Odświeżyć widoki admina")}
+          />
     </div>
   );
 };

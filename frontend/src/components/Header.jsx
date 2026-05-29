@@ -106,7 +106,7 @@ const Header = () => {
               className="h-8 text-xs font-medium"
               onClick={() => navigate("/dashboard")}
             >
-              Dashboard
+              Panel analityczny
             </Button>
 
             <Button

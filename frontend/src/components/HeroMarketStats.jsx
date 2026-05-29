@@ -8,7 +8,7 @@ import {
   CardContent,
 } from "@/components/ui/card";
 
-const HeroSection = ({
+const HeroMarketStats = ({
   cities,
   stats,
   selectedCity,
@@ -112,4 +112,4 @@ const HeroSection = ({
   );
 };
 
-export default HeroSection;
+export default HeroMarketStats;

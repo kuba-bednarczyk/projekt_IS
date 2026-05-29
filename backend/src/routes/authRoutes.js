@@ -11,7 +11,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 // endpoint rejestracji uzytkownika
 router.post("/register", async (req, res) => {
   try {
-    // walidacja z poziomu bazy danych 
+    // walidacja z poziomu bazy danych
     const validatedData = userSchema.safeParse(req.body);
 
     if (!validatedData.success) {
@@ -24,22 +24,41 @@ router.post("/register", async (req, res) => {
 
     const {nickname, email, password } = validatedData.data;
 
-    if (!nickname || !email || !password) {
-      return res.status(400).json({error: "Wszystkie pola są wymagane"});
+  
+    const missingErrors = [];
+    if (!nickname) missingErrors.push({ field: "nickname", message: "Nazwa użytkownika jest wymagana." });
+    if (!email) missingErrors.push({ field: "email", message: "Adres e-mail jest wymagany." });
+    if (!password) missingErrors.push({ field: "password", message: "Hasło jest wymagane." });
+
+    if (missingErrors.length > 0) {
+      return res.status(400).json({ success: false, errors: missingErrors });
     }
 
-    // sprawdzenie czy user o takim e-mailu juz istnieje w bazie 
-    const exsistingUser = await prisma.user.findUnique({
-      where: {email},
-    });
+    const dbErrors = [];
 
-    if (exsistingUser) {
-      return res.status(400).json({error: "Użytkownik z tym adresem e-mail już istnieje."});
+    const existingEmail = await prisma.user.findFirst({
+      where: { email },
+    });
+    if (existingEmail) {
+      dbErrors.push({ field: "email", message: "Ten adres e-mail jest już zajęty." });
+    }
+
+    const existingNickname = await prisma.user.findFirst({
+      where: { nickname },
+    });
+    if (existingNickname) {
+      dbErrors.push({ field: "nickname", message: "Ta nazwa użytkownika jest już zajęta." });
+    }
+
+    if (dbErrors.length > 0) {
+      return res.status(400).json({
+        success: false,
+        errors: dbErrors
+      });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    //utworzenie nowego usera
     const newUser = await prisma.user.create({
       data: {
         nickname,
@@ -49,7 +68,6 @@ router.post("/register", async (req, res) => {
       }
     });
 
-    // generowanie tokenu do automatycznego zalogowania
     const token = jwt.sign(
       {
         userId: newUser.id,
@@ -61,7 +79,6 @@ router.post("/register", async (req, res) => {
       {expiresIn: "24h"}
     );
 
-    // wysłanie ciasteczka autorazycajnego i odpowiedz 201
     res.cookie("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
@@ -74,7 +91,7 @@ router.post("/register", async (req, res) => {
     console.error("Błąd podczas rejestracji: ", error);
     res.status(500).json({error: "Wewnętrzny błąd serwera."});
   }
-})
+});
 
 // endpoint logowania z JWT i httpCookie
 router.post("/login", async (req, res) => {
