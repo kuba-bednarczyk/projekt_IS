@@ -4,9 +4,10 @@ import HeroMarketStats from "@/components/HeroMarketStats";
 import { PriceTrendCard, CityComparisonCard, MarketTypeCard } from "@/components/DashboardCards";
 import { Button } from "@/components/ui/button";
 
-
 import { useDashboardData } from "@/hooks/useDashboardData";
 import { useDashboardMath } from "@/hooks/useDashboardMath";
+
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
 
 const Dashboard = () => {
   const { data, filters, ranges } = useDashboardData();
@@ -22,7 +23,7 @@ const Dashboard = () => {
       queryParams.append("yearStart", filters.yearFrom);
       queryParams.append("yearEnd", filters.yearTo);
 
-      const res = await fetch(`http://localhost:3000/api/export/${format}?${queryParams.toString()}`, { credentials: "include" });
+      const res = await fetch(`${API_URL}/export/${format}?${queryParams.toString()}`, { credentials: "include" });
       if (!res.ok) throw new Error(`Błąd podczas eksportu do ${format.toUpperCase()}`);
 
       const blob = await res.blob();

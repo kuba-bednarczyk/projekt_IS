@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router";
 import useCurrentUser from "@/hooks/useCurrentUser";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+
 const Header = () => {
   const navigate = useNavigate();
 
@@ -27,7 +29,7 @@ const Header = () => {
       }
       fetch(
         // Dodanie znacznika czasu w celu aktualizacji zdjecia profilowego po update'cie danych konta
-        `http://localhost:3000/api/users/${user.userId}/picture?t=${Date.now()}`,
+        `${API_URL}/users/${user.userId}/picture?t=${Date.now()}`,
         {
           credentials: "include",
         },
@@ -48,7 +50,7 @@ const Header = () => {
   const handleLogout = async () => {
     try {
       // Wyślij żądanie do serwera, aby wyczyścić cookie HttpOnly
-      await fetch("http://localhost:3000/api/auth/logout", {
+      await fetch(`${API_URL}/auth/logout`, {
         method: "POST",
         credentials: "include",
       });

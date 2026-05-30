@@ -1,6 +1,8 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { useNavigate } from "react-router";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+
 // pomocnicze do waliddacji dat
 const periodToIndex = (year, quarter) => Number(year) * 4 + Number(quarter);
 const indexToPeriod = (index) => ({
@@ -46,9 +48,9 @@ export const useDashboardData = () => {
         };
 
         const [citiesRes, pricesRes, ratesRes] = await Promise.all([
-          fetch("http://localhost:3000/api/cities", fetchOptions),
-          fetch("http://localhost:3000/api/prices", fetchOptions),
-          fetch("http://localhost:3000/api/rates", fetchOptions),
+          fetch(`${API_URL}/cities`, fetchOptions),
+          fetch(`${API_URL}/prices`, fetchOptions),
+          fetch(`${API_URL}/rates`, fetchOptions),
         ]);
 
         if (citiesRes.status === 401 || citiesRes.status === 403) {

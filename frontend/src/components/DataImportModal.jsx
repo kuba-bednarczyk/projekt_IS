@@ -11,6 +11,8 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+
 const DataImportModal = ({ isOpen, onClose, onImportSuccess }) => {
   const [pricesFile, setPricesFile] = useState(null);
   const [ratesFile, setRatesFile] = useState(null);
@@ -25,7 +27,7 @@ const DataImportModal = ({ isOpen, onClose, onImportSuccess }) => {
       return;
     }
 
-    // ZABEZPIECZENIE: Okienko potwierdzające operację destrukcyjną
+    // Okienko potwierdzające usunięcie danych
     const isConfirmed = window.confirm(
       "UWAGA: Ta operacja usunie wszystkie obecne dane o cenach i stopach procentowych, a następnie zastąpi je nowymi. Operacji nie można cofnąć. Czy na pewno chcesz kontynuować?"
     );
@@ -41,19 +43,16 @@ const DataImportModal = ({ isOpen, onClose, onImportSuccess }) => {
         credentials: "include",
       };
 
-      // 1. Wyczyszczenie bazy (odpalamy endpointy od Twojego kolegi)
-      await fetch("http://localhost:3000/api/import/rates", fetchDeleteOptions);
-      await fetch("http://localhost:3000/api/import/cities", fetchDeleteOptions);
+      await fetch(`${API_URL}/import/rates`, fetchDeleteOptions);
+      await fetch(`${API_URL}/import/cities`, fetchDeleteOptions);
 
       setStatus({ type: "info", message: "Wgrywanie i przetwarzanie nowych plików XML..." });
 
-      // 2. Przygotowanie danych do wysyłki (FormData)
       const formData = new FormData();
       formData.append("prices", pricesFile);
       formData.append("rates", ratesFile);
 
-      // 3. Wysłanie nowych plików
-      const importRes = await fetch("http://localhost:3000/api/import", {
+      const importRes = await fetch(`${API_URL}/import`, {
         method: "POST",
         credentials: "include",
         body: formData,
@@ -66,11 +65,9 @@ const DataImportModal = ({ isOpen, onClose, onImportSuccess }) => {
 
       setStatus({ type: "success", message: "Baza danych została pomyślnie zaktualizowana!" });
       
-      // Czyszczenie inputów po sukcesie
       setPricesFile(null);
       setRatesFile(null);
       
-      // Odświeżenie danych na froncie (jeśli przekazano taką funkcję)
       if (onImportSuccess) {
         setTimeout(onImportSuccess, 2000);
       }
