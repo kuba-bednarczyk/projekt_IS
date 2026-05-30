@@ -13,6 +13,8 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+
 const Register = () => {
   const [nickname, setNickname] = useState("");
   const [email, setEmail] = useState("");
@@ -39,7 +41,7 @@ const Register = () => {
     setIsLoading(true);
 
     try {
-      const res = await fetch("http://localhost:3000/api/auth/register", {
+      const res = await fetch(`${API_URL}/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

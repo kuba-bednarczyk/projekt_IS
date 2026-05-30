@@ -1,8 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import Header from "@/components/Header";
-import useCurrentUser from "@/hooks/useCurrentUser";
-import { Camera, Trash2, Save, User, Mail, Lock } from "lucide-react";
 
+import { Camera, Trash2, Save, User, Mail, Lock } from "lucide-react";
 import {
   Card,
   CardHeader,
@@ -14,6 +12,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+
+import useCurrentUser from "@/hooks/useCurrentUser";
+import Header from "@/components/Header";
+
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
 
 const Account = () => {
   const { user, loading } = useCurrentUser();
@@ -41,7 +44,7 @@ const Account = () => {
       const fetchUserPicture = async () => {
         try {
           const picRes = await fetch(
-            `http://localhost:3000/api/users/${user.userId}/picture?t=${Date.now()}`,
+            `${API_URL}/users/${user.userId}/picture?t=${Date.now()}`,
             { credentials: "include" },
           );
           if (picRes.ok) {
@@ -121,7 +124,7 @@ const Account = () => {
       }
 
       const response = await fetch(
-        `http://localhost:3000/api/users/${user.userId}`,
+        `${API_URL}/users/${user.userId}`,
         {
           method: "PATCH",
           headers: {
