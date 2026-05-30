@@ -3,8 +3,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 export const TopCitiesCard = ({ data, endYear }) => (
   <Card className="flex flex-col">
     <CardHeader>
-      <CardTitle className="text-lg font-semibold">Gorączka Miast (TOP 5)</CardTitle>
-      <CardDescription>Najszybciej rosnące rynki ({endYear})</CardDescription>
+      <CardTitle className="text-lg font-semibold">Najszybciej rosnące rynki ({endYear})</CardTitle>
+      <CardDescription>5 miast w których ceny rosły najszybciej r/r.</CardDescription>
     </CardHeader>
     <CardContent className="flex-1">
       <div className="space-y-4">

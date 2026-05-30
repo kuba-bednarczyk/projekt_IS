@@ -15,13 +15,12 @@ const app = express();
 
 // Middleware
 // zmiana ustawien cors pod httpCookie
-//DEPRECATED CORS
-// app.use(
-//   cors({
-//     origin: "http://localhost:5173",
-//     credentials: true,
-//   }),
-// ); 
+app.use(
+  cors({
+    origin: "http://localhost",
+    credentials: true,
+  }),
+); 
 
 app.use(express.json({ limit: "5mb" })); // pozwala czytac dane z bazy (limit zwiększony dla zdjęć Base64)
 app.use(cookieParser()); // do obsługi ciasteczek HttpOnly
@@ -48,6 +47,6 @@ app.get("/api/status", async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-// app.listen(PORT, () => {
-//   console.log(`Server is running on : http://localhost:${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Server is running on : http://localhost:${PORT}`);
+});
