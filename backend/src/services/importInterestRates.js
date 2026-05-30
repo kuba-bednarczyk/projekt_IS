@@ -2,7 +2,7 @@ const { Prisma } = require("../generated/prisma");
 const prisma = require("../config/db");
 
 async function importInterestRates(parsedData) {
-  console.log("Importowanie stóp🦶");
+  console.log("Importowanie stóp procentowych");
   const pozycjeZDatami = parsedData.stopy_procentowe_archiwum.pozycje;
 
   const ratesByType = {};
