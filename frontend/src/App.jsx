@@ -10,7 +10,7 @@ import AdminPanel from "./pages/AdminPanel";
 
 
 // protected Route
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/layout/ProtectedRoute";
 
 const App = () => {
   return (

@@ -14,7 +14,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 
 import useCurrentUser from "@/hooks/useCurrentUser";
-import Header from "@/components/Header";
+import Header from "@/components/layout/Header";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
 
@@ -123,17 +123,14 @@ const Account = () => {
         payload.password = password;
       }
 
-      const response = await fetch(
-        `${API_URL}/users/${user.userId}`,
-        {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-          body: JSON.stringify(payload),
+      const response = await fetch(`${API_URL}/users/${user.userId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        credentials: "include",
+        body: JSON.stringify(payload),
+      });
 
       const data = await response.json();
 
@@ -341,11 +338,7 @@ const Account = () => {
             </CardContent>
 
             <CardFooter className="pt-6 flex justify-end">
-              <Button
-                type="submit"
-                className="min-w-35"
-                disabled={loading}
-              >
+              <Button type="submit" className="min-w-35" disabled={loading}>
                 {loading ? (
                   "Zapisywanie..."
                 ) : (

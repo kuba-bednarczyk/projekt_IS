@@ -3,12 +3,12 @@ import { useNavigate } from "react-router";
 
 import useCurrentUser from "@/hooks/useCurrentUser";
 
-import Header from "@/components/Header";
-import DataImportModal from "@/components/DataImportModal";
-import UsersTable from "@/components/UsersTable";
-import AddUserModal from "@/components/AddUserModal";
-import EditUserModal from "@/components/EditUserModal";
-import ManageSystemData from "@/components/ManageSystemData";
+import Header from "@/components/layout/Header";
+import DataImportModal from "@/components/admin/DataImportModal";
+import UsersTable from "@/components/admin/UsersTable";
+import AddUserModal from "@/components/admin/AddUserModal";
+import EditUserModal from "@/components/admin/EditUserModal";
+import ManageSystemData from "@/components/admin/ManageSystemData";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
 
@@ -17,7 +17,7 @@ const AdminPanel = () => {
   const navigate = useNavigate();
 
   const [users, setUsers] = useState([]);
-  
+
   // Stany Modali
   const [isAddOpen, setIsAddOpen] = useState(false);
   const [isImportModalOpen, setIsImportModalOpen] = useState(false);
@@ -26,9 +26,11 @@ const AdminPanel = () => {
   // Pobieranie uzytkowników na start
   useEffect(() => {
     const fetchUsers = async () => {
-      if (!localStorage.getItem("isAuthenticated")) return navigate("/", { replace: true });
+      if (!localStorage.getItem("isAuthenticated"))
+        return navigate("/", { replace: true });
       if (loading) return;
-      if (!user || user.role !== "ADMIN") return navigate("/dashboard", { replace: true });
+      if (!user || user.role !== "ADMIN")
+        return navigate("/dashboard", { replace: true });
 
       try {
         const usersRes = await fetch(`${API_URL}/users`, {
@@ -70,7 +72,12 @@ const AdminPanel = () => {
 
   // Czyszczenie bazy rynkowej
   const handleDeleteAllMarketData = async () => {
-    if (!window.confirm("UWAGA: Czy na pewno chcesz całkowicie wyczyścić dane? Dashboard przestanie wyświetlać dane.")) return;
+    if (
+      !window.confirm(
+        "UWAGA: Czy na pewno chcesz całkowicie wyczyścić dane? Dashboard przestanie wyświetlać dane.",
+      )
+    )
+      return;
 
     try {
       const fetchOptions = { method: "DELETE", credentials: "include" };
@@ -91,41 +98,44 @@ const AdminPanel = () => {
     <div className="min-h-screen bg-zinc-50">
       <Header />
       <main className="max-w-4xl mx-auto p-6">
-        
         {/* Tabela i zarządzanie użytkownikami */}
-          <UsersTable 
-            users={users} 
-            currentUser={user} 
-            onEditClick={(u) => setEditingUser(u)} 
-            onDeleteClick={handleDeleteUser}
-            onAddClick={() => setIsAddOpen(true)}
-          />
+        <UsersTable
+          users={users}
+          currentUser={user}
+          onEditClick={(u) => setEditingUser(u)}
+          onDeleteClick={handleDeleteUser}
+          onAddClick={() => setIsAddOpen(true)}
+        />
 
-          {/* Zarządzanie danymi systemowymi */}
-          <ManageSystemData 
-            onImportClick={() => setIsImportModalOpen(true)}
-            handleDelete={handleDeleteAllMarketData} 
-          />
+        {/* Zarządzanie danymi systemowymi */}
+        <ManageSystemData
+          onImportClick={() => setIsImportModalOpen(true)}
+          handleDelete={handleDeleteAllMarketData}
+        />
       </main>
 
       {/* Modals */}
-      <AddUserModal 
-        isOpen={isAddOpen} 
-        onClose={() => setIsAddOpen(false)} 
-        onSuccess={(newUser) => setUsers([...users, newUser])} 
+      <AddUserModal
+        isOpen={isAddOpen}
+        onClose={() => setIsAddOpen(false)}
+        onSuccess={(newUser) => setUsers([...users, newUser])}
       />
-      <EditUserModal 
-        user={editingUser} 
-        isOpen={editingUser} 
-        onClose={() => setEditingUser(null)} 
+      <EditUserModal
+        user={editingUser}
+        isOpen={editingUser}
+        onClose={() => setEditingUser(null)}
         onSuccess={(updatedUser) => {
-          setUsers(users.map((u) => (u.id === updatedUser.id ? updatedUser : u)));
-        }} 
+          setUsers(
+            users.map((u) => (u.id === updatedUser.id ? updatedUser : u)),
+          );
+        }}
       />
       <DataImportModal
         isOpen={isImportModalOpen}
         onClose={() => setIsImportModalOpen(false)}
-        onImportSuccess={() => alert("Dane zaktualizowane. Przejdź do Dashboardu.")}
+        onImportSuccess={() =>
+          alert("Dane zaktualizowane. Przejdź do Dashboardu.")
+        }
       />
     </div>
   );

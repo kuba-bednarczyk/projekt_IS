@@ -111,14 +111,14 @@ const Header = () => {
               Panel analityczny
             </Button>
 
-            <Button
+            {/* <Button
               variant={isActive("/calculator") ? "default" : "outline"}
               size="sm"
               className="h-8 text-xs font-medium"
               onClick={() => navigate("/calculator")}
             >
               Kalkulator
-            </Button>
+            </Button> */}
 
             {user?.role === "ADMIN" && (
               <Button
