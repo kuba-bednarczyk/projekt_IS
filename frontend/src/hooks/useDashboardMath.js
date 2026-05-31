@@ -54,7 +54,7 @@ export const useDashboardMath = (data, filters) => {
     return resultData;
   }, [prices, rates, selectedRange, isInSelectedRange, isPriceMatchingFilters]);
 
-// Statystyki do HeroMarketStats
+// statystyki do Hero 
   const stats = useMemo(() => {
     if (prices.length === 0 || !selectedRange) return null;
     const endY = selectedRange.endYear, endQ = selectedRange.endQuarter;
@@ -81,7 +81,7 @@ export const useDashboardMath = (data, filters) => {
     const avgTransakcyjne = calcAvg(currentQuarterPrices.filter((p) => p.priceType === "transakcyjne"));
     const spread = (avgOfertowe > 0 && avgTransakcyjne > 0) ? ((avgOfertowe - avgTransakcyjne) / avgTransakcyjne) * 100 : 0;
 
-    // Perspektywa kupującego: całkowity koszt + rata kredytu
+    // perspektywa kupującego: całkowity koszt + rata kredytu
     let apartmentValue = "Brak";
     let estimatedInstallment = "Brak";
     
@@ -103,7 +103,7 @@ export const useDashboardMath = (data, filters) => {
 
     return {
       avgPriceLabel: `Śr. cena/m²`,
-      currentPeriodLabel: `(${endY} Q${endQ})`, // DODANE: Uniwersalna etykieta czasu
+      currentPeriodLabel: `(${endY} Q${endQ})`, 
       avgPrice: avgCurrent > 0 ? `${Math.round(avgCurrent).toLocaleString("pl-PL")} zł` : "Brak",
       rrGrowth,
       growth5Y: growth5Y !== 0 ? `${growth5Y > 0 ? "+" : ""}${Math.round(growth5Y)}%` : "Brak",
@@ -148,7 +148,7 @@ const momentumData = useMemo(() => {
     })
     .filter(c => c.growth !== null)
     .sort((a, b) => b.growth - a.growth)
-    .slice(0, 5); // Pobieramy Top 5
+    .slice(0, 5); // pobieramy pierwsze 5
   }, [cities, prices, selectedRange, selectedMarket, selectedPriceType]);
 
   // slider: średnia z całego roku z ostatnich 3 lat wg. filtru endYear

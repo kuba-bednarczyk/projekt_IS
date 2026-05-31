@@ -17,7 +17,6 @@ const HeroMarketStats = ({ stats }) => {
       <CardContent>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           
-          {/* Kafelek 1: Średnia cena */}
           <Card className="bg-muted/30 border-none shadow-none">
             <CardHeader className="p-4 pb-2">
               <CardDescription className="text-xs font-semibold uppercase text-zinc-500 tracking-wider">
@@ -34,7 +33,6 @@ const HeroMarketStats = ({ stats }) => {
             </CardContent>
           </Card>
 
-          {/* Kafelek 2: Stopa NBP */}
           <Card className="bg-muted/30 border-none shadow-none">
             <CardHeader className="p-4 pb-2">
               <CardDescription className="text-xs font-semibold uppercase text-zinc-500 tracking-wider">
@@ -47,7 +45,6 @@ const HeroMarketStats = ({ stats }) => {
             </CardContent>
           </Card>
 
-          {/* Kafelek 3: Wzrost 5-letni */}
           <Card className="bg-muted/30 border-none shadow-none">
             <CardHeader className="p-4 pb-2">
               <CardDescription className="text-xs font-semibold uppercase text-zinc-500 tracking-wider">
@@ -60,7 +57,6 @@ const HeroMarketStats = ({ stats }) => {
             </CardContent>
           </Card>
 
-          {/* Kafelek 4: Rozstrzał of./trans. */}
           <Card className="bg-muted/30 border-none shadow-none">
             <CardHeader className="p-4 pb-2">
               <CardDescription className="text-xs font-semibold uppercase text-zinc-500 tracking-wider">
@@ -73,7 +69,6 @@ const HeroMarketStats = ({ stats }) => {
             </CardContent>
           </Card>
 
-          {/* Kafelek 5: Wartość 50m2 */}
           <Card className="bg-muted/40 border-none shadow-none">
             <CardHeader className="p-4 pb-2">
               <CardDescription className="text-xs font-semibold uppercase text-zinc-500 tracking-wider">
@@ -88,7 +83,6 @@ const HeroMarketStats = ({ stats }) => {
             </CardContent>
           </Card>
 
-          {/* Kafelek 6: Szacunkowa Rata */}
           <Card className="bg-muted/40 border-none shadow-none">
             <CardHeader className="p-4 pb-2">
               <CardDescription className="text-xs font-semibold uppercase text-zinc-500 tracking-wider">

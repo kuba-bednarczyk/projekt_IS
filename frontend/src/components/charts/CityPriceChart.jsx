@@ -18,7 +18,7 @@ const CityPriceChart = ({ data }) => {
     );
   }
 
-  // Sortowanie danych od najwyższej ceny
+  // sortowanie danych od najwyższej ceny
   const sortedData = [...data].sort((a, b) => b.avgPrice - a.avgPrice);
 
   return (

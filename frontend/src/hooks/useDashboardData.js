@@ -17,13 +17,14 @@ const DEAFULT_Q_FROM = "1";
 export const useDashboardData = () => {
   const navigate = useNavigate();
 
-  // Stany bazowe (API)
+  // stany bazowe (z API)
   const [cities, setCities] = useState([]);
   const [prices, setPrices] = useState([]);
   const [rates, setRates] = useState([]);
+
   const [isLoading, setIsLoading] = useState(true);
 
-  // Stany filtrów
+  // stany filtrów
   const [selectedCity, setSelectedCity] = useState("all");
   const [selectedMarket, setSelectedMarket] = useState("all");
   const [selectedPriceType, setSelectedPriceType] = useState("all");

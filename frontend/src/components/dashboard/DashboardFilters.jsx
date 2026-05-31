@@ -7,7 +7,6 @@ const DashboardFilters = ({ filters, ranges, cities }) => {
         <CardTitle className="text-lg font-semibold">Filtry danych</CardTitle>
       </CardHeader>
       <CardContent>
-        {/* Górny rząd: Miasto, Rynek, Rodzaj ceny */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           <div className="space-y-2">
             <label className="text-sm font-medium leading-none">Miasto</label>
@@ -50,7 +49,6 @@ const DashboardFilters = ({ filters, ranges, cities }) => {
           </div>
         </div>
 
-        {/* Dolny rząd: Zakresy dat */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-zinc-100">
           <div className="space-y-2">
             <label className="text-sm font-medium leading-none">Rok od</label>
