@@ -15,7 +15,6 @@ services:
     networks:
       - network
     restart: unless-stopped
-    # Dodany healthcheck sprawdzający, czy baza jest gotowa na połączenia
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U admin -d real_estate_db"]
       interval: 5s
