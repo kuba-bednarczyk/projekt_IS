@@ -37,20 +37,8 @@ async function main() {
     },
   });
 
-  // user 2
-  await prisma.user.upsert({
-    where: { email: "jankowalski@test.pl" },
-    update: {},
-    create: {
-      nickname: "jkowalski99",
-      email: "jkowalski@test.pl",
-      password: userPassword,
-      role: "USER",
-    },
-  });
-
   console.log(
-    "Database was successfully seeded with 3 users.",
+    "Database was successfully seeded with 2 users.",
   );
 }
 

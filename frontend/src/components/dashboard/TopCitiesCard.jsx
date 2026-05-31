@@ -4,7 +4,7 @@ export const TopCitiesCard = ({ data, endYear }) => (
   <Card className="flex flex-col">
     <CardHeader>
       <CardTitle className="text-lg font-semibold">Najszybciej rosnące rynki ({endYear})</CardTitle>
-      <CardDescription>5 miast w których ceny najbardziej wzrosły r/r.</CardDescription>
+      <CardDescription>5 miast w których ceny rosły najszybciej %r/r.</CardDescription>
     </CardHeader>
     <CardContent className="flex-1">
       <div className="space-y-4">

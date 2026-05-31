@@ -17,10 +17,10 @@ const app = express();
 // zmiana ustawien cors pod httpCookie
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "http://localhost",
     credentials: true,
   }),
-);
+); 
 
 app.use(express.json({ limit: "5mb" })); // pozwala czytac dane z bazy (limit zwiększony dla zdjęć Base64)
 app.use(cookieParser()); // do obsługi ciasteczek HttpOnly

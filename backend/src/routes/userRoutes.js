@@ -90,7 +90,7 @@ router.get("/:id/picture", verifyToken, async (req, res) => {
       where: { id: userId },
       select: { profilePicture: true },
     });
-    if (!user?.profilePicture) return res.status(404).send("Not found");
+    if (!user?.profilePicture) return res.status(200).send("Not found");
 
     const base64 = Buffer.from(user.profilePicture).toString("base64");
 
