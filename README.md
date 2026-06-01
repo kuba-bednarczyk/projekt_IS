@@ -14,6 +14,7 @@ Aplikacja została zaprojektowana w architekturze mikroserwisowej i skonteneryzo
 1. **Frontend (`/frontend`)**: React.js, Vite, Recharts (Wizualizacja danych), Tailwind CSS, shadcn/ui (Stylowanie).
 2. **Backend (`/backend`)**: Node.js, Express.js, Prisma ORM, Zod (Walidacja), JWT & BCrypt (Autoryzacja).
 3. **Baza danych**: PostgreSQL (tabele: `City`, `HousingPrice`, `InterestRate`, `User`).
+4. **Testy aplikacji:** Postman (testy manualne), JEST (testy jednostkowe)
 
 ## Instrukcja uruchomienia 
 
@@ -259,46 +260,3 @@ Część kliencka opiera się na reużywalnych komponentach i autorskich hookach
 * **`src/hooks/`** – Wyizolowana logika biznesowa i stany. Znajduje się tu m.in. kluczowy dla aplikacji plik `useDashboardMath.js`, odpowiedzialny za agregację i przeliczanie surowych danych rynkowych na wartości wyświetlane na wykresach.
 * **`src/pages/`** – Główne widoki aplikacji (widok logowania, główny pulpit analityczny, panel administratora), które składają mniejsze komponenty w całe strony.
 * **`src/lib/`** – Funkcje narzędziowe (utils).
-
----
-
-## Wykorzystanie narzędzi AI
-
-Ze względu na charakter pracy oraz korzystanie z asystentów wbudowanych w edytory kodu, które nie zapisują trwałej historii konwersacji, poniżej udostępniamy zachowane materiały oraz szczegółowe podsumowanie obszarów, w których wykorzystywaliśmy AI.
-
-### 1. Załączone materiały i linki
-
-* **Rozwiązywanie problemów z Dockerem (Gemini):** [https://gemini.google.com/share/237a0615b4b6](https://gemini.google.com/share/237a0615b4b6)
-* **Rozwiązywanie konfliktów git merge:** [https://gemini.google.com/share/28c189882ab4](https://gemini.google.com/share/28c189882ab4)
-* **Transkrypty z edytora Cursor:** Zachowane logi z pracy z wbudowanym asystentem znajdują się w folderze `./docs/ai_logs`:
-  - `cursor_dashboard_ui_redesign.md`
-  - `cursor_edit_user_information.md`
-
-### 2. Fragmenty kodu wygenerowane przez AI i nasz wkład
-
-Poniżej wskazujemy konkretne pliki i linie kodu, wskazujemy rozwiązany problem oraz opisujemy, jak zmodyfikowaliśmy kod wygenerowany przez AI:
-
-* `backend/src/middleware/auth.js` **(linie 4-24)** oraz `backend/src/routes/authRoutes.js` **(linie 84-142)**
-  * **Kontekst:** Bezpieczeństwo i architektura autoryzacji użytkowników z użyciem JWT.
-  * **Co zrobiło AI:** Wygenerowanie podstawowej logiki weryfikacji i przesyłania tokena w nagłówku `Authorization` (Bearer) z domyślnym założeniem przechowywania go w `localStorage` po stronie klienta.
-  * **Nasza modyfikacja:** Ze względów bezpieczeństwa (ochrona przed atakami typu XSS) zrezygnowaliśmy z `localStorage`. Całkowicie przebudowaliśmy logikę logowania i middleware, przenosząc zapis oraz odczyt tokenów do bezpiecznych ciasteczek (`req.cookies`) z wykorzystaniem flag `httpOnly: true`, `secure` oraz `sameSite: "lax"`.
-
-* `backend/src/validations/importSchemas.js` **(linie 2-6 i 37-61)**
-  * **Kontekst:** Problem z walidacją nieustrukturyzowanych danych z plików XML.
-  * **Co zrobiło AI:** Wygenerowanie funkcji `forceArray` oraz szkieletu bloku `superRefine`.
-  * **Nasza modyfikacja:** Dodanie autorskiego algorytmu sprawdzania spójności, ręczna weryfikacja istnienia kwartałów i poprawa przekazywania komunikatów o błędach.
-
-* `backend/src/routes/exportRoutes.js` **(linie 35-88)**
-  * **Kontekst:** Konfiguracja eksportu przetworzonych danych JSON do formatów XML/YAML.
-  * **Co zrobiło AI:** Wygenerowanie bazowych endpointów yaml/xml z użyciem biblioteki `xml2js`.
-  * **Nasza modyfikacja:** Zmiana biblioteki na wydajniejszy `fast-xml-parser` oraz ręczne ustawienie odpowiednich nagłówków (Headers) w odpowiedzi HTTP.
-
-* `backend/src/services/importInterestRates.js` **(linie 29-87)**
-  * **Kontekst:** Przetwarzanie i grupowanie surowych danych o stopach procentowych NBP.
-  * **Co zrobiło AI:** Napisanie prostej funkcji grupującej rekordy do wstawienia.
-  * **Nasza modyfikacja:** Zaimplementowanie złożonej logiki i algorytmu automatycznie kalkulującego i wypełniającego puste miesiące na osi czasu.
-
-* `frontend/src/hooks/useDashboardMath.js` **(linie 43-195)** oraz `frontend/src/pages/Dashboard.jsx`
-  * **Kontekst:** Renderowanie wykresów analitycznych (Recharts) i przeliczanie danych rynkowych.
-  * **Co zrobiło AI:** Wygenerowanie algorytmów agregujących dane (m.in. dynamika r/r). Początkowo AI wygenerowało całą strukturę wizualną wykresów bezpośrednio w głównym pliku `Dashboard.jsx`.
-  * **Nasza modyfikacja:** Gruntowna refaktoryzacja kodu. Logikę matematyczną przenieśliśmy do dedykowanego hooka `useDashboardMath.js`. Odrzuciliśmy monolityczną strukturę i wydzieliliśmy każdy wykres do osobnych komponentów (np. `CityPriceChart`, `MarketTypePricesChart`), zagnieżdżając je w komponentach typu Card (np. `PriceTrendCard`, `MomentumCard`) w celu zachowania czystości kodu oraz dodaliśmy filtry ignorujące skrajne wartości.

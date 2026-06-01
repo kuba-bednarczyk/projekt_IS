@@ -1,0 +1,337 @@
+{
+  "info": {
+    "_postman_id": "2df74e30-f09a-42ae-881d-5f3e70cb7f71",
+    "name": "projekt_IS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53579126",
+    "_collection_link": "https://go.postman.co/collection/53579126-2df74e30-f09a-42ae-881d-5f3e70cb7f71?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "bad",
+      "item": [
+        {
+          "name": "/users/",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nickname\": \"test_user_01\",\r\n  \"email\": \"test01example.com\",\r\n  \"password\": \"SuperSecretPassword123\",\r\n  \"role\": \"OWNER\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}users/",
+              "host": [
+                "{{baseUrl}}users"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/users/:id",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"jkowalski@test.pl\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}users/4",
+              "host": [
+                "{{baseUrl}}users"
+              ],
+              "path": [
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/users/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}users/abc",
+              "host": [
+                "{{baseUrl}}users"
+              ],
+              "path": [
+                "abc"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/users/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}users/1",
+              "host": [
+                "{{baseUrl}}users"
+              ],
+              "path": [
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/users/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}users/1",
+              "host": [
+                "{{baseUrl}}users"
+              ],
+              "path": [
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/prices",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}prices?ystart=abc",
+              "host": [
+                "{{baseUrl}}prices"
+              ],
+              "query": [
+                {
+                  "key": "ystart",
+                  "value": "abc"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "happy",
+      "item": [
+        {
+          "name": "/users/",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nickname\": \"test_user_01\",\r\n  \"email\": \"test01@example.com\",\r\n  \"password\": \"SuperSecretPassword123\",\r\n  \"role\": \"USER\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}users/",
+              "host": [
+                "{{baseUrl}}users"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/users/",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}users/",
+              "host": [
+                "{{baseUrl}}users"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/users/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}users/4",
+              "host": [
+                "{{baseUrl}}users"
+              ],
+              "path": [
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/cities",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}cities",
+              "host": [
+                "{{baseUrl}}cities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/prices",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}prices?ystart=2023",
+              "host": [
+                "{{baseUrl}}prices"
+              ],
+              "query": [
+                {
+                  "key": "ystart",
+                  "value": "2023"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/users/:id",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nickname\": \"test_user_01_updated\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}users/4",
+              "host": [
+                "{{baseUrl}}users"
+              ],
+              "path": [
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/users/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}users/4",
+              "host": [
+                "{{baseUrl}}users"
+              ],
+              "path": [
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "/auth/login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"admin@test.pl\",\r\n  \"password\": \"admin123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}auth/login",
+          "host": [
+            "{{baseUrl}}auth"
+          ],
+          "path": [
+            "login"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}
