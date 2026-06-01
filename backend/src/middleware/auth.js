@@ -7,7 +7,7 @@ const verifyToken = (req, res, next) => {
     return res.status(500).json({ error: "Błąd: nie znaleziono klucza." });
   }
 
-  // Szukamy tokena najpierw w ciasteczku (frontend), potem w headerze (np. dla postmana)
+  // Szukamy tokena najpierw w ciasteczku, potem w headerze
   const token = req.cookies?.token || req.header("Authorization")?.split(" ")[1];
   if (!token) {
     return res.status(401).json({ error: "Odmowa dostępu: Brak tokena." });
