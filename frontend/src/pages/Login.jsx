@@ -32,7 +32,7 @@ const Login = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include", // Niezbędne do odebrania i zapisania cookies!
+        credentials: "include",
         body: JSON.stringify({ email, password }),
       });
 
@@ -42,7 +42,6 @@ const Login = () => {
         throw new Error(data.error || "Błąd logowania");
       }
 
-      // Weryfikacja JWT przeniesiona do HttpOnly cookie, localStorage używamy tylko by śledzić status interfejsu
       localStorage.setItem("isAuthenticated", "true");
 
       navigate("/dashboard");

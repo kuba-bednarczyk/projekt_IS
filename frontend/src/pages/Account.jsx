@@ -31,7 +31,6 @@ const Account = () => {
 
   const fileInputRef = useRef(null);
 
-  // Bezpieczna synchronizacja stanu początkowego bez wywoływania kaskadowych renderów (omija błąd ESLint)
   const [lastLoadedUserId, setLastLoadedUserId] = useState(null);
   if (user && user.userId !== lastLoadedUserId) {
     setNickname(user.nickname || "");
@@ -64,7 +63,6 @@ const Account = () => {
     }
   }, [user?.userId]);
 
-  // Funkcja wywoływana, gdy użytkownik wybierze nowe zdjęcie z dysku
   const onFileChange = (e) => {
     const f = e.target.files?.[0];
     if (!f) return;
@@ -88,7 +86,7 @@ const Account = () => {
   };
 
   const handleSave = async (e) => {
-    e.preventDefault(); // Blokujemy domyślne przeładowanie strony przez formularz
+    e.preventDefault(); 
     setFieldErrors({});
     setStatusMessage(null);
 
@@ -100,7 +98,6 @@ const Account = () => {
       return;
     }
 
-    // Walidacja identyczności haseł
     if (password.trim() !== "" && password !== confirmPassword) {
       setFieldErrors({
         confirmPassword: "Nowe hasło i powtórzone hasło nie są identyczne.",
@@ -112,7 +109,7 @@ const Account = () => {
       const payload = {
         nickname: nickname,
         email: email,
-        role: user.role, // Dołączamy obecną rolę, by walidator Zod nie zgłosił jej braku
+        role: user.role, 
       };
 
       if (preview !== originalPreview) {
@@ -187,7 +184,6 @@ const Account = () => {
           )}
           <Card className="shadow-sm border-zinc-200/60">
             <CardContent className="pt-6 space-y-8">
-              {/* Sekcja Avatara */}
               <div className="flex flex-col sm:flex-row sm:items-center gap-6">
                 <div
                   className="relative w-24 h-24 rounded-full bg-zinc-100 border-2 border-dashed border-zinc-300 overflow-hidden group cursor-pointer shrink-0 transition-colors hover:border-zinc-400"

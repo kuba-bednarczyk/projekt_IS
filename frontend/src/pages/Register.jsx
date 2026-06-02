@@ -137,7 +137,6 @@ const Register = () => {
               )}
             </div>
 
-            {/* Nowe pole: Powtórz hasło */}
             <div className="space-y-2">
               <Label htmlFor="confirmPassword">Powtórz hasło *</Label>
               <Input

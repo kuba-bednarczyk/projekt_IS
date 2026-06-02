@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 
-// pages
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
@@ -8,8 +7,6 @@ import Account from "./pages/Account";
 import Calculator from "./pages/Calculator";
 import AdminPanel from "./pages/AdminPanel";
 
-
-// protected Route
 import ProtectedRoute from "./components/layout/ProtectedRoute";
 
 const App = () => {
@@ -26,7 +23,6 @@ const App = () => {
         <Route
           path="/dashboard"
           element={
-            // ProtectedRoute blokuje dostep przed nieautoryzowanym dostępem
             <ProtectedRoute>
               <Dashboard />
             </ProtectedRoute>
