@@ -112,7 +112,7 @@ const Header = () => {
               onClick={() => handleNavigation("/dashboard")}
             >
               <Home className="w-4 h-4 mr-1.5" />
-              Dashboard
+              Panel analityczny
             </Button>
 
             {user?.role === "ADMIN" && (
