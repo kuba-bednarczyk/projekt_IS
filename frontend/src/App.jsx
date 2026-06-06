@@ -4,7 +4,6 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Account from "./pages/Account";
-import Calculator from "./pages/Calculator";
 import AdminPanel from "./pages/AdminPanel";
 
 import ProtectedRoute from "./components/layout/ProtectedRoute";
@@ -25,14 +24,6 @@ const App = () => {
           element={
             <ProtectedRoute>
               <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/calculator"
-          element={
-            <ProtectedRoute>
-              <Calculator />
             </ProtectedRoute>
           }
         />

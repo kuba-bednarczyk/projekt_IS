@@ -17,7 +17,7 @@ const app = express();
 // zmiana ustawien cors pod httpCookie
 // app.use(
 //   cors({
-//     origin: "http://localhost",
+//     origin: "http://localhost:5173",
 //     credentials: true,
 //   }),
 // ); 
